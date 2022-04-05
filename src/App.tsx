@@ -98,7 +98,7 @@ const App = (): ReactElement => {
     <ThemeProvider theme={theme}>
       <GlobalStyles isMobileMenuOpen={isMobileMenuOpen} />
       <Router history={history}>
-        {isLoggedIn && <Header />}
+     <Header />
         <Body
           isShowOverlay={isMobileMenuOpen}
           onClick={() => {
@@ -109,7 +109,7 @@ const App = (): ReactElement => {
             }, 500);
           }}
         >
-          {isLoggedIn && <SideNavigation />}
+       
           <Routes />
         </Body>
         {isLoggedIn && <FooterComponent />}

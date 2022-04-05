@@ -4,8 +4,8 @@ import ROUTES from "./routes";
 const Sidemenu = [
   {
     icon: ["fas", "line-chart"],
-    label: "Courses",
-    to: "",
+    label: "Register",
+    to: ROUTES.REGISTER,
   },
   {
     icon: ["fas", "book"],

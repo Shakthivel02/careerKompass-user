@@ -3,6 +3,7 @@ const ROUTES = {
   LOGIN: "/",
   SELECTED_STREAM: "/selectStream",
   RESULT: "/result",
+  REGISTER: "/register",
 };
 
 export default ROUTES;

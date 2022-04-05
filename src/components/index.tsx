@@ -17,6 +17,7 @@ import AlignWrapper from "./AlignCenter";
 import { Close } from "./CloseButton";
 import Dropdown from "./Dropdown";
 import Modal from "./Modal";
+import EditableDropdown from "./EditableDropdown";
 
 export {
   DropdownWrapper,
@@ -41,4 +42,5 @@ export {
   Modal,
   Dropdown,
   TextArea,
+  EditableDropdown
 };

@@ -1,3 +1,5 @@
+import { DropdownListProps } from "../components/EditableDropdown/typings";
+import { Profile } from "../redux/Register/types";
 import { GetTest, StreamList } from "../redux/streamMaster/types";
 
 export const getStreamDropdown = (streamdata: Array<StreamList>) => {
@@ -15,4 +17,14 @@ export const getTestPayload = (Test: Array<GetTest>) => {
     level: TestPayload.test_level,
   }));
   return testData;
+};
+
+export const getProfileDropdown = (
+  profile: Array<Profile>
+): Array<DropdownListProps> => {
+  const ProfileData = profile.map((profile: Profile) => ({
+    id: profile?.id,
+    name: profile?.profile
+  }));
+  return ProfileData;
 };

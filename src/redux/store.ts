@@ -3,12 +3,14 @@ import loginReducer from "./login/reducer";
 import menuReducer from "./menu/reducer";
 import streamReducer from "./streamMaster/reducer";
 import TestReducer from "./TestApi/reducer";
+import RegisterReducer from './Register/reducer'
 
 const reducer = {
   login: loginReducer,
   menu: menuReducer,
   stream: streamReducer,
   Test: TestReducer,
+  register: RegisterReducer
 };
 
 const initialState = {};

@@ -4,7 +4,6 @@ import {
   GetTest,
   InitialState,
   QuestionType,
-  SelectedTest,
   StreamList,
 } from "./types";
 
