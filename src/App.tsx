@@ -1,7 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import theme, { colors } from "./const/theme";
-import SideNavigation from "./container/SideNavigation";
+import theme, { colors } from "./const/theme"; 
 import Header from "./components/Header";
 import { Router } from "react-router-dom";
 import styled from "styled-components";
@@ -98,7 +97,7 @@ const App = (): ReactElement => {
     <ThemeProvider theme={theme}>
       <GlobalStyles isMobileMenuOpen={isMobileMenuOpen} />
       <Router history={history}>
-     <Header />
+     {isLoggedIn && <Header />}
         <Body
           isShowOverlay={isMobileMenuOpen}
           onClick={() => {
@@ -108,8 +107,7 @@ const App = (): ReactElement => {
               }
             }, 500);
           }}
-        >
-       
+        > 
           <Routes />
         </Body>
         {isLoggedIn && <FooterComponent />}

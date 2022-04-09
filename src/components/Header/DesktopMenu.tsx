@@ -1,32 +1,19 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import { ReactElement } from "react";
 import {
-  DesktopWrapper,
-  HamburgerMenu,
+  DesktopWrapper, 
   LogoBrand,
   LogoWrapper,
   SubBrand,
-} from "./subcomponents";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
-import { updateIsMenuOpen } from "../../redux/menu/actions";
+} from "./subcomponents"; 
 
-const DesktopMenu = (): ReactElement => {
-  const { isMenuOpen } = useSelector((state: RootState) => state.menu);
-  const dispatch = useDispatch();
-
+const DesktopMenu = (): ReactElement => { 
   return (
     <DesktopWrapper>
       <LogoWrapper>
         <LogoBrand>Career</LogoBrand>
         <SubBrand>Kompus</SubBrand>
-        <sup>®</sup>
-        <HamburgerMenu
-          variant="light"
-          onClick={() => dispatch(updateIsMenuOpen(!isMenuOpen))}
-        >
-          <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
-        </HamburgerMenu>
+        <sup>®</sup> 
       </LogoWrapper>
     </DesktopWrapper>
   );

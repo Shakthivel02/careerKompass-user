@@ -7,7 +7,7 @@ export const RegisterWrapper = styled.div`
   display: flex;
   width: 100%;
   max-width: 100%;
-  height: 100vh;
+  height: 110vh;
   border-radius: 4px;
   background: ${({ theme }) => theme?.appBackground};
 `
@@ -21,7 +21,7 @@ export const ContainerWrapper = styled.div`
   border-top-right-radius:20px;
   border:1px solid gray;
   @media (min-width: 769px) {
-    width: 50%;
+    width: 60%;
   }
   `
 export const Title = styled(H3)`
@@ -38,3 +38,16 @@ export const FormContainer = styled(Form)`
   justify-content: center;
 `
  
+export const RLogoWrapper = styled.div`
+width: 120px;
+height: 35%;
+display: flex; 
+margin: auto ;
+`;
+export const RLogo = styled.img`
+margin: 0 auto;
+width: 90px;
+height: 35%;
+display: flex; 
+margin: auto 12px;
+`;

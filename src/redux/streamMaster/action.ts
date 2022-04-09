@@ -1,6 +1,6 @@
 import { streamSlice } from "./reducer";
 import { handleStreamMaster, SelectedStream } from "./api";
 
-const { updateHasError } = streamSlice.actions;
+const { updateHasError,updateSelectedStream } = streamSlice.actions;
 
-export { updateHasError, handleStreamMaster, SelectedStream };
+export { updateHasError, handleStreamMaster, SelectedStream,updateSelectedStream };

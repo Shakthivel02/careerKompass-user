@@ -2,6 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import apiEndpoints from "../../const/apiEndpoints";
 import api from "../../services";
 import {
+  GetLevel,
   GetTest,
   QuestionType,
   SelectedStreamType,
@@ -10,7 +11,7 @@ import {
 } from "./types";
 
 export const handleStreamMaster = createAsyncThunk(
-  "streamMaster",
+  "streamMaster/getstreamMaster",
   async (): Promise<Array<StreamList>> => {
     const response = await api.get(apiEndpoints.getStream);
     return response.data.message;
@@ -36,6 +37,14 @@ export const GetQuestionByTest = createAsyncThunk(
       apiEndpoints.GetQuestionByTest,
       requestPayload
     );
+    return response.data.message;
+  }
+);
+
+export const getLevel = createAsyncThunk(
+  "level/GetLevel",
+  async (): Promise<Array<GetLevel>> => {
+    const response = await api.get(apiEndpoints.getLevel);
     return response.data.message;
   }
 );

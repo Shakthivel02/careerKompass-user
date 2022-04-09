@@ -1,6 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { GetQuestionByTest, handleStreamMaster, SelectedStream } from "./api";
+import { getLevel, GetQuestionByTest, handleStreamMaster, SelectedStream } from "./api";
 import {
+  CreatetestByStream,
+  GetLevel,
   GetTest,
   InitialState,
   QuestionType,
@@ -15,11 +17,18 @@ const initialState: InitialState = {
   },
   questions: [],
   getTest: [],
+  levelsData: [],
+  uselectedStream: {
+    streamID:''
+  }
 };
 export const streamSlice = createSlice({
   name: "streamMaster",
   initialState,
   reducers: {
+    updateSelectedStream: (state, action: PayloadAction<CreatetestByStream>) => {
+      state.uselectedStream = action?.payload
+    },
     updateHasError: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
     },
@@ -64,6 +73,19 @@ export const streamSlice = createSlice({
     [GetQuestionByTest.rejected.toString()]: (state) => {
       state.isLoading = false;
     },
+    [getLevel.pending.toString()]: (state) => {
+      state.isLoading = true;
+  },
+  [getLevel.fulfilled.toString()]: (
+      state,
+      action: PayloadAction<Array<GetLevel>>
+  ) => {
+      state.isLoading = false;
+      state.levelsData = action?.payload;
+  },
+  [getLevel.rejected.toString()]: (state) => {
+      state.isLoading = false;
+  },
   },
 });
 

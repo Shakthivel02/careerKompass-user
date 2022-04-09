@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { DropdownButton, Dropdown, FormControl } from 'react-bootstrap'
 import {
   ListInput,
@@ -25,16 +25,6 @@ const EditableDropdown = ({
     name: name || '',
     id: id || ''
   })
-
-  useEffect(() => {
-    if (!!selectdItem.name && !dropdownList.length) {
-      setSelectedItem({
-        name: '',
-        id: ''
-      })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dropdownList])
 
   return (
     <EditDropdownWrapper
@@ -72,7 +62,7 @@ const EditableDropdown = ({
         >
           {dropdownList.map((item, index) => (
             <Dropdown.Item eventKey={index} key={`dropdown-${index}`}>
-              {item?.name}
+              {item.name}
             </Dropdown.Item>
           ))}
         </DropdownButton>
