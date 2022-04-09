@@ -12,7 +12,7 @@ export const AddUserApi = createAsyncThunk(
 )
 
 export const getProfile = createAsyncThunk(
-    "streamMaster",
+    "profile/getProfile",
     async (): Promise<Array<Profile>> => {
       const response = await api.get(apiEndpoints.getProfile);
       return response.data.message;

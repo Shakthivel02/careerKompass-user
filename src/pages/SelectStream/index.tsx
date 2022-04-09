@@ -3,42 +3,44 @@ import { UserFilterSection } from "./subcomponents";
 import {
   PageWrapper,
   FlexWrapper,
-  SectionTitle,
-  CardWrapper,
-  Column,
+  SectionTitle, 
   ActionButton,
 } from "../../components";
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { getStreamDropdown, getTestPayload } from "../../helpers/dropdown";
+import { getLevelsDropdown, getTestPayload } from "../../helpers/dropdown";
 import {
-  GetQuestionByTest,
-  handleStreamMaster,
+  getLevel,
+  GetQuestionByTest, 
   SelectedStream,
 } from "../../redux/streamMaster/api";
 import { SelectedStreamType } from "../../redux/streamMaster/types";
 import { useHistory } from "react-router-dom";
 import ROUTES from "../../const/routes";
-import { DropdownListProps } from "./typings";
+import { DropdownListProps } from "./typings"; 
 
 const SelectStreamLevel = (): ReactElement => {
-  const { selectedStream, stream, test } = useSelector(
-    (state: RootState) => ({
-      stream: state.stream.streamMaster,
+  const { selectedStream, test, levelData, uselectedStream } = useSelector(
+    (state: RootState) => ({ 
       selectedStream: state.stream.selectStream as SelectedStreamType,
       test: state.stream.getTest,
+      levelData: state.stream.levelsData,
+      uselectedStream: state.stream.uselectedStream
     }),
     shallowEqual
   );
-  const history = useHistory();
-  const StreamDropdown = stream ? getStreamDropdown(stream) : [];
+  const history = useHistory(); 
   const [values, setValues] = useState(selectedStream);
+
   const [show, setShow] = useState(false);
+
   const dispatch = useDispatch();
   const [selectedTest] = test ? getTestPayload(test) : [];
 
+  const LevelDrop = levelData ? getLevelsDropdown(levelData) : []
+
   useEffect(() => {
-    dispatch(handleStreamMaster());
+    dispatch(getLevel());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -49,27 +51,25 @@ const SelectStreamLevel = (): ReactElement => {
   return (
     <PageWrapper>
       <FlexWrapper hasBorder>
-        <SectionTitle title={"Select Stream"} />
+        <SectionTitle title={"Select Level"} />
       </FlexWrapper>
       <UserFilterSection
-        Stream={StreamDropdown}
+        Stream={LevelDrop}
         handleStreamSelect={([stream]: Array<DropdownListProps>) => {
           setValues({ ...values, streamID: stream.id });
         }}
         handleSearch={(e: SyntheticEvent) => {
           e.preventDefault();
-          dispatch(SelectedStream(values));
+          dispatch(SelectedStream({ ...values, ...uselectedStream }));
           setShow(true);
         }}
       />
       {show ? (
         <FlexWrapper justifyContent="space-around">
           {test.map((data, id) => (
-            <CardWrapper key={id}>
-              <Column keyName="Test Name" value={data.test_name} />
-              <Column keyName="Level" value={data.test_level} />
-              <ActionButton onClick={handleTakeTest}>Take Test</ActionButton>
-            </CardWrapper>
+            <div key={id}> 
+               <ActionButton onClick={handleTakeTest}>Take Test</ActionButton>
+            </div>
           ))}
         </FlexWrapper>
       ) : null}

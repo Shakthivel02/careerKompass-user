@@ -20,7 +20,7 @@ export const UserFilterSection = ({
             isRequired
             dropdownList={Stream}
             singleSelect
-            placeholder={"Select Stream"}
+            placeholder={"Select Level"}
             handleSelect={handleStreamSelect}
           />
         </DropdownWrapper>

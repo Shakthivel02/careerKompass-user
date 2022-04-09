@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 const ActionButton = styled(Button)`
   margin: ${({ margin }) => (margin ? `${margin}%` : "auto")};
-  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}px` : "auto")};
+  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}px` : "10px")};
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}px` : "auto")};
   margin-right: ${({ marginRight }) =>
     marginRight ? `${marginRight}px` : "auto"};

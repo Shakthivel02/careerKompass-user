@@ -7,6 +7,7 @@ const apiEndpoints = {
   PostAnswers: "PostAnswers",
   addUser: "Add_User",
   getProfile: "Get_Profile",
+  getLevel: "Get_Level",
 };
 
 export default apiEndpoints;
