@@ -6,7 +6,7 @@ const LoadingIndicator = styled(Spinner)`
   margin: 12px auto;
   display: block;
   width: 50px;
-  height: 50px;
+  height: 50px; 
 `
 
 const Loader = (): ReactElement => {

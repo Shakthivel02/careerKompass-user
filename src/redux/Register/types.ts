@@ -19,8 +19,24 @@ export interface Profile {
 
 }
 
+export interface Countries {
+    id: string
+    name: string
+}
+
+export interface StatesPayload {
+    id: string
+}
+
+export interface StatesResponse {
+    id: string
+    state_name: string 
+}
+
 export interface InitialState {
     isLoading: boolean;
     registerDetails: Register
     profileData: Array<Profile>
+    countryData: Array<Countries>
+    stateData: Array<StatesResponse>
 }

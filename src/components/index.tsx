@@ -2,8 +2,7 @@ import DropdownWrapper from "./DropdownWrapper";
 import Input, { TextArea } from "./Input";
 import FlexWrapper from "./FlexWrapper";
 import Loader from "./Loader";
-import ToastMessage from "./ToastMessge";
-import SideMenu from "./SideMenu";
+import ToastMessage from "./ToastMessge"; 
 import Header from "./Header";
 import SectionTitle from "./SectionTitle";
 import PageWrapper from "./PageWrapper";
@@ -26,8 +25,7 @@ export {
   ActionButton,
   Loader,
   ToastMessage,
-  Header,
-  SideMenu,
+  Header, 
   SectionTitle,
   PageWrapper,
   TableHeader,

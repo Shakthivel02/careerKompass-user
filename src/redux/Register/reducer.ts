@@ -1,7 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { AddUserApi, getProfile } from "./api";
+import { AddUserApi, getCountries, getProfile, getStates } from "./api";
 import {
-    InitialState, Profile, Register,
+    Countries,
+    InitialState, Profile, Register, StatesResponse,
 } from "./types";
 
 const initialState: InitialState = {
@@ -18,7 +19,9 @@ const initialState: InitialState = {
         stream: '',
     },
     isLoading: false,
-    profileData: []
+    profileData: [],
+    countryData: [],
+    stateData: []
 };
 export const RegisterSlice = createSlice({
     name: "Register",
@@ -48,6 +51,32 @@ export const RegisterSlice = createSlice({
             state.profileData = action?.payload;
         },
         [getProfile.rejected.toString()]: (state) => {
+            state.isLoading = false;
+        },
+        [getCountries.pending.toString()]: (state) => {
+            state.isLoading = true;
+        },
+        [getCountries.fulfilled.toString()]: (
+            state,
+            action: PayloadAction<Array<Countries>>
+        ) => {
+            state.isLoading = false;
+            state.countryData = action?.payload;
+        },
+        [getCountries.rejected.toString()]: (state) => {
+            state.isLoading = false;
+        },
+        [getStates.pending.toString()]: (state) => {
+            state.isLoading = true;
+        },
+        [getStates.fulfilled.toString()]: (
+            state,
+            action: PayloadAction<Array<StatesResponse>>
+        ) => {
+            state.isLoading = false;
+            state.stateData = action?.payload;
+        },
+        [getStates.rejected.toString()]: (state) => {
             state.isLoading = false;
         },
     },

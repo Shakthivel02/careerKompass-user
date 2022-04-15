@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"
 import apiEndpoints from "../../const/apiEndpoints"
 import api from "../../services"
-import { Profile, Register } from "./types"
+import { Countries, Profile, Register, StatesPayload, StatesResponse } from "./types"
 
 export const AddUserApi = createAsyncThunk(
     'user/addUser',
@@ -18,3 +18,24 @@ export const getProfile = createAsyncThunk(
       return response.data.message;
     }
   );
+
+  export const getCountries = createAsyncThunk(
+    "country/getCountry",
+    async (): Promise<Array<Countries>> => {
+      const response = await api.get(apiEndpoints.getCountries);
+      return response.data.message;
+    }
+  );
+
+  
+export const getStates = createAsyncThunk(
+  "state/getState",
+  async (requestPayload: StatesPayload): Promise<StatesResponse> => {
+    const response = await api.post(
+      `${apiEndpoints.getState}`,
+      requestPayload
+    );
+
+    return response.data.message;
+  }
+);

@@ -100,7 +100,7 @@ export const QuestionSection = ({
   return (
     <PageWrapper>
       <FlexWrapper justifyContent="center">
-        <CardWrapper width="60">
+        <CardWrapper  >
           <FlexWrapper justifyContent="center">
             <H4 color="rgb(36,46,111)">
               Question No. {quesId[activeQuestions]}

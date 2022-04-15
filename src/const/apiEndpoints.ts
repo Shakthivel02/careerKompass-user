@@ -8,6 +8,8 @@ const apiEndpoints = {
   addUser: "Add_User",
   getProfile: "Get_Profile",
   getLevel: "Get_Level",
+  getCountries: "Get_Countries",
+  getState: "Get_States",
 };
 
 export default apiEndpoints;

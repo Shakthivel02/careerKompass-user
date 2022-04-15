@@ -13,11 +13,11 @@ export const loginSlice = createSlice({
       state.hasError = action.payload;
     },
     updateUserName: (state, action: PayloadAction<string>) => {
-      state.email = action.payload;
+      state.email = action.payload; 
     },
     updatePassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
-    },
+    }, 
   },
   extraReducers: {
     [handleAuthenticate.pending.toString()]: (state) => {

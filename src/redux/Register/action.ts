@@ -1,3 +1,3 @@
-import { AddUserApi,getProfile } from "./api";
+import { AddUserApi,getProfile,getCountries } from "./api";
 
-export { AddUserApi,getProfile };
+export { AddUserApi,getProfile,getCountries };

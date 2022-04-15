@@ -9,13 +9,14 @@ import {
   ListItems,
   ListItemsHead,
 } from "./subcomponents";
+import footerlogo from '../../assests/logo.png'
 
 const FooterComponent = (): ReactElement => {
   return (
     <>
       <Footer>
         <FooterImageWrapper>
-          <FooterImage alt="Logo" src="/assets/footer.png" />
+          <FooterImage alt="Logo" src={footerlogo} />
         </FooterImageWrapper>
         <ListGroup>
           <ListItemsHead>Links</ListItemsHead>
