@@ -12,6 +12,7 @@ import BREAKPOINTS from "./const/breakpoint";
 import useBreakpoint from "use-breakpoint";
 import { updateIsMenuOpen } from "./redux/menu/actions";
 import FooterComponent from "./components/Footer";
+import './App.css'
 
 interface BodyProps {
   isShowOverlay?: boolean;
@@ -109,6 +110,7 @@ const App = (): ReactElement => {
           }}
         > 
           <Routes />
+         
         </Body>
         {isLoggedIn && <FooterComponent />}
       </Router>

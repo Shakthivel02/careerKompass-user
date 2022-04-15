@@ -1,5 +1,5 @@
 import { DropdownListProps } from "../components/EditableDropdown/typings";
-import { Profile } from "../redux/Register/types";
+import { Countries, Profile, StatesResponse } from "../redux/Register/types";
 import { GetLevel, GetTest, StreamList } from "../redux/streamMaster/types";
 
 export const getStreamDropdown = (
@@ -39,4 +39,24 @@ export const getLevelsDropdown = (
     name: levelsPros?.test_level
   }));
   return LevelsData;
+};
+
+export const getCountryDropdown = (
+  countrymap: Array<Countries>
+): Array<DropdownListProps> => {
+  const countries = countrymap.map((countryProps: Countries) => ({
+    id: countryProps?.id,
+    name: countryProps?.name,
+  }));
+  return countries;
+};
+
+export const getStateDropdown = (
+  statemap: Array<StatesResponse>
+): Array<DropdownListProps> => {
+  const states = statemap.map((stateProps: StatesResponse) => ({
+    id: stateProps?.id,
+    name: stateProps?.state_name,
+  }))
+  return states;
 };

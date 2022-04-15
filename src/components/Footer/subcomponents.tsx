@@ -1,13 +1,11 @@
 import { Figure } from "react-bootstrap";
 import styled from "styled-components";
 
-export const Footer = styled.div`
-  display: flex;
-  flex-direction: row;
+export const Footer = styled.div` 
   background: rgb(235, 235, 248);
-  margin-top: -3.4%;
-  position: relative;
-  z-index: 100;
+  display: flex;
+  justify-content: space-around;
+  height: auto; 
   @media (max-width: 750px) {
     margin-top: -6%;
     height: 120px;
@@ -15,8 +13,8 @@ export const Footer = styled.div`
 `;
 
 export const FooterImage = styled(Figure.Image)`
-  width: 56%;
-  height: 88%;
+   display: flex;
+  width: 55%;
   @media (max-width: 650px) {
     width: 500px;
     height: 50px;

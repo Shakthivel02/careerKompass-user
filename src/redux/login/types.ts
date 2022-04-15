@@ -17,7 +17,6 @@ interface UserState {
   hasError: boolean;
   userInfo: UserInfo | null;
 }
-
 export const initialState: UserState = {
   isLoggedIn: false,
   isLoading: false,

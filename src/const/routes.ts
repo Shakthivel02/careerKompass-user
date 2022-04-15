@@ -1,7 +1,6 @@
 const ROUTES = {
-  REGISTER: "/", 
-  TEST: "/testpage",
-  LOGIN: "/user",
+  LOGIN: "/",
+  TEST: "/testpage", 
   SELECTEDSTREAM: "/selectStream",
   RESULT: "/result", 
 };

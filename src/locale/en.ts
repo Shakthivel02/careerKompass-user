@@ -26,8 +26,8 @@ const strings = {
       title: "Result",
     },
   },
-  details:{
-    userDetails:{
+  details: {
+    userDetails: {
       firstName: 'First Name',
       lastName: 'Last Name',
       email: 'Email',
@@ -37,13 +37,13 @@ const strings = {
       contactno: 'Contact Number',
       userTypeId: 'User Type'
     },
-    streamDetails:{
-      id:'ID',
-      divisionid:'Division ID',
-      name:'Stream Name',
-      createdat:'Created Time',
-      updatedat:'Updated Time',
-      status:'Status',
+    streamDetails: {
+      id: 'ID',
+      divisionid: 'Division ID',
+      name: 'Stream Name',
+      createdat: 'Created Time',
+      updatedat: 'Updated Time',
+      status: 'Status',
     }
   },
   tablefooter: {
@@ -52,6 +52,33 @@ const strings = {
   },
   button: {
     submit: 'Submit'
+  },
+  validationMessages: {
+    userName: {
+      required: 'Username is required'
+    },
+    phone: {
+      required: 'Phone number is required',
+      numberOnly: 'Please enter only numbers',
+      invalid: 'Please enter valid phone number'
+    },
+    email: {
+      required: 'Email is required',
+      invalid: 'Please enter valid email'
+    },
+    password: {
+      required: 'Password is required',
+      confirmPasswordRequired: 'Confirm Password is required',
+      invalid:
+        'Password must contain 8 characters, One uppercase, One lowercase, One number and one special case character',
+      nonMatch: 'Passwords must match'
+    },
+    field: {
+      required: 'This is a required field'
+    },
+    date: {
+      academicYearInvalid: 'Please enter a valid Academic year to proceed'
+    }
   }
-};
+}
 export default strings

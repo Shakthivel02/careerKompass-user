@@ -1,4 +1,11 @@
-import { Button, Card, Col, FormControl, InputGroup, Row } from "react-bootstrap";
+import {
+  Button,
+  Card,
+  Col,
+  FormControl,
+  InputGroup,
+  Row,
+} from "react-bootstrap";
 import styled from "styled-components";
 import Backimage from "../../assests/container1.jpg";
 import Backimage1 from "../../assests/container3.jpg";
@@ -45,7 +52,6 @@ export const ContainBImg = styled.img`
   bottom: 32rem;
   left: 48rem;
   @media (max-width: 500px) {
-    
   }
 `;
 
@@ -55,7 +61,6 @@ export const ContainImg = styled.img`
   bottom: 26.5rem;
   left: 11rem;
   @media (max-width: 500px) {
- 
   }
 `;
 
@@ -73,11 +78,11 @@ export const Logo = styled.img`
   margin: auto 12px;
 `;
 export const LoginButton = styled(Button)`
- letter-spacing: 0px;
-color: rgba(255, 123, 0, 1);
-text-transform: capitalize;
-font-family: 'Montserrat';
-  font-weight: 700;
+  letter-spacing: 0px;
+  color: rgba(255, 123, 0, 1);
+  text-transform: capitalize;
+  font-family: "Montserrat";
+  font-weight: bolder;
   font-size: 12px;
   cursor: pointer;
   padding: 5px 23px 5px 23px;
@@ -158,6 +163,11 @@ export const Start = styled(Button)`
   font-size: 12px;
   font-weight: 600;
   padding: 10px 20px 10px 20px;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #ff7b00;
+  }
 `;
 export const Container2 = styled.div`
   width: 100%;
@@ -182,12 +192,12 @@ export const Header2 = styled.header`
   letter-spacing: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    color: rgba(15, 16, 67, 1);
+  color: rgba(15, 16, 67, 1);
   text-align: center;
 
   @media (max-width: 600px) {
-    margin:0px auto;
-    padding-top:10px;
+    margin: 0px auto;
+    padding-top: 10px;
     text-align: center;
     font-size: 22px;
     width: 100%;
@@ -199,16 +209,16 @@ export const CardWrapper = styled.div`
   flex-wrap: wrap;
   margin-left: 13em;
   @media (max-width: 600px) {
-    margin: 0px auto; 
+    margin: 0px auto;
     width: 80%;
   }
   @media (max-width: 900px) {
-    margin: 0px auto; 
+    margin: 0px auto;
     width: 80%;
   }
 `;
 export const Body2 = styled.body`
- color: rgba(109, 109, 149, 1);
+  color: rgba(109, 109, 149, 1);
   font-size: 23px;
   margin-top: 5px;
   text-align: center;
@@ -228,7 +238,7 @@ export const Cards = styled(Card)`
   border: none;
   width: 25%;
   height: 300px;
-   
+
   @media (max-width: 600px) {
     width: auto;
     height: auto;
@@ -247,8 +257,8 @@ export const Cards = styled(Card)`
 export const CardHeader = styled(Card.Header)`
   font-size: 25px;
   color: rgba(51, 53, 207, 1);
-text-transform: capitalize;
-opacity: 1;
+  text-transform: capitalize;
+  opacity: 1;
   display: flex;
   justify-content: center;
   border: none;
@@ -268,8 +278,8 @@ export const CardFooter = styled(Card.Footer)`
   text-align: center;
   text-align-last: center;
   margin: 15px 20px;
-  font-size: 14px; 
-font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
   color: rgba(109, 109, 149, 1);
 `;
 
@@ -385,9 +395,9 @@ export const GCard = styled(Card)`
   justify-content: center;
   text-align: center;
   cursor: pointer;
-  height: 95px; 
+  height: 95px;
   :hover {
-    background-color: #3335CF;
+    background-color: #3335cf;
     color: red;
   }
   @media (max-width: 600px) {
@@ -422,7 +432,7 @@ export const Label = styled.div`
 `;
 export const CardWrapper1 = styled.div`
   width: 100%;
-  margin-left: 35px  ;
+  margin-left: 35px;
   @media (max-width: 600px) {
     margin: 0 auto;
     width: 100%;
@@ -464,7 +474,7 @@ export const FinalFooter = styled.div`
   font-size: 11px;
   padding: 6px 60px;
   color: rgba(103, 114, 148, 1);
-text-transform: capitalize;
+  text-transform: capitalize;
   margin-top: 20px;
   justify-content: space-between;
   display: flex;
@@ -512,9 +522,8 @@ export const CardRow = styled(Row)`
   }
 `;
 export const Coll = styled(Col)`
-  padding-left: 70px;   
+  padding-left: 70px;
   @media (max-width: 600px) {
- 
   }
 `;
 
@@ -551,7 +560,7 @@ export const Input = styled(InputGroup)`
   width: 57%;
   height: 22px;
   margin-top: 33px;
-  
+
   @media (max-width: 600px) {
     width: 40%;
     height: -20px;
@@ -560,7 +569,7 @@ export const Input = styled(InputGroup)`
   @media (max-width: 900px) {
     width: 50%;
     height: -20px;
-    margin:30px auto;
+    margin: 30px auto;
   }
 `;
 export const Form = styled(FormControl)`
@@ -597,4 +606,3 @@ export const WWraper = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
- 
