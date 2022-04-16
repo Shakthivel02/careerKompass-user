@@ -6,11 +6,15 @@ import { H3 } from "../../typography";
 
 export const ListInput = styled(InputGroup)`
   height: 43%;
+  #input {
+    font-size: 13px;
+  }
   #dropdown-id {
     border: none;
+    background-color: white;
     &:hover,
     &:focus {
-      background: #edfae9;
+      background: white;
       color: #9b8f8f;
     }
   }
@@ -30,7 +34,7 @@ export const DropdownInput = styled(FormControl)`
   ::placeholder {
     color: #7d7da3;
     text-transform: capitalize;
-    opacity: 0.57;
+    opacity: 0.60;
     font-size: 12px;
   }
   .input[type="text"] {
@@ -65,5 +69,3 @@ pointer-events: none;
 opacity: 0.7;
 `}
 `;
-
- 

@@ -82,8 +82,7 @@ import {
     RegisterHelperText
 } from "./RegisterStyle/subcomponents"
 import { EditableDropdown, FlexWrapper, Loader } from "../../components"
-import { getProfileDropdown, getStreamDropdown, getCountryDropdown, getStateDropdown } from "../../helpers/dropdown"
-import { handleStreamMaster, updateSelectedStream } from "../../redux/streamMaster/action"
+import { getProfileDropdown, getCountryDropdown, getStateDropdown } from "../../helpers/dropdown"
 import { getProfile, AddUserApi, getCountries } from "../../redux/Register/action"
 import { DropdownListProps } from "../../components/EditableDropdown/typings"
 import { OTPBodyWrapper, OTPFormInput, OTPHeaderWrapper, OTPHelperText, OTPInput, OTPLock, OTPLogo, OTPModalDialog, OTPSubmitButton, OTPTitle, OTPTitleWrapper, OTPVerifyWrapper, OTPWrapper, ResendButton } from "./OTPStyle/subcomponent"
@@ -94,16 +93,14 @@ const User = (): ReactElement => {
     const {
         isLoading,
         isLoggedIn,
-        streamList,
         profileData,
         registerDetails,
         countryList,
         stateList,
     } = useSelector(
-        (state: RootState) => ({ 
+        (state: RootState) => ({
             isLoading: state.login.isLoading,
             isLoggedIn: state.login.isLoggedIn,
-            streamList: state.stream.streamMaster,
             profileData: state.register.profileData,
             registerDetails: state.register.registerDetails,
             countryList: state.register.countryData,
@@ -112,11 +109,10 @@ const User = (): ReactElement => {
         shallowEqual
     )
 
-    const StreamDropdown = streamList ? getStreamDropdown(streamList) : [];
     const ProfileDropdown = profileData ? getProfileDropdown(profileData) : [];
     const CountyDropdown = countryList ? getCountryDropdown(countryList) : [];
     const StateDropDown = stateList ? getStateDropdown(stateList) : [];
-    
+
 
     const [showLogin, setShowLogin] = useState(false)
     const [showRegister, setShowRegister] = useState(false)
@@ -134,7 +130,7 @@ const User = (): ReactElement => {
     }
 
     useEffect(() => {
-        
+
         dispatch(getCountries())
         if (isLoggedIn) {
             history.push(ROUTES.SELECTEDSTREAM);
@@ -247,7 +243,7 @@ const User = (): ReactElement => {
                                         onChange={(event: ChangeEvent<HTMLInputElement>) =>
                                             dispatch(updateUserName(event?.target?.value))
                                         }
-                                        type="text" 
+                                        type="text"
                                     />
                                 </Input>
                                 <Input>
@@ -392,23 +388,11 @@ const User = (): ReactElement => {
                                             placeholder={"Select Profile"}
                                             handleSelect={(value: DropdownListProps) => {
                                                 setValues({ ...values, profile: value?.name })
-                                                dispatch(handleStreamMaster())
-
                                             }}
                                         />
                                     </RegisterInput>
-                                    <RegisterInput>
-                                        <EditableDropdown
-                                            dropdownList={StreamDropdown}
-                                            placeholder={"Select Stream"}
-                                            handleSelect={(value: DropdownListProps) => {
-                                                setValues({ ...values, stream: value?.id }) 
-                                                dispatch(updateSelectedStream({
-                                                    streamID: value?.id
-                                                }))
-                                            }}
-                                        />
-                                    </RegisterInput>
+                                </FlexWrapper>
+                                <FlexWrapper justifyContent="center" noPadding>
                                     <ModalRegisterButton type="submit">
                                         Next
                                     </ModalRegisterButton>
@@ -445,7 +429,11 @@ const User = (): ReactElement => {
                                     />
                                 </OTPInput>
                                 <ResendButton>Resend OTP</ResendButton>
-                                <OTPSubmitButton type="submit">
+                                <OTPSubmitButton
+                                    onClick={() =>
+                                        history.push(ROUTES.STREAMSELECTION)
+                                    }
+                                >
                                     Register
                                 </OTPSubmitButton>
                             </OTPBodyWrapper>
