@@ -35,14 +35,16 @@ const Login = () => {
         }),
         shallowEqual
     )
+     
     
     const dispatch = useDispatch()
     const [showLogin, setShowLogin] = useState(false)
+    const Toggle = () => setShowLogin(!!!showLogin);
 
     return (
         <ModalDialog
             show={true}
-            onHide={() => setShowLogin(showLogin)}
+            onHide={Toggle}
             centered={true}
             contentclassNameName="contentName"
             backdrop="true"
@@ -57,8 +59,7 @@ const Login = () => {
                             Login
                         </Title>
                         <HelperText
-                            onClick={() => {
-
+                            onClick={() => { 
                                 setShowLogin(false)
                             }}
                         >New user ?<span>Register</span></HelperText>

@@ -47,10 +47,11 @@ const EditableDropdown = ({
           value={selectdItem.name}
           isValid={!error && !!selectdItem.name}
           isInvalid={!!error}
+          id="input"
         />
 
         <DropdownButton
-          variant="outline-secondary"
+          variant="outline-sec"
           title=""
           id="dropdown-id"
           align="end"
@@ -61,7 +62,7 @@ const EditableDropdown = ({
           }}
         >
           {dropdownList.map((item, index) => (
-            <Dropdown.Item eventKey={index} key={`dropdown-${index}`}>
+            <Dropdown.Item id="input" eventKey={index} key={`dropdown-${index}`}>
               {item.name}
             </Dropdown.Item>
           ))}

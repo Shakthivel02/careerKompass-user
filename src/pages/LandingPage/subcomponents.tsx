@@ -94,11 +94,13 @@ export const LoginButton = styled(Button)`
   margin: 12px 15px 12px 12px;
 `;
 export const MenuContainer = styled.div`
-  color: #252654;
-  font-size: 13px;
+  color: #0f1043;
+  text-transform: capitalize;
+  opacity: 1;
+  font-size: 12px;
   cursor: pointer;
   margin: 16px 2px;
-  font-weight: 500;
+  font-weight: 700;
 `;
 export const HamburgerMenu = styled(Button)`
   background: none;
