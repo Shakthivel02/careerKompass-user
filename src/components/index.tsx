@@ -17,6 +17,7 @@ import { Close } from "./CloseButton";
 import Dropdown from "./Dropdown";
 import Modal from "./Modal";
 import EditableDropdown from "./EditableDropdown";
+import UserHeader from "./UserHeader";
 
 export {
   DropdownWrapper,
@@ -40,5 +41,6 @@ export {
   Modal,
   Dropdown,
   TextArea,
-  EditableDropdown
+  EditableDropdown,
+  UserHeader
 };
