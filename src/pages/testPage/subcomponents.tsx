@@ -5,9 +5,10 @@ import { SelectedAnswers } from "../../redux/TestApi/types";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
-import { ActionButton, FlexWrapper } from "../../components";
+import { ActionButton, FlexWrapper, UserHeader } from "../../components";
 import { Button } from "react-bootstrap";
-import log from "../../assests/p5.png";
+import log from "../../assests/aero.png";
+import ROUTES from "../../const/routes";
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -120,14 +121,9 @@ const SubmitButton = styled(Button)`
   }
 `;
 
-// export const Logo = styled.img`
-//   margin: 0 auto;
-//   width: 30px;
-//   height: 35%;
-//   display: flex;
-//   margin: auto 12px;
-//   color: white;
-// `;
+export const Logo = styled.img`
+  width: 12%;
+`;
 
 export const QuestionSection = ({
   data,
@@ -148,6 +144,7 @@ export const QuestionSection = ({
 
   return (
     <PageWrapper>
+      <UserHeader />
       <FlexWrap>
         <Bold>Selected Stream & Level</Bold>
         <div id="logoWrapper">
@@ -156,7 +153,7 @@ export const QuestionSection = ({
             marginTop="30"
             backgroundColor="#3335CF"
           >
-            {/* <Logo src={log} />*/} Aeronautical - Product Head
+            <Logo src={log} /> Aeronautical - Product Head
           </ActionButton>
         </div>
       </FlexWrap>
@@ -175,15 +172,36 @@ export const QuestionSection = ({
         <TestWrapper>
           <Optoins>
             <Span className="span">A</Span>
-            <OptoinList className="options"> True </OptoinList>
+            <OptoinList
+              onClick={() => {
+                onSetActiveQuestion(activeQuestions + 1);
+              }}
+              className="options"
+            >
+              {" "}
+              True{" "}
+            </OptoinList>
           </Optoins>
           <Optoins>
             <Span className="span">B</Span>
-            <OptoinList className="options"> False</OptoinList>
+            <OptoinList
+              onClick={() => {
+                onSetActiveQuestion(activeQuestions + 1);
+              }}
+              className="options"
+            >
+              False
+            </OptoinList>
           </Optoins>
         </TestWrapper>
         <FlexWrapper justifyContent="center" noPadding>
-          <SubmitButton>Submit</SubmitButton>
+          <SubmitButton
+            onClick={() => {
+              history.push(ROUTES.RESULT);
+            }}
+          >
+            Submit
+          </SubmitButton>
         </FlexWrapper>
       </QuestionContainer>
     </PageWrapper>

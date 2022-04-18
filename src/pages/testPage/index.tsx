@@ -4,6 +4,7 @@ import { RootState } from "../../redux/store";
 import { QuestionSection } from "./subcomponents";
 import { data } from "./const";
 
+
 const TestPage = (): ReactElement => {
   const { questionList } = useSelector(
     (state: RootState) => ({
@@ -18,12 +19,13 @@ const TestPage = (): ReactElement => {
   const questionData = questionList.map((question) => question.question);
 
   return (
-    <QuestionSection
-      data={question}
-      quesId={quesNo}
-      activeQuestions={activeQuestions}
-      onSetActiveQuestion={setActiveQuestion}
-    />
+  
+      <QuestionSection
+        data={question}
+        quesId={quesNo}
+        activeQuestions={activeQuestions}
+        onSetActiveQuestion={setActiveQuestion}
+      />
   );
 };
 

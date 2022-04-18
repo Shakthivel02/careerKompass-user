@@ -1,20 +1,20 @@
 import { ReactElement, useEffect } from "react"
 import { EditableDropdown, FlexWrapper, UserHeader } from '../../components'
 import {
-    Body,
-    ContainerWrapper,
-    DropdownWrapper,
-    Header1,
-    Header2,
-    LeftBack,
-    StreamHeader,
-    StreamWrapper,
-    TestButton
-} from './subcomponent'
-import { shallowEqual, useDispatch, useSelector } from "react-redux"
-import { getLevelsDropdown, getStreamDropdown } from "../../helpers/dropdown"
-import { RootState } from "../../redux/store"
-import { getLevel, handleStreamMaster } from "../../redux/streamMaster/api"
+  Body,
+  ContainerWrapper,
+  DropdownWrapper,
+  Header1,
+  Header2,
+  LeftBack,
+  StreamHeader,
+  StreamWrapper,
+  TestButton,
+} from "./subcomponent";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { getLevelsDropdown, getStreamDropdown } from "../../helpers/dropdown";
+import { RootState } from "../../redux/store";
+import { getLevel, handleStreamMaster } from "../../redux/streamMaster/api";
 import { useHistory } from "react-router-dom";
 import ROUTES from "../../const/routes";
 
@@ -39,24 +39,13 @@ const StreamSelection = (): ReactElement => {
   return (
     <ContainerWrapper>
       <LeftBack></LeftBack>
-      <HeaderWrapper>
-        <LogoWrapper>
-          <Logo src={logo} />
-        </LogoWrapper>
-        <Wrapper>
-          <MenuContainer>Menu</MenuContainer>
-          <HamburgerMenu>
-            <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
-          </HamburgerMenu>
-        </Wrapper>
-      </HeaderWrapper>
+      <UserHeader />
       <Body>
         <Header1>What do you aspire</Header1>
         <Header2>to become in next five years?</Header2>
         <StreamWrapper>
           <StreamHeader>
-            {" "}
-            Select Stream &<br></br> Level to Take test{" "}
+            Select Stream &<br></br> Level to Take test
           </StreamHeader>
           <DropdownWrapper>
             <EditableDropdown
@@ -76,8 +65,14 @@ const StreamSelection = (): ReactElement => {
           </DropdownWrapper>
         </StreamWrapper>
       </Body>
-      <FlexWrapper>
-        <TestButton onClick={TakeAssement}>Take Assement</TestButton>
+      <FlexWrapper justifyContent="center" noPadding>
+        <TestButton
+          onClick={() => {
+            history.push(ROUTES.TEST);
+          }}
+        >
+          Take Assement
+        </TestButton>
       </FlexWrapper>
     </ContainerWrapper>
   );
