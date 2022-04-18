@@ -19,11 +19,10 @@ export const PageWrapper = styled.div`
   }
 `;
 export const HeaderWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  margin-left: 50px;
+ display: flex;
+  justify-content: space-between; 
   width: 90%;
+  margin: 20px auto;
   @media (max-width: 600px) {
     margin: 10px 0px 10px -10px;
     width: 100%;
