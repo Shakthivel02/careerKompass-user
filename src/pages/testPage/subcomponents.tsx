@@ -1,35 +1,133 @@
-import { ReactElement, useState, ChangeEvent } from "react";
-import {
-  PageWrapper,
-  FlexWrapper,
-  ActionButton,
-  CardWrapper,
-} from "../../components";
+import { ReactElement, useState } from "react";
 import styled from "styled-components";
 import { QuestionSectionProps } from "./typings";
-import fonts from "../../const/fonts";
-import { H4 } from "../../typography";
 import { SelectedAnswers } from "../../redux/TestApi/types";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
-import ROUTES from "../../const/routes";
-import { postAnswer } from "../../redux/TestApi/api";
+import { ActionButton, FlexWrapper } from "../../components";
+import { Button } from "react-bootstrap";
+import log from "../../assests/p5.png";
 
-export const ChoiceWrapper = styled.span`
-  font-size: ${fonts.xLarge};
-  margin-left: 6px;
-`;
-
-export const RadioInputWrapper = styled.div`
+export const FlexWrap = styled.div`
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #fff2e1;
+  height: 100px;
+  #logoWrapper {
+    dispaly: flex;
+  }
 `;
 
-const H2 = styled.p`
-  text-align: center;
-  font-size: 20px;
+export const PageWrapper = styled.div`
+  width: 100%;
 `;
+
+interface bold {
+  fontSize?: string;
+  fontWeight?: string;
+}
+const Bold = styled.p<bold>`
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
+  color: #0f1043;
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "20px")};
+  font-family: Tahoma, Helvetica, sans-serif;
+  padding-top: 3%;
+  padding-right: 2%;
+`;
+const QuestionContainer = styled.div`
+  width: 70%;
+  margin-left: 12%;
+`;
+const QuestionNo = styled.span`
+  font-weight: 700;
+  color: #0f1043;
+  font-size: 16px;
+  margin-left: 8px;
+  font-family: Tahoma, Helvetica, sans-serif;
+  opacity: 0.6;
+`;
+
+const TestWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 80%;
+  height: 100px;
+  font-family: "Montserrat", sans-serif;
+`;
+
+const Optoins = styled.div`
+  display: flex;
+  width: 50%;
+  align-items: center;
+  .span {
+    &:hover {
+      background-color: #3335cf;
+      color: #ffffff;
+    }
+  }
+  .options {
+    &:hover {
+      background-color: #c5c5ff;
+    }
+  }
+`;
+
+const OptoinList = styled.div`
+  background-color: #f7f3f3;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #000124;
+  text-align: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 1000;
+  padding: 0.6rem 7rem 0.6rem 1.2rem;
+  text-transform: capitalize;
+  box-shadow: 0px 1px 4px lightgray;
+  opacity: 1;
+`;
+const Span = styled.div`
+  color: #000124;
+  opacity: 1;
+  font-weight: 700;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 12px;
+  background-color: #e6e3e3;
+  text-align: center;
+  box-shadow: 0px 1px 4px lightgray;
+  padding: 0.6rem 0.9rem 0.6rem 0.9rem;
+`;
+
+const SubmitButton = styled(Button)`
+  height: 35px;
+  width: 100px;
+  background: #ff7b00 0% 0% no-repeat padding-box;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 1;
+  margin-left: 14%;
+  margin-top: 4%;
+  &:hover,
+  &:active,
+  &:focus {
+    background: #ff7b00 0% 0% no-repeat padding-box;
+  }
+`;
+
+// export const Logo = styled.img`
+//   margin: 0 auto;
+//   width: 30px;
+//   height: 35%;
+//   display: flex;
+//   margin: auto 12px;
+//   color: white;
+// `;
 
 export const QuestionSection = ({
   data,
@@ -47,101 +145,47 @@ export const QuestionSection = ({
   );
   const [selected, setSelected] = useState(selectedAnswers);
   const [buttonValue, SetbuttonValue] = useState("Next");
-  console.log();
-
-  const changeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-    const isQuesIncluded = selected.some(
-      (item) => item?.id === `${quesId[activeQuestions]}`
-    );
-
-    if (isQuesIncluded) {
-      const updatedSelection = selected.map((item) => {
-        if (item?.id === `${quesId[activeQuestions]}`) {
-          return {
-            answer: e.target.value,
-            id: `${quesId[activeQuestions]}`,
-          };
-        }
-        return item;
-      });
-      setSelected(updatedSelection);
-    } else {
-      setSelected([
-        ...selected,
-        {
-          answer: e.target.value,
-          id: `${quesId[activeQuestions]}`,
-        },
-      ]);
-    }
-  };
-
-  const selectedQuestion = selected.filter(
-    (item) => item?.id === `${quesId[activeQuestions]}`
-  );
-  const answer = selectedQuestion.length > 0 ? selectedQuestion[0].answer : "";
-  console.log(selected);
-
-  const nextClickHandle = () => {
-    if (data.length > activeQuestions + 1) {
-      onSetActiveQuestion(activeQuestions + 1);
-    } else {
-      onSetActiveQuestion(0);
-    }
-    if (quesId[activeQuestions] === data.length - 1) {
-      SetbuttonValue("Submit");
-    }
-    if (quesId[activeQuestions] === data.length) {
-      dispatch(postAnswer(selected));
-      history.push(ROUTES.RESULT);
-    }
-  };
 
   return (
     <PageWrapper>
-      <FlexWrapper justifyContent="center">
-        <CardWrapper  >
-          <FlexWrapper justifyContent="center">
-            <H4 color="rgb(36,46,111)">
-              Question No. {quesId[activeQuestions]}
-            </H4>
-          </FlexWrapper>
-          <FlexWrapper justifyContent="center" marginTop={-4}>
-            <H2>{data[activeQuestions]}</H2>
-          </FlexWrapper>
-          {/* INPUT */}
-          <RadioInputWrapper>
-            <FlexWrapper justifyContent="center" marginTop={-4}>
-              <label>
-                <input
-                  type="radio"
-                  value={"True"}
-                  name="answer"
-                  checked={answer === "True"}
-                  onChange={changeHandler}
-                />
-                <ChoiceWrapper>True</ChoiceWrapper>
-              </label>
-            </FlexWrapper>
-            <FlexWrapper justifyContent="center" marginTop={-4}>
-              <label>
-                <input
-                  type="radio"
-                  value={"False"}
-                  name="answer"
-                  checked={answer === "False"}
-                  onChange={changeHandler}
-                />
-                <ChoiceWrapper>False</ChoiceWrapper>
-              </label>
-            </FlexWrapper>
-          </RadioInputWrapper>
-          {/* INPUT  */}
-          <FlexWrapper justifyContent="center">
-            <ActionButton onClick={nextClickHandle}>{buttonValue}</ActionButton>
-          </FlexWrapper>
-        </CardWrapper>
-      </FlexWrapper>
+      <FlexWrap>
+        <Bold>Selected Stream & Level</Bold>
+        <div id="logoWrapper">
+          <ActionButton
+            id="logoWrapper"
+            marginTop="30"
+            backgroundColor="#3335CF"
+          >
+            {/* <Logo src={log} />*/} Aeronautical - Product Head
+          </ActionButton>
+        </div>
+      </FlexWrap>
+      <QuestionContainer>
+        <Bold fontSize="16">
+          Question <QuestionNo>{`${quesId[activeQuestions]} of 16`}</QuestionNo>
+        </Bold>
+        <FlexWrapper noPadding>
+          <Bold fontWeight="600" fontSize="16">
+            {quesId[activeQuestions]}
+          </Bold>
+          <Bold fontWeight="50" fontSize="16">
+            {data[activeQuestions]}
+          </Bold>
+        </FlexWrapper>
+        <TestWrapper>
+          <Optoins>
+            <Span className="span">A</Span>
+            <OptoinList className="options"> True </OptoinList>
+          </Optoins>
+          <Optoins>
+            <Span className="span">B</Span>
+            <OptoinList className="options"> False</OptoinList>
+          </Optoins>
+        </TestWrapper>
+        <FlexWrapper justifyContent="center" noPadding>
+          <SubmitButton>Submit</SubmitButton>
+        </FlexWrapper>
+      </QuestionContainer>
     </PageWrapper>
   );
 };

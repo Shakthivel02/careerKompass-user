@@ -13,12 +13,13 @@ const TestPage = (): ReactElement => {
   );
   const [activeQuestions, setActiveQuestion] = useState(0);
   const quesNo = data.map((quesId) => quesId.id);
+  const question = data.map((ques) => ques.question);
 
   const questionData = questionList.map((question) => question.question);
 
   return (
     <QuestionSection
-      data={questionData}
+      data={question}
       quesId={quesNo}
       activeQuestions={activeQuestions}
       onSetActiveQuestion={setActiveQuestion}

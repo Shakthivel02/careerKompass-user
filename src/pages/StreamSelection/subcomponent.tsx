@@ -20,8 +20,7 @@ export const ContainerWrapper = styled.div`
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 100%;
-  @media (max-width: 900px) {
+  @media (max-width: 700px) {
     width: 100%;
     height: 100%;
   }
