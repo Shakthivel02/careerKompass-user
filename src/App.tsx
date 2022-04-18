@@ -20,7 +20,7 @@ interface BodyProps {
 
 const Body = styled.div<BodyProps>`
   display: flex;
-  min-height: calc(110vh - 40px);
+  min-height: calc(100vh - 40px);
   background: ${({ isShowOverlay }) =>
     isShowOverlay
       ? `

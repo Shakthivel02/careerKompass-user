@@ -1,9 +1,9 @@
 const ROUTES = {
   LOGIN: "/",
-  TEST: "/testpage", 
   SELECTEDSTREAM: "/selectStream",
-  RESULT: "/result", 
-  STREAMSELECTION: '/streamSelection'
+  RESULT: "/result",
+  STREAMSELECTION: "/streamSelection",
+  TEST: "/test",
 };
 
 export default ROUTES;
