@@ -4,6 +4,7 @@ import SelectStreamLevel from "./SelectStream";
 import TestPage from "./testPage"; 
 import User from "./LandingPage";
 import StreamSelection from "./StreamSelection";
+import ResultCopy from "../resultcopy";
 
 export {
     TestPage,
@@ -11,5 +12,6 @@ export {
     SelectStreamLevel,
     Result, 
     User,
-    StreamSelection
+    StreamSelection,
+    ResultCopy
 };
