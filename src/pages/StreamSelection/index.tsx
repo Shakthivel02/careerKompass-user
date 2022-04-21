@@ -1,5 +1,5 @@
-import { ReactElement, useEffect } from "react"
-import { EditableDropdown, FlexWrapper, UserHeader } from '../../components'
+import { ReactElement, useEffect, useState } from "react";
+import { EditableDropdown, FlexWrapper, UserHeader } from "../../components";
 import {
   Body,
   ContainerWrapper,
@@ -14,15 +14,23 @@ import {
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { getLevelsDropdown, getStreamDropdown } from "../../helpers/dropdown";
 import { RootState } from "../../redux/store";
-import { getLevel, handleStreamMaster } from "../../redux/streamMaster/api";
+import {
+  GetQuestionByTest,
+  handleStreamMaster,
+  SelectedStream,
+} from "../../redux/streamMaster/api";
 import { useHistory } from "react-router-dom";
 import ROUTES from "../../const/routes";
+import { DropdownListProps } from "../../components/Dropdown/typings";
+import { validateUsername } from "../../helpers/formValidation";
 
 const StreamSelection = (): ReactElement => {
-  const { streamList, levelData } = useSelector(
+  const { streamList, levelData, SelectStream, TestId } = useSelector(
     (state: RootState) => ({
       streamList: state.stream.streamMaster,
-      levelData: state.stream.levelsData,
+      levelData: state.stream.getTest,
+      SelectStream: state.stream.selectStream,
+      TestId: state.stream.testID,
     }),
     shallowEqual
   );
@@ -35,6 +43,12 @@ const StreamSelection = (): ReactElement => {
     dispatch(handleStreamMaster());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const [stream, setStream] = useState(SelectStream);
+  const [TestID, setTestID] = useState(TestId);
+  useEffect(() => {
+    dispatch(SelectedStream(stream));
+  }, [stream]);
 
   return (
     <ContainerWrapper>
@@ -51,8 +65,8 @@ const StreamSelection = (): ReactElement => {
             <EditableDropdown
               dropdownList={StreamDropdown}
               placeholder={"Select Stream"}
-              handleSelect={() => {
-                dispatch(getLevel());
+              handleSelect={(value: DropdownListProps) => {
+                setStream({ streamID: value?.id });
               }}
             />
           </DropdownWrapper>
@@ -60,7 +74,9 @@ const StreamSelection = (): ReactElement => {
             <EditableDropdown
               dropdownList={LevelDropdown}
               placeholder={"Select Level"}
-              handleSelect={() => {}}
+              handleSelect={(value: DropdownListProps) => {
+                setTestID({ testID: value?.id });
+              }}
             />
           </DropdownWrapper>
         </StreamWrapper>
@@ -68,6 +84,7 @@ const StreamSelection = (): ReactElement => {
       <FlexWrapper justifyContent="center" noPadding>
         <TestButton
           onClick={() => {
+            dispatch(GetQuestionByTest({ testID: TestID.testID }));
             history.push(ROUTES.TEST);
           }}
         >
@@ -78,4 +95,4 @@ const StreamSelection = (): ReactElement => {
   );
 };
 
-export default StreamSelection
+export default StreamSelection;

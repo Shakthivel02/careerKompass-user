@@ -18,13 +18,11 @@ export interface GetTest {
   stream_id?: string;
   stream_name?: string;
   test_level: string;
-  test_level_id?: string;
+  test_level_id: string;
 }
 
 export interface SelectedTest {
   testID: string;
-  testName: string;
-  level: string;
 }
 
 export interface GetLevel {
@@ -48,14 +46,16 @@ export interface QuestionType {
   stream_name: string;
 }
 export interface CreatetestByStream {
-  streamID: string 
+  streamID: string;
 }
+
 export interface InitialState {
   isLoading: boolean;
   streamMaster: Array<StreamList>;
   selectStream: SelectedStreamType;
   getTest: Array<GetTest>;
   questions: Array<QuestionType>;
-  levelsData: Array<GetLevel>
-  uselectedStream: CreatetestByStream
+  levelsData: Array<GetLevel>;
+  uselectedStream: CreatetestByStream;
+  testID: SelectedTest;
 }

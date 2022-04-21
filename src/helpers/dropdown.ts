@@ -32,11 +32,11 @@ export const getProfileDropdown = (
 };
 
 export const getLevelsDropdown = (
-  levels: Array<GetLevel>
+  levels: Array<GetTest>
 ): Array<DropdownListProps> => {
-  const LevelsData = levels.map((levelsPros: GetLevel) => ({
-    id: levelsPros?.id,
-    name: levelsPros?.test_level
+  const LevelsData = levels.map((levelsPros: GetTest) => ({
+    id: levelsPros?.test_ID,
+    name: levelsPros?.test_level,
   }));
   return LevelsData;
 };

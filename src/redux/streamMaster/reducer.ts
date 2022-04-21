@@ -19,8 +19,11 @@ const initialState: InitialState = {
   getTest: [],
   levelsData: [],
   uselectedStream: {
-    streamID:''
-  }
+    streamID: "",
+  },
+  testID: {
+    testID: "",
+  },
 };
 export const streamSlice = createSlice({
   name: "streamMaster",
