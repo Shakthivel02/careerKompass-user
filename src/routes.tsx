@@ -5,7 +5,8 @@ import {
   SelectStreamLevel,
   Result,
   User,
-  StreamSelection
+  StreamSelection,
+  ResultCopy
 } from "./pages";
 
 const Routes = () => {
@@ -16,7 +17,7 @@ const Routes = () => {
       <Route path={ROUTES.TEST} component={TestPage} />
       <Route path={ROUTES.SELECTEDSTREAM} component={SelectStreamLevel} />
       <Route path={ROUTES.RESULT} component={Result} />
-       
+       <Route path={ROUTES.RESULTCOPY} component={ResultCopy} />
     </Switch>
   );
 };
