@@ -1,6 +1,13 @@
 import { Switch, Route } from "react-router-dom";
 import ROUTES from "./const/routes";
-import { TestPage, Result, User, StreamSelection } from "./pages";
+
+import {
+  TestPage,
+  Result,
+  User,
+  StreamSelection,
+  ResultCopy
+} from "./pages";
 
 const Routes = () => {
   return (
@@ -9,6 +16,7 @@ const Routes = () => {
       <Route path={ROUTES.STREAMSELECTION} component={StreamSelection} />
       <Route path={ROUTES.TEST} component={TestPage} />
       <Route path={ROUTES.RESULT} component={Result} />
+       <Route path={ROUTES.RESULTCOPY} component={ResultCopy} />
     </Switch>
   );
 };
