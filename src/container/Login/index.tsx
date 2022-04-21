@@ -38,7 +38,7 @@ const Login = (): ReactElement => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      history.push(ROUTES.SELECTEDSTREAM);
+      history.push(ROUTES.STREAMSELECTION);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn]);
@@ -50,7 +50,7 @@ const Login = (): ReactElement => {
           onSubmit={(e: SyntheticEvent) => {
             e.preventDefault();
             dispatch(handleAuthenticate());
-            history.push(ROUTES.SELECTEDSTREAM);
+            history.push(ROUTES.STREAMSELECTION);
           }}
         >
           <Title>{login}</Title>

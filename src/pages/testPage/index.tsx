@@ -19,13 +19,12 @@ const TestPage = (): ReactElement => {
   const questionData = questionList.map((question) => question.question);
 
   return (
-  
-      <QuestionSection
-        data={question}
-        quesId={quesNo}
-        activeQuestions={activeQuestions}
-        onSetActiveQuestion={setActiveQuestion}
-      />
+    <QuestionSection
+      data={questionData}
+      quesId={quesNo}
+      activeQuestions={activeQuestions}
+      onSetActiveQuestion={setActiveQuestion}
+    />
   );
 };
 

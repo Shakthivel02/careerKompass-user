@@ -19,4 +19,18 @@ export const data = [
     answer: "True",
     id: 3,
   },
+  {
+    question:
+      "I love teaching and when I teach I give all specific instructions",
+    choice: ["True", "False"],
+    answer: "True",
+    id: 4,
+  },
+  {
+    question:
+      "I love teaching and when I teach I give all specific instructions",
+    choice: ["True", "False"],
+    answer: "True",
+    id: 5,
+  },
 ];

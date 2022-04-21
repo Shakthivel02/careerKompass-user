@@ -90,6 +90,7 @@ const OptoinList = styled.div`
   text-transform: capitalize;
   box-shadow: 0px 1px 4px lightgray;
   opacity: 1;
+  cursor: pointer;
 `;
 const Span = styled.div`
   color: #000124;
@@ -131,7 +132,6 @@ export const QuestionSection = ({
   quesId,
   onSetActiveQuestion,
 }: QuestionSectionProps): ReactElement => {
-  const dispatch = useDispatch();
   const history = useHistory();
   const { selectedAnswers } = useSelector(
     (state: RootState) => ({
@@ -140,7 +140,7 @@ export const QuestionSection = ({
     shallowEqual
   );
   const [selected, setSelected] = useState(selectedAnswers);
-  const [buttonValue, SetbuttonValue] = useState("Next");
+  console.log(selected);
 
   return (
     <PageWrapper>
@@ -175,11 +175,14 @@ export const QuestionSection = ({
             <OptoinList
               onClick={() => {
                 onSetActiveQuestion(activeQuestions + 1);
+                setSelected([
+                  ...selected,
+                  { id: `${quesId[activeQuestions]}`, answer: "True" },
+                ]);
               }}
               className="options"
             >
-              {" "}
-              True{" "}
+              True
             </OptoinList>
           </Optoins>
           <Optoins>
@@ -187,6 +190,10 @@ export const QuestionSection = ({
             <OptoinList
               onClick={() => {
                 onSetActiveQuestion(activeQuestions + 1);
+                setSelected([
+                  ...selected,
+                  { id: `${quesId[activeQuestions]}`, answer: "False" },
+                ]);
               }}
               className="options"
             >

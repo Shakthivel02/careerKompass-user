@@ -10,6 +10,7 @@ const apiEndpoints = {
   getLevel: "Get_Level",
   getCountries: "Get_Countries",
   getState: "Get_States",
+  getCountryPin: "Contact_Code",
 };
 
 export default apiEndpoints;
