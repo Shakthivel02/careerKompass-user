@@ -64,6 +64,7 @@ export const UListWrapper = styled.ul`
   font-size: 16px;
 `;
 
+
 export const ContentPageLogo = styled(Figure.Image)`
   width: 18%;
  margin-left: 2%;
@@ -73,6 +74,7 @@ export const ContentPageLogo = styled(Figure.Image)`
 export const ContentLogo = styled(Figure.Image)`
   width: 40%;
   margin-left:20%;
+
 `;
 
 export const CardLogo= styled(Figure.Image)`

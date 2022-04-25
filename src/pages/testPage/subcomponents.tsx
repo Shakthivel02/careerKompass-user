@@ -9,6 +9,8 @@ import { ActionButton, FlexWrapper, UserHeader } from "../../components";
 import { Button } from "react-bootstrap";
 import log from "../../assests/aero.png";
 import ROUTES from "../../const/routes";
+import { postAnswer } from "../../redux/TestApi/api";
+import { getTestId } from "../../helpers/dropdown";
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -64,17 +66,6 @@ const Optoins = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
-  .span {
-    &:hover {
-      background-color: #3335cf;
-      color: #ffffff;
-    }
-  }
-  .options {
-    &:hover {
-      background-color: #c5c5ff;
-    }
-  }
 `;
 
 const OptoinList = styled.div`
@@ -91,7 +82,11 @@ const OptoinList = styled.div`
   box-shadow: 0px 1px 4px lightgray;
   opacity: 1;
   cursor: pointer;
+  ${Optoins}:hover & {
+    background: #c5c5ff;
+  }
 `;
+
 const Span = styled.div`
   color: #000124;
   opacity: 1;
@@ -103,6 +98,10 @@ const Span = styled.div`
   text-align: center;
   box-shadow: 0px 1px 4px lightgray;
   padding: 0.6rem 0.9rem 0.6rem 0.9rem;
+  ${Optoins}:hover & {
+    background: #3335cf;
+    color: white;
+  }
 `;
 
 const SubmitButton = styled(Button)`
@@ -133,15 +132,47 @@ export const QuestionSection = ({
   onSetActiveQuestion,
 }: QuestionSectionProps): ReactElement => {
   const history = useHistory();
-  const { selectedAnswers } = useSelector(
+  const { selectedAnswers, TestId, UserId, level } = useSelector(
     (state: RootState) => ({
-      selectedAnswers: state.Test.AnswerList as Array<SelectedAnswers>,
+      selectedAnswers: state.Test.AnswerList as SelectedAnswers,
+      TestId: state.stream.questions,
+      UserId: state.login.userInfo,
+      level: state.stream.level.test_level,
     }),
     shallowEqual
   );
   const [selected, setSelected] = useState(selectedAnswers);
   console.log(selected);
+  const dispatch = useDispatch();
+  const TestID = TestId ? getTestId(TestId) : [];
+  const [TESTID] = TestID.map((x) => {
+    return x.id;
+  });
+  const [TestName] = TestID.map((x) => {
+    return x.name;
+  });
 
+  const [buttonValue, SetbuttonValue] = useState("Next");
+  const nextClickHandle = () => {
+    if (data.length > activeQuestions + 1) {
+      onSetActiveQuestion(activeQuestions + 1);
+    } else {
+      onSetActiveQuestion(0);
+    }
+    if (quesId[activeQuestions] === quesId[data.length - 2]) {
+      SetbuttonValue("Submit");
+    }
+    if (quesId[activeQuestions] === quesId[data.length - 1]) {
+      dispatch(
+        postAnswer({
+          UserId: UserId?.userId,
+          categoryID: "",
+          TestID: TESTID,
+        })
+      );
+      history.push(ROUTES.RESULTCOPY);
+    }
+  };
   return (
     <PageWrapper>
       <UserHeader />
@@ -153,7 +184,7 @@ export const QuestionSection = ({
             marginTop="30"
             backgroundColor="#3335CF"
           >
-            <Logo src={log} /> Aeronautical - Product Head
+            <Logo src={log} /> {TestName} - {level}
           </ActionButton>
         </div>
       </FlexWrap>
@@ -171,44 +202,16 @@ export const QuestionSection = ({
         </FlexWrapper>
         <TestWrapper>
           <Optoins>
-            <Span className="span">A</Span>
-            <OptoinList
-              onClick={() => {
-                onSetActiveQuestion(activeQuestions + 1);
-                setSelected([
-                  ...selected,
-                  { id: `${quesId[activeQuestions]}`, answer: "True" },
-                ]);
-              }}
-              className="options"
-            >
-              True
-            </OptoinList>
+            <Span>A</Span>
+            <OptoinList onClick={() => {}}>True</OptoinList>
           </Optoins>
           <Optoins>
-            <Span className="span">B</Span>
-            <OptoinList
-              onClick={() => {
-                onSetActiveQuestion(activeQuestions + 1);
-                setSelected([
-                  ...selected,
-                  { id: `${quesId[activeQuestions]}`, answer: "False" },
-                ]);
-              }}
-              className="options"
-            >
-              False
-            </OptoinList>
+            <Span>B</Span>
+            <OptoinList onClick={() => {}}>False</OptoinList>
           </Optoins>
         </TestWrapper>
         <FlexWrapper justifyContent="center" noPadding>
-          <SubmitButton
-            onClick={() => {
-              history.push(ROUTES.RESULT);
-            }}
-          >
-            Submit
-          </SubmitButton>
+          <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </FlexWrapper>
       </QuestionContainer>
     </PageWrapper>

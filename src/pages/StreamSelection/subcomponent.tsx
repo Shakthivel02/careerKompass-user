@@ -20,6 +20,7 @@ export const ContainerWrapper = styled.div`
   background-position: center;
   background-size: cover;
   width: 100%;
+  height: 125vh;
   @media (max-width: 700px) {
     width: 100%;
     height: 100%;
@@ -45,22 +46,35 @@ export const Header1 = styled.div`
   text-align: center;
   font-size: 38px;
   font-weight: 900;
+  position: relative;
+  z-index: 100;
 `;
-export const Header2 = styled.div`
+
+interface Header2props {
+  fontSize?: string;
+}
+export const Header2 = styled.div<Header2props>`
   letter-spacing: 0px;
   color: #6d6d95;
   opacity: 1;
   text-align: center;
-  font-size: 30px;
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "30px")};
   font-weight: 600;
+  position: relative;
+  z-index: 100;
 `;
 
 export const Body = styled.div`
   margin-top: 6rem;
 `;
-
+export const Para = styled.p`
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  width: 60%;
+`;
 export const StreamWrapper = styled.div`
-  margin: 6rem 10rem;
+  margin: 3rem 5rem;
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
@@ -111,21 +125,38 @@ export const DropdownWrapper = styled.div`
   }
 `;
 
-export const TestButton = styled(Button)`
-  margin-top: 20px;
-  margin: 0 auto;
-  position: absolute;
-  height: 35px;
-  font-weight: 1000;
-  font-family: "Montserrat", sans-serif;
-  background: #ff7b00 0% 0% no-repeat padding-box;
-  font-size: 14px;
-  color: #ffffff;
-  opacity: 1;
+export const LevelCard = styled(Button)`
+  background-color: #0000000f;
+  width: 12%;
+  height: 56px;
+  margin: 12px;
+  margin-top: -8px;
+  border-radius: 5px;
   border: none;
+  position: relative;
+  z-index: 100;
+  color: black;
   &:hover,
   &:active,
   &:focus {
     background-color: #ff7b00;
+    color: white;
   }
 `;
+
+export const TestButton = styled(Button)`
+  margin-top: 12px;
+  position: absolute;
+  height: 35px;
+  font-weight: 1000;
+  font-family: "Montserrat", sans-serif;
+  background: #8d8d9c;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 1;
+  border: none;
+  :hover {
+    background: #0f1043;
+  }
+`;
+

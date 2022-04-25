@@ -1,4 +1,3 @@
-
 import { ActionButton, UserHeader, CardWrapper, FlexWrapper, Header } from '../components';
 import { Bold, FlexWrap, PageWrapper, Logo, Logs, Label, Text, FirstWrapper,Titles,ViewButton,LastLogo,LastButton,ContentLogo,Heading,CardLogo,ThirdWrapper, SecondWrapper,UListWrapper,ListText,Paras, Title, FinalFooter,SubmitButton,Buttons, Para, ContentPageLogo, SideTitles } from '../resultcopy/sucomponents';
 import aero from '../assests/aero.png'
@@ -104,4 +103,4 @@ const ResultCopy = () => {
  )
 }
 
-export default ResultCopy
+export default ResultCopy;
