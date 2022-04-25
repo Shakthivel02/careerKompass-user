@@ -19,6 +19,7 @@
     "axios": "^0.26.1",
     "bootstrap": "^5.1.3",
     "dotenv": "^16.0.0",
+    "js-file-download": "^0.4.12",
     "multiselect-react-dropdown": "^2.0.21",
     "react": "^17.0.2",
     "react-bootstrap": "^2.2.0",

@@ -1,4 +1,9 @@
-import { ActionButton, UserHeader, CardWrapper, FlexWrapper, Header } from '../components';
+import {
+  ActionButton,
+  UserHeader,
+  CardWrapper,
+  FlexWrapper,
+} from "../components";
 import {
   Bold,
   FlexWrap,
@@ -16,7 +21,6 @@ import {
   Heading,
   CardLogo,
   ThirdWrapper,
-  SecondWrapper,
   UListWrapper,
   ListText,
   Paras,
@@ -33,8 +37,8 @@ import log from "../assests/ak3.png";
 import ak from "../assests/ak1.png";
 import logo from "../assests/ak2.png";
 import Gp from "../assests/Gp1.png";
-import Image from "react-bootstrap/Image";
 import ab from "../assests/ak4.png";
+import Download from "../redux/result/api";
 
 const ResultCopy = () => {
   return (
@@ -126,7 +130,7 @@ const ResultCopy = () => {
           <Titles> Your Result Document for</Titles>
           <Heading>Aeronautical-Product Head</Heading>
           <LastLogo src={ab} />
-          <DownloadButton>Download</DownloadButton>
+          <DownloadButton onClick={Download}>Download</DownloadButton>
         </ThirdWrapper>
       </FlexWrapper>
     </PageWrapper>

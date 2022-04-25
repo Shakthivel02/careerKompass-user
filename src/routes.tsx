@@ -1,22 +1,20 @@
 import { Switch, Route } from "react-router-dom";
 import ROUTES from "./const/routes";
+import ProtectedRoute from "./container/ProtectedRoute";
 
-import {
-  TestPage,
-  Result,
-  User,
-  StreamSelection,
-  ResultCopy
-} from "./pages";
+import { TestPage, Result, User, StreamSelection, ResultCopy } from "./pages";
 
 const Routes = () => {
   return (
     <Switch>
       <Route exact path={ROUTES.LOGIN} component={User} />
-      <Route path={ROUTES.STREAMSELECTION} component={StreamSelection} />
-      <Route path={ROUTES.TEST} component={TestPage} />
-      <Route path={ROUTES.RESULT} component={Result} />
-       <Route path={ROUTES.RESULTCOPY} component={ResultCopy} />
+      <ProtectedRoute
+        path={ROUTES.STREAMSELECTION}
+        component={StreamSelection}
+      />
+      <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
+      <ProtectedRoute path={ROUTES.RESULT} component={Result} />
+      <ProtectedRoute path={ROUTES.RESULTCOPY} component={ResultCopy} />
     </Switch>
   );
 };
