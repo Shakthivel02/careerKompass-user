@@ -16,7 +16,6 @@ import {
   Heading,
   CardLogo,
   ThirdWrapper,
-  SecondWrapper,
   UListWrapper,
   ListText,
   Paras,
@@ -33,7 +32,6 @@ import log from "../assests/ak3.png";
 import ak from "../assests/ak1.png";
 import logo from "../assests/ak2.png";
 import Gp from "../assests/Gp1.png";
-import Image from "react-bootstrap/Image";
 import ab from "../assests/ak4.png";
 
 const ResultCopy = () => {

@@ -5,14 +5,14 @@ export const Logo = styled.img`
   width: 14%;
 `;
 export const Logs = styled.img`
-  width: 90%;
+  width: 100%;
   position: absolute;
   height: 100px;
   display: flex;
 `;
 
 export const PageWrapper = styled.div`
-  width: 98%;
+  width:100%;
 `;
 export const Text = styled.div`
   margin-top: 2;
@@ -101,8 +101,8 @@ export const Titles = styled.p`
   font-size: 20px;
   font-weight: 700;
   color: #000000;
-  margin-left: 25%;
-  margin-top: 5%;
+  margin-left: 15%;
+  margin-top: 10%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -113,7 +113,7 @@ export const Heading = styled.p`
   font-weight: 600;
   color: #43566d;
   align-items: center;
-  margin-left: 30%;
+  margin-left: 20%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -160,8 +160,8 @@ export const DownloadButton = styled(Button)`
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
-  margin-left: 35%;
-  margin-top: 5%;
+  margin-left:26%;
+  margin-top: 8%;
   &:hover,
   &:active,
   &:focus {
@@ -187,11 +187,12 @@ export const DownloadButton = styled(Button)`
 export const FirstWrapper= styled.div`
 background-color: #FCFCFF;
 width:70%;
+margin-left:2%
 `;
 
 export const ThirdWrapper= styled.div`
 background-color: #F6F6FE;
-width:30%;
+width:20%;
 `;
 
 export const Label = styled.div`
@@ -201,14 +202,6 @@ font-family:serif;
 font-size:38px;
 padding-top:2.5%;
 background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
-`;
-
-export const SecondWrapper= styled.div`
-background-color: #FCFCFF;
-width:70%;
-margin-top:0.5%;
-height: 100%;
-margin-right:40%;
 `;
 
 export const Title = styled.div`
