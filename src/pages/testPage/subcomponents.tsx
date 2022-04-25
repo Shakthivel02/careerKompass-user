@@ -153,7 +153,17 @@ export const QuestionSection = ({
   });
 
   const [buttonValue, SetbuttonValue] = useState("Next");
+  const [color, setColor] = useState({
+    option: "",
+    span: { back: "", text: "" },
+  });
+  const [Acolor, setAColor] = useState({
+    option: "",
+    span: { back: "", text: "" },
+  });
   const nextClickHandle = () => {
+    setColor({ option: "", span: { back: "", text: "" } });
+    setAColor({ option: "", span: { back: "", text: "" } });
     if (data.length > activeQuestions + 1) {
       onSetActiveQuestion(activeQuestions + 1);
     } else {
@@ -202,12 +212,46 @@ export const QuestionSection = ({
         </FlexWrapper>
         <TestWrapper>
           <Optoins>
-            <Span>A</Span>
-            <OptoinList onClick={() => {}}>True</OptoinList>
+            <Span
+              style={{
+                backgroundColor: Acolor.span.back,
+                color: Acolor.span.text,
+              }}
+            >
+              A
+            </Span>
+            <OptoinList
+              onClick={() => {
+                setAColor({
+                  option: "#c5c5ff",
+                  span: { back: "#3335cf", text: "white" },
+                });
+              }}
+              style={{ backgroundColor: Acolor.option }}
+            >
+              True
+            </OptoinList>
           </Optoins>
           <Optoins>
-            <Span>B</Span>
-            <OptoinList onClick={() => {}}>False</OptoinList>
+            <Span
+              style={{
+                backgroundColor: color.span.back,
+                color: color.span.text,
+              }}
+            >
+              B
+            </Span>
+            <OptoinList
+              onClick={() => {
+                setColor({
+                  option: "#c5c5ff",
+                  span: { back: "#3335cf", text: "white" },
+                });
+              }}
+              style={{ backgroundColor: color.option }}
+            >
+              False
+            </OptoinList>
           </Optoins>
         </TestWrapper>
         <FlexWrapper justifyContent="center" noPadding>

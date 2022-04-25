@@ -5,17 +5,17 @@ export const Logo = styled.img`
   width: 14%;
 `;
 export const Logs = styled.img`
-width:100%;
-position: absolute;
-height: 100px;
-display: flex;
+  width: 90%;
+  position: absolute;
+  height: 100px;
+  display: flex;
 `;
 
 export const PageWrapper = styled.div`
-  width:100%;
+  width: 98%;
 `;
- export const Text= styled.div`
-  margin-Top:2;
+export const Text = styled.div`
+  margin-top: 2;
   color: white;
 `;
 
@@ -23,9 +23,9 @@ export const FinalFooter = styled.div`
   display: flex;
   justify-content: space-around;
   background-color: rgb(68, 70, 212);
-  width:70%;
-  margin-left:10%;
-  padding:1%;
+  width: 70%;
+  margin-left: 10%;
+  padding: 1%;
 `;
 
 interface ParaProps {
@@ -38,7 +38,7 @@ export const Para = styled.p<ParaProps>`
   font-family: "Open Sans", sans-serif;
   font-size: 17px;
   line-height: 1.6;
-width: 60%;
+  width: 60%;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
   color: ${({ color }) => (color ? color : "black")};
@@ -59,31 +59,29 @@ export const UListWrapper = styled.ul`
   line-height: 3;
 `;
 
- export const ListText = styled.li`
+export const ListText = styled.li`
   font-style: italic;
   font-size: 16px;
 `;
 
-
 export const ContentPageLogo = styled(Figure.Image)`
   width: 18%;
- margin-left: 2%;
- height: fit-content;
+  margin-left: 2%;
+  height: fit-content;
 `;
 
 export const ContentLogo = styled(Figure.Image)`
   width: 40%;
-  margin-left:20%;
-
+  margin-left: 20%;
 `;
 
-export const CardLogo= styled(Figure.Image)`
+export const CardLogo = styled(Figure.Image)`
   width: 70%;
 `;
 
-export const LastLogo= styled(Figure.Image)`
+export const LastLogo = styled(Figure.Image)`
   width: 50%;
-  margin-left:25%;
+  margin-left: 25%;
 `;
 
 export const SideTitles = styled.p`
@@ -91,8 +89,8 @@ export const SideTitles = styled.p`
   font-family: sans-serif;
   font-size: 15px;
   margin-left: 5%;
-  margin-top:5%;
-  color:#3335CF;
+  margin-top: 5%;
+  color: #3335cf;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -100,75 +98,75 @@ export const SideTitles = styled.p`
 
 export const Titles = styled.p`
   font-family: Bold;
-  font-size:20px;
-  font-weight:700;
-  color:#000000;
-  margin-left:25%;
-  margin-top:5%;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin-left: 25%;
+  margin-top: 5%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
 `;
 
 export const Heading = styled.p`
-  font-family:Bold;
-  font-weight:600;
-  color:#43566D;
+  font-family: Bold;
+  font-weight: 600;
+  color: #43566d;
   align-items: center;
-  margin-left:30%;
+  margin-left: 30%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
 `;
 
- export const SubmitButton = styled(Button)`
+export const SubmitButton = styled(Button)`
   height: 35px;
-  font-family:sans-serif;
+  font-family: sans-serif;
   width: 100px;
-  background: #FF7B00 0% 0% no-repeat padding-box;
+  background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
   margin-left: 40%;
-  
+
   &:hover,
   &:active,
   &:focus {
-    background: #3335CF 0% 0% no-repeat padding-box;
+    background: #3335cf 0% 0% no-repeat padding-box;
   }
 `;
- export const ViewButton  = styled(Button)`
-height: 35px;
-width: 120px;
-background:#3335CF 0% 0% no-repeat padding-box;
-border: none;
-font-size: 14px;
-color: #ffffff;
-opacity: 1;
-margin-left: 75%;
-&:hover,
-&:active,
-&:focus {
-  background: #ff7b00 0% 0% no-repeat padding-box;
-}
+export const ViewButton = styled(Button)`
+  height: 35px;
+  width: 120px;
+  background: #3335cf 0% 0% no-repeat padding-box;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 1;
+  margin-left: 75%;
+  &:hover,
+  &:active,
+  &:focus {
+    background: #ff7b00 0% 0% no-repeat padding-box;
+  }
 `;
 
-export const LastButton  = styled(Button)`
-height: 35px;
-width: 150px;
-background:#ff7b00 0% 0% no-repeat padding-box;
-border: none;
-font-size: 14px;
-color: #ffffff;
-opacity: 1;
-margin-left: 35%;
-margin-top:5%;
-&:hover,
-&:active,
-&:focus {
-  background: #3335CF 0% 0% no-repeat padding-box;
-}
+export const DownloadButton = styled(Button)`
+  height: 35px;
+  width: 150px;
+  background: #ff7b00 0% 0% no-repeat padding-box;
+  border: none;
+  font-size: 14px;
+  color: #ffffff;
+  opacity: 1;
+  margin-left: 35%;
+  margin-top: 5%;
+  &:hover,
+  &:active,
+  &:focus {
+    background: #3335cf 0% 0% no-repeat padding-box;
+  }
 `;
 
  export const Buttons = styled(Button)`
