@@ -23,17 +23,17 @@ export const CardFooter = styled.div`
 
 export const CardTitle = styled.div`
   width: 100%;
-  color: #FF8D24;
-  font-size: 50px;
-  margin-left:25%;
-  margin-top:-15%;
+  color: #ff8d24;
+  font-size: 32px;
+  margin-left: 25%;
+  margin-top: -15%;
 `;
 
 export const Label = styled.p`
   width: 100%;
-  color:#393BD0;
-  font-size: 37px;
-  margin-left:40%;
+  color: #393bd0;
+  font-size: 32px;
+  margin-left: 40%;
 `;
 
 export const CardText = styled.div`

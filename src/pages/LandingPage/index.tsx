@@ -438,7 +438,12 @@ const User = (): ReactElement => {
                   <OTPFormInput placeholder="Enter OTP" />
                 </OTPInput>
                 <ResendButton>Resend OTP</ResendButton>
-                <OTPSubmitButton onClick={() => setShowLogin(true)}>
+                <OTPSubmitButton
+                  onClick={() => {
+                    setShowLogin(true);
+                    setShowOtp(false);
+                  }}
+                >
                   Register
                 </OTPSubmitButton>
               </OTPBodyWrapper>

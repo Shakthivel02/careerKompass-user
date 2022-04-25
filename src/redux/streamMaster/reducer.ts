@@ -6,6 +6,7 @@ import {
   GetTest,
   InitialState,
   QuestionType,
+  SelectedLevel,
   StreamList,
 } from "./types";
 
@@ -24,16 +25,25 @@ const initialState: InitialState = {
   testID: {
     testID: "",
   },
+  level: {
+    test_level: "",
+  },
 };
 export const streamSlice = createSlice({
   name: "streamMaster",
   initialState,
   reducers: {
-    updateSelectedStream: (state, action: PayloadAction<CreatetestByStream>) => {
-      state.uselectedStream = action?.payload
+    updateSelectedStream: (
+      state,
+      action: PayloadAction<CreatetestByStream>
+    ) => {
+      state.uselectedStream = action?.payload;
     },
     updateHasError: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
+    },
+    updateSelectedLevel: (state, action: PayloadAction<SelectedLevel>) => {
+      state.level = action?.payload;
     },
   },
   extraReducers: {
@@ -78,17 +88,17 @@ export const streamSlice = createSlice({
     },
     [getLevel.pending.toString()]: (state) => {
       state.isLoading = true;
-  },
-  [getLevel.fulfilled.toString()]: (
+    },
+    [getLevel.fulfilled.toString()]: (
       state,
       action: PayloadAction<Array<GetLevel>>
-  ) => {
+    ) => {
       state.isLoading = false;
       state.levelsData = action?.payload;
-  },
-  [getLevel.rejected.toString()]: (state) => {
+    },
+    [getLevel.rejected.toString()]: (state) => {
       state.isLoading = false;
-  },
+    },
   },
 });
 

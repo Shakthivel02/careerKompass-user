@@ -1,6 +1,11 @@
 import { DropdownListProps } from "../components/EditableDropdown/typings";
 import { Countries, Profile, StatesResponse } from "../redux/Register/types";
-import { GetLevel, GetTest, StreamList } from "../redux/streamMaster/types";
+import {
+  GetLevel,
+  GetTest,
+  QuestionType,
+  StreamList,
+} from "../redux/streamMaster/types";
 
 export const getStreamDropdown = (
   stream: Array<StreamList>
@@ -26,7 +31,7 @@ export const getProfileDropdown = (
 ): Array<DropdownListProps> => {
   const ProfileData = profile.map((profile: Profile) => ({
     id: profile?.id,
-    name: profile?.profile
+    name: profile?.profile,
   }));
   return ProfileData;
 };
@@ -57,6 +62,16 @@ export const getStateDropdown = (
   const states = statemap.map((stateProps: StatesResponse) => ({
     id: stateProps?.id,
     name: stateProps?.state_name,
-  }))
+  }));
   return states;
+};
+
+export const getTestId = (
+  TestId: Array<QuestionType>
+): Array<DropdownListProps> => {
+  const QuestionData = TestId.map((TestPros: QuestionType) => ({
+    id: TestPros?.test_ID,
+    name: TestPros?.stream_name,
+  }));
+  return QuestionData;
 };

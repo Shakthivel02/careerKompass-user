@@ -5,7 +5,7 @@ import { SelectedAnswers } from "./types";
 
 export const postAnswer = createAsyncThunk(
   "question/PostAnswers",
-  async (requestPayload: Array<SelectedAnswers>): Promise<SelectedAnswers> => {
+  async (requestPayload: SelectedAnswers): Promise<SelectedAnswers> => {
     const response = await api.post(apiEndpoints.PostAnswers, requestPayload);
     return response.data;
   }

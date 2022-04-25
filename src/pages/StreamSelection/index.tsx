@@ -1,5 +1,10 @@
 import { ReactElement, useEffect, useState } from "react";
-import { EditableDropdown, FlexWrapper, UserHeader } from "../../components";
+import {
+  EditableDropdown,
+  FlexWrapper,
+  PageWrapper,
+  UserHeader,
+} from "../../components";
 import {
   Body,
   ContainerWrapper,
@@ -7,6 +12,8 @@ import {
   Header1,
   Header2,
   LeftBack,
+  LevelCard,
+  Para,
   StreamHeader,
   StreamWrapper,
   TestButton,
@@ -23,6 +30,7 @@ import { useHistory } from "react-router-dom";
 import ROUTES from "../../const/routes";
 import { DropdownListProps } from "../../components/Dropdown/typings";
 import { validateUsername } from "../../helpers/formValidation";
+import { updateSelectedLevel } from "../../redux/streamMaster/action";
 
 const StreamSelection = (): ReactElement => {
   const { streamList, levelData, SelectStream, TestId } = useSelector(
@@ -50,36 +58,80 @@ const StreamSelection = (): ReactElement => {
     dispatch(SelectedStream(stream));
   }, [stream]);
 
+  const [show, setShow] = useState(false);
+
   return (
     <ContainerWrapper>
       <LeftBack></LeftBack>
       <UserHeader />
       <Body>
-        <Header1>What do you aspire</Header1>
-        <Header2>to become in next five years?</Header2>
+        <Header1>Are you all set?</Header1>
+        <FlexWrapper justifyContent="center">
+          <Para>
+            Unlock new quests and know more about your uniqueness by answering
+            Careerkompass’s alternative-response questions. This quick
+            assessment measures your traits, interests, and skills in key areas.
+            Follow your heart and choose the answers, your choices pave the way
+            towards your ideal career based on your job role with our
+            personalized guide.
+          </Para>
+        </FlexWrapper>
+        <Header2>Select your desired Stream and choose level</Header2>
         <StreamWrapper>
-          <StreamHeader>
-            Select Stream &<br></br> Level to Take test
-          </StreamHeader>
           <DropdownWrapper>
             <EditableDropdown
               dropdownList={StreamDropdown}
               placeholder={"Select Stream"}
               handleSelect={(value: DropdownListProps) => {
                 setStream({ streamID: value?.id });
-              }}
-            />
-          </DropdownWrapper>
-          <DropdownWrapper>
-            <EditableDropdown
-              dropdownList={LevelDropdown}
-              placeholder={"Select Level"}
-              handleSelect={(value: DropdownListProps) => {
-                setTestID({ testID: value?.id });
+                setShow(true);
               }}
             />
           </DropdownWrapper>
         </StreamWrapper>
+        {show ? (
+          <PageWrapper>
+            <FlexWrapper justifyContent="center">
+              <Header2 fontSize="14px">
+                Select The Career Roadmap According To Your Level Of Experience
+              </Header2>
+            </FlexWrapper>
+            <FlexWrapper justifyContent="center">
+              {LevelDropdown.map((x) => {
+                if (x.name === "expert") {
+                  return (
+                    <LevelCard
+                      onClick={() => {
+                        setTestID({ testID: x.id });
+                        dispatch(updateSelectedLevel({ test_level: x.name }));
+                      }}
+                    >
+                      {x.name}
+                      <br />
+                      <span style={{ fontSize: "12px" }}>
+                        (1-3 year experience)
+                      </span>
+                    </LevelCard>
+                  );
+                } else {
+                  return (
+                    <LevelCard
+                      onClick={() => {
+                        setTestID({ testID: x.id });
+                      }}
+                    >
+                      {x.name}
+                      <br />
+                      <span style={{ fontSize: "12px" }}>
+                        (3+ year experience)
+                      </span>
+                    </LevelCard>
+                  );
+                }
+              })}
+            </FlexWrapper>
+          </PageWrapper>
+        ) : null}
       </Body>
       <FlexWrapper justifyContent="center" noPadding>
         <TestButton

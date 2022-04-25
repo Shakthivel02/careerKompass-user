@@ -33,6 +33,10 @@ export interface GetLevel {
   modified_at: string;
 }
 
+export interface SelectedLevel {
+  test_level: string;
+}
+
 export interface QuestionType {
   question_ID: string;
   question: string;
@@ -58,4 +62,5 @@ export interface InitialState {
   levelsData: Array<GetLevel>;
   uselectedStream: CreatetestByStream;
   testID: SelectedTest;
+  level: SelectedLevel;
 }

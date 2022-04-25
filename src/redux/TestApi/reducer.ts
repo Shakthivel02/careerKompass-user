@@ -4,7 +4,11 @@ import { InitialState, SelectedAnswers } from "./types";
 
 const initialState: InitialState = {
   isLoading: false,
-  AnswerList: [],
+  AnswerList: {
+    UserId: "",
+    categoryID: "",
+    TestID: "",
+  },
 };
 export const TestSlice = createSlice({
   name: "Test",
@@ -13,7 +17,7 @@ export const TestSlice = createSlice({
     updateHasError: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
     },
-    updateAnswer: (state, action: PayloadAction<Array<SelectedAnswers>>) => {
+    updateAnswer: (state, action: PayloadAction<SelectedAnswers>) => {
       state.AnswerList = action.payload;
     },
   },
