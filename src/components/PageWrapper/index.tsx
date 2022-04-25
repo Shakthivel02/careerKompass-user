@@ -4,7 +4,7 @@ const PageWrapper = styled.div`
   margin: 24px 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 98%;
   padding: 0 12px;
   @media (max-width: 415px) {
     width: 98%;
