@@ -15,6 +15,8 @@ const TestPage = (): ReactElement => {
   const [activeQuestions, setActiveQuestion] = useState(0);
   const questionData = questionList.map((question) => question.question);
   const questionNo = questionList.map((question) => question.question_ID);
+  const catID = questionList.map((question) => question.cat_id);
+  const CrtAns = questionList.map((question) => question.answer);
 
   return (
     <QuestionSection
@@ -22,6 +24,8 @@ const TestPage = (): ReactElement => {
       quesId={questionNo}
       activeQuestions={activeQuestions}
       onSetActiveQuestion={setActiveQuestion}
+      catID={catID}
+      correctAns={CrtAns}
     />
   );
 };

@@ -1,7 +1,6 @@
 import { ReactElement, useState } from "react";
 import styled from "styled-components";
 import { QuestionSectionProps } from "./typings";
-import { SelectedAnswers } from "../../redux/TestApi/types";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
@@ -11,6 +10,7 @@ import log from "../../assests/aero.png";
 import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
+import { SelectedAnswers } from "../../redux/TestApi/types";
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -68,39 +68,24 @@ const Optoins = styled.div`
   align-items: center;
 `;
 
-const OptoinList = styled.div`
-  background-color: #f7f3f3;
+const OptionButton = styled(Button)`
+  background: linear-gradient(90deg, #0000001a 20%, #fcfcff 20%);
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border: none;
   color: #000124;
-  text-align: center;
-  align-items: center;
+  width: 50%;
   font-size: 12px;
   font-weight: 1000;
   padding: 0.6rem 7rem 0.6rem 1.2rem;
-  text-transform: capitalize;
   box-shadow: 0px 1px 4px lightgray;
   opacity: 1;
   cursor: pointer;
-  ${Optoins}:hover & {
-    background: #c5c5ff;
-  }
-`;
-
-const Span = styled.div`
-  color: #000124;
-  opacity: 1;
-  font-weight: 700;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  font-size: 12px;
-  background-color: #e6e3e3;
-  text-align: center;
-  box-shadow: 0px 1px 4px lightgray;
-  padding: 0.6rem 0.9rem 0.6rem 0.9rem;
-  ${Optoins}:hover & {
-    background: #3335cf;
-    color: white;
+  &:hover,
+  &:active,
+  &:focus {
+    color: black;
+    background: linear-gradient(90deg, #3335cf 20%, #c5c5ff 20%);
   }
 `;
 
@@ -123,66 +108,98 @@ const SubmitButton = styled(Button)`
 
 export const Logo = styled.img`
   width: 12%;
+  float: left;
+`;
+
+export const OptionText = styled.span`
+  float: right;
+`;
+
+export const Option = styled.span`
+  float: left;
+  ${OptionButton}:hover & {
+    color: white;
+  }
+  ${OptionButton}:focus & {
+    color: white;
+  }
 `;
 
 export const QuestionSection = ({
   data,
   activeQuestions,
   quesId,
+  catID,
+  correctAns,
   onSetActiveQuestion,
 }: QuestionSectionProps): ReactElement => {
   const history = useHistory();
-  const { selectedAnswers, TestId, UserId, level } = useSelector(
+  const dispatch = useDispatch();
+  const { TestId, level, SelectAnswer } = useSelector(
     (state: RootState) => ({
-      selectedAnswers: state.Test.AnswerList as SelectedAnswers,
       TestId: state.stream.questions,
-      UserId: state.login.userInfo,
       level: state.stream.level.test_level,
+      SelectAnswer: state.Test.AnswerList as Array<SelectedAnswers>,
     }),
     shallowEqual
   );
-  const [selected, setSelected] = useState(selectedAnswers);
-  console.log(selected);
-  const dispatch = useDispatch();
+
+  //TestId AND TestName
   const TestID = TestId ? getTestId(TestId) : [];
-  const [TESTID] = TestID.map((x) => {
-    return x.id;
-  });
   const [TestName] = TestID.map((x) => {
     return x.name;
   });
 
+  //NextButton
   const [buttonValue, SetbuttonValue] = useState("Next");
-  const [color, setColor] = useState({
-    option: "",
-    span: { back: "", text: "" },
-  });
-  const [Acolor, setAColor] = useState({
-    option: "",
-    span: { back: "", text: "" },
-  });
+
   const nextClickHandle = () => {
-    setColor({ option: "", span: { back: "", text: "" } });
-    setAColor({ option: "", span: { back: "", text: "" } });
     if (data.length > activeQuestions + 1) {
       onSetActiveQuestion(activeQuestions + 1);
     } else {
       onSetActiveQuestion(0);
     }
+    //Button Value
     if (quesId[activeQuestions] === quesId[data.length - 2]) {
       SetbuttonValue("Submit");
     }
     if (quesId[activeQuestions] === quesId[data.length - 1]) {
-      dispatch(
-        postAnswer({
-          UserId: UserId?.userId,
-          categoryID: "",
-          TestID: TESTID,
-        })
-      );
+      dispatch(postAnswer(selectedAnswer));
       history.push(ROUTES.RESULTCOPY);
     }
   };
+
+  //changeEvent
+  const [selectedAnswer, setSelectedAnswer] = useState(SelectAnswer);
+
+  const changeHandler = (e: any) => {
+    const isQuesIncluded = selectedAnswer.some(
+      (item) => item?.questionId === `${quesId[activeQuestions]}`
+    );
+
+    if (isQuesIncluded) {
+      const updatedSelection = selectedAnswer.map((item) => {
+        if (item?.questionId === `${quesId[activeQuestions]}`) {
+          return {
+            questionId: `${quesId[activeQuestions]}`,
+            answer: e.target.value,
+          };
+        }
+        return item;
+      });
+      setSelectedAnswer(updatedSelection);
+    } else {
+      setSelectedAnswer([
+        ...selectedAnswer,
+        {
+          questionId: `${quesId[activeQuestions]}`,
+          answer: e.target.value,
+        },
+      ]);
+    }
+  };
+  console.log(selectedAnswer);
+
   return (
     <PageWrapper>
       <UserHeader />
@@ -211,47 +228,25 @@ export const QuestionSection = ({
           </Bold>
         </FlexWrapper>
         <TestWrapper>
-          <Optoins>
-            <Span
-              style={{
-                backgroundColor: Acolor.span.back,
-                color: Acolor.span.text,
-              }}
-            >
-              A
-            </Span>
-            <OptoinList
-              onClick={() => {
-                setAColor({
-                  option: "#c5c5ff",
-                  span: { back: "#3335cf", text: "white" },
-                });
-              }}
-              style={{ backgroundColor: Acolor.option }}
-            >
-              True
-            </OptoinList>
+          <Optoins
+            onClick={(e) => {
+              changeHandler(e);
+            }}
+          >
+            <OptionButton value="True">
+              <Option>A</Option>
+              <OptionText>True</OptionText>
+            </OptionButton>
           </Optoins>
-          <Optoins>
-            <Span
-              style={{
-                backgroundColor: color.span.back,
-                color: color.span.text,
-              }}
-            >
-              B
-            </Span>
-            <OptoinList
-              onClick={() => {
-                setColor({
-                  option: "#c5c5ff",
-                  span: { back: "#3335cf", text: "white" },
-                });
-              }}
-              style={{ backgroundColor: color.option }}
-            >
-              False
-            </OptoinList>
+          <Optoins
+            onClick={(e) => {
+              changeHandler(e);
+            }}
+          >
+            <OptionButton value="False">
+              <Option>B</Option>
+              <OptionText>False</OptionText>
+            </OptionButton>
           </Optoins>
         </TestWrapper>
         <FlexWrapper justifyContent="center" noPadding>

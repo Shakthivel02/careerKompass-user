@@ -3,12 +3,11 @@ import {
   UserHeader,
   CardWrapper,
   FlexWrapper,
-} from "../components";
+} from "../../components";
 import {
   Bold,
   FlexWrap,
   PageWrapper,
-  Logo,
   Logs,
   Label,
   Text,
@@ -31,16 +30,29 @@ import {
   Para,
   ContentPageLogo,
   SideTitles,
-} from "../resultcopy/sucomponents";
-import aero from "../assests/aero.png";
-import log from "../assests/ak3.png";
-import ak from "../assests/ak1.png";
-import logo from "../assests/ak2.png";
-import Gp from "../assests/Gp1.png";
-import ab from "../assests/ak4.png";
-import Download from "../redux/result/api";
+  Sticky,
+  RelativeWrap,
+  CareerKompass,
+} from "./sucomponents";
+import log from "../../assests/ak3.png";
+import badgeImg from "../../assests/badge.svg";
+import logo from "../../assests/ak2.png";
+import Gp from "../../assests/Gp1.png";
+import ab from "../../assests/ak4.png";
+import careerKompass from "../../assests/careerKompass.svg";
+import Download from "../../redux/result/api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { shallowEqual, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 
 const ResultCopy = () => {
+  const { Stream } = useSelector(
+    (state: RootState) => ({
+      Stream: state.stream.questions,
+    }),
+    shallowEqual
+  );
+  const [badge] = Stream.map((x) => x.stream_name);
   return (
     <PageWrapper>
       <UserHeader />
@@ -53,16 +65,18 @@ const ResultCopy = () => {
             marginTop="30"
             backgroundColor="#3335CF"
           >
-            <Logo src={aero} /> Aeronautical
+            {badge}
           </ActionButton>
         </div>
       </FlexWrap>
 
       <FlexWrapper>
         <FirstWrapper>
-          <Label>Congratulation.. suresh Kumar</Label>
+          <CardWrapper width="100%" marginleft="-4%">
+            <Label>Congratulation.. suresh Kumar</Label>
+          </CardWrapper>
           <Title>Your are a Analyst</Title>
-          <FlexWrapper>
+          <FlexWrapper justifyContent="space-around">
             <Para>
               You love gaining knowledge in various science and engineering
               disciplines.You will like the challenge of contributing to the
@@ -77,23 +91,30 @@ const ResultCopy = () => {
               flying,quality and performance of flying objects and the materials
               they are made of,and so on.
             </Para>
-            <ContentPageLogo src={ak} />
+            <div>
+              <ContentPageLogo src={badgeImg} />
+              <RelativeWrap>
+                <CareerKompass src={careerKompass} />
+              </RelativeWrap>
+            </div>
           </FlexWrapper>
-          <CardWrapper width="60%" height="20%">
-            <Paras>
-              You can have a great scope as a product analyst in Aeronautical
-              Engineering. To shine as an analyst, focus on mastering the
-              following CAD tools:
-            </Paras>
-            <FlexWrapper>
-              <UListWrapper>
-                <ListText>Ansys</ListText>
-                <ListText> Ansys Fluent</ListText>
-                <ListText> HyperMesh</ListText>
-              </UListWrapper>
-              <ContentLogo src={logo} />
-            </FlexWrapper>
-          </CardWrapper>
+          <FlexWrapper>
+            <CardWrapper width="60%" height="20%">
+              <Paras>
+                You can have a great scope as a product analyst in Aeronautical
+                Engineering. To shine as an analyst, focus on mastering the
+                following CAD tools:
+              </Paras>
+              <FlexWrapper>
+                <UListWrapper>
+                  <ListText>Ansys</ListText>
+                  <ListText> Ansys Fluent</ListText>
+                  <ListText> HyperMesh</ListText>
+                </UListWrapper>
+                <ContentLogo src={logo} />
+              </FlexWrapper>
+            </CardWrapper>
+          </FlexWrapper>
           <SideTitles>Certified programs</SideTitles>
           <Paras>
             Cloudkampus offers Certified programs that equip you with the
@@ -102,11 +123,13 @@ const ResultCopy = () => {
             opportunities. Following is the recommended Cloudkampus Certified
             program for you:
           </Paras>
-          <CardWrapper>
-            <CardLogo src={log} />
-            <Titles> Certified FEA Aviation Engineer</Titles>
-            <ViewButton>View program</ViewButton>
-          </CardWrapper>
+          <FlexWrapper>
+            <CardWrapper>
+              <CardLogo src={log} />
+              <Titles> Certified FEA Aviation Engineer</Titles>
+              <ViewButton>View program</ViewButton>
+            </CardWrapper>
+          </FlexWrapper>
           <SideTitles>Subscription plan</SideTitles>
           <Paras>
             You can choose a subscription plan suitable for you and enroll in a
@@ -127,10 +150,19 @@ const ResultCopy = () => {
           </FinalFooter>
         </FirstWrapper>
         <ThirdWrapper>
-          <Titles> Your Result Document for</Titles>
-          <Heading>Aeronautical-Product Head</Heading>
-          <LastLogo src={ab} />
-          <DownloadButton onClick={Download}>Download</DownloadButton>
+          <Sticky>
+            <FlexWrapper justifyContent="center">
+              <Titles> Your Result Document for</Titles>
+              <Heading>Aeronautical-Product Head</Heading>
+              <LastLogo src={ab} />
+            </FlexWrapper>
+            <FlexWrapper justifyContent="center" marginTop={-8}>
+              <DownloadButton onClick={Download}>
+                <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
+                <span style={{ marginLeft: "3%" }}>Download</span>
+              </DownloadButton>
+            </FlexWrapper>
+          </Sticky>
         </ThirdWrapper>
       </FlexWrapper>
     </PageWrapper>
