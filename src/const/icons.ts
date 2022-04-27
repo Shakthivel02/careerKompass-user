@@ -26,6 +26,7 @@ import {
   faLineChart,
   faTools,
   faBook,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -69,5 +70,6 @@ library.add(
   faSearch,
   faMedal,
   faTools,
-  faBook
+  faBook,
+  faDownload
 );

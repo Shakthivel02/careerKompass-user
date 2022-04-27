@@ -1,22 +1,23 @@
-import { Button, Card, Figure } from "react-bootstrap";
+import { Button, Figure } from "react-bootstrap";
 import styled from "styled-components";
 
 export const Logo = styled.img`
   width: 14%;
 `;
 export const Logs = styled.img`
-  width: 100%;
+  width: 98%;
   position: absolute;
   height: 100px;
   display: flex;
 `;
 
 export const PageWrapper = styled.div`
-  width:100%;
+  width: 100%;
 `;
 export const Text = styled.div`
   margin-top: 2;
   color: white;
+  font-size: 20px;
 `;
 
 export const FinalFooter = styled.div`
@@ -25,7 +26,9 @@ export const FinalFooter = styled.div`
   background-color: rgb(68, 70, 212);
   width: 70%;
   margin-left: 10%;
-  padding: 1%;
+  padding: 3%;
+  border-radius: 10px;
+  margin-top: 4%;
 `;
 
 interface ParaProps {
@@ -34,11 +37,10 @@ interface ParaProps {
   marginLeft?: string;
 }
 export const Para = styled.p<ParaProps>`
-  font-weight: 100%;
   font-family: "Open Sans", sans-serif;
-  font-size: 17px;
+  font-size: 15px;
   line-height: 1.6;
-  width: 60%;
+  width: 50%;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
   color: ${({ color }) => (color ? color : "black")};
@@ -65,9 +67,8 @@ export const ListText = styled.li`
 `;
 
 export const ContentPageLogo = styled(Figure.Image)`
-  width: 18%;
-  margin-left: 2%;
-  height: fit-content;
+  width: 80%;
+  margin-left: 4%;
 `;
 
 export const ContentLogo = styled(Figure.Image)`
@@ -80,8 +81,7 @@ export const CardLogo = styled(Figure.Image)`
 `;
 
 export const LastLogo = styled(Figure.Image)`
-  width: 50%;
-  margin-left: 25%;
+  width: 35%;
 `;
 
 export const SideTitles = styled.p`
@@ -98,11 +98,11 @@ export const SideTitles = styled.p`
 
 export const Titles = styled.p`
   font-family: Bold;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 700;
   color: #000000;
-  margin-left: 15%;
-  margin-top: 10%;
+  text-align: center;
+  margin-top: 4%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -113,7 +113,7 @@ export const Heading = styled.p`
   font-weight: 600;
   color: #43566d;
   align-items: center;
-  margin-left: 20%;
+  text-align: center;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -128,7 +128,7 @@ export const SubmitButton = styled(Button)`
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
-  margin-left: 40%;
+  margin-left: 30%;
 
   &:hover,
   &:active,
@@ -154,13 +154,12 @@ export const ViewButton = styled(Button)`
 
 export const DownloadButton = styled(Button)`
   height: 35px;
-  width: 150px;
+  width: 120px;
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
-  margin-left:26%;
   margin-top: 8%;
   &:hover,
   &:active,
@@ -169,7 +168,7 @@ export const DownloadButton = styled(Button)`
   }
 `;
 
- export const Buttons = styled(Button)`
+export const Buttons = styled(Button)`
   height: 35px;
   width: 120px;
   background: #ff7b00 0% 0% no-repeat padding-box;
@@ -180,36 +179,38 @@ export const DownloadButton = styled(Button)`
   &:hover,
   &:active,
   &:focus {
-    background: #3335CF 0% 0% no-repeat padding-box;
+    background: #3335cf 0% 0% no-repeat padding-box;
   }
 `;
 
-export const FirstWrapper= styled.div`
-background-color: #FCFCFF;
-width:70%;
-margin-left:2%
+export const FirstWrapper = styled.div`
+  background-color: #fcfcff;
+  width: 65%;
+  margin-left: 4%;
 `;
 
-export const ThirdWrapper= styled.div`
-background-color: #F6F6FE;
-width:20%;
+export const ThirdWrapper = styled.div`
+  background-color: #f6f6fe;
+  width: 30%;
+  margin-top: -1.8%;
 `;
 
 export const Label = styled.div`
-color:#FF7B00;
-text-align: center;
-font-family:serif;
-font-size:38px;
-padding-top:2.5%;
-background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
+  color: #ff7b00;
+  text-align: center;
+  font-family: serif;
+  font-size: 38px;
+  padding-top: 2.5%;
+  background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
 `;
 
 export const Title = styled.div`
-color:#3335CF;
-font-family: normal normal bold 40px/60px Montserrat;
-font-size:35px;
-margin-left:4%;
-margin-top:2%;
+  color: #3335cf;
+  font-family: normal normal bold 40px/60px Montserrat;
+  font-size: 24px;
+  font-weight: 700;
+  margin-left: 5%;
+  margin-top: 2%;
 `;
 
 interface bold {
@@ -217,33 +218,48 @@ interface bold {
   fontWeight?: string;
 }
 export const Bold = styled.p<bold>`
- font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
-  color:#3335CF;
+  font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
+  color: #3335cf;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "25px")};
-  font-family:  normal normal bold 36px/60px Montserrat;
-  color: #3335CF;
+  font-family: normal normal bold 36px/60px Montserrat;
+  z-index: 100;
+  color: #3335cf;
   padding-top: 2%;
   padding-right: 2%;
-  @media(max-width:600px){
+  @media (max-width: 600px) {
     margin: 0 auto;
     font-size: 18px;
-    width:100%;
-  
+    width: 100%;
   }
 `;
 
 export const FlexWrap = styled.div`
-display: flex;
-justify-content: space-around;
-width: 100%;
-background-color: #FFF2E1;
-height: 110px;
-#logoWrapper {
-  display: row;
-  flex-direction:row;
-}
-@media (max-width: 600px) {
-   display: flex;
-
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: #fff2e1;
+  height: 110px;
+  #logoWrapper {
+    display: row;
+    flex-direction: row;
   }
+  @media (max-width: 600px) {
+    display: flex;
+  }
+`;
+
+export const Sticky = styled.div`
+  height: 200px;
+  position: fixed;
+`;
+
+export const RelativeWrap = styled.div`
+  position: relative;
+  z-index: 1000;
+  margin-left: 26%;
+  margin-top: -55%;
+`;
+
+export const CareerKompass = styled(Figure.Image)`
+  width: 48%;
 `;

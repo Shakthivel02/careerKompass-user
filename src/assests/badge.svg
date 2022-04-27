@@ -1,0 +1,131 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="358" height="358" viewBox="0 0 358 358">
+  <defs>
+    <filter id="Path_26756" x="0" y="0" width="358" height="358" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_22232" data-name="Rectangle 22232" width="23.369" height="22.225" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_22233" data-name="Rectangle 22233" width="23.371" height="22.225" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_22234" data-name="Rectangle 22234" width="28.892" height="27.479" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-4">
+      <rect id="Rectangle_22235" data-name="Rectangle 22235" width="23.37" height="22.225" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-6">
+      <rect id="Rectangle_22237" data-name="Rectangle 22237" width="28.893" height="27.479" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Group_44782" data-name="Group 44782" transform="translate(9 9)">
+    <g transform="matrix(1, 0, 0, 1, -9, -9)" filter="url(#Path_26756)">
+      <path id="Path_26756-2" data-name="Path 26756" d="M349,178.559a170.392,170.392,0,0,1-1.162,20.646,166.028,166.028,0,0,1-4.182,22.351c-.788,3.128-1.674,6.209-2.656,9.265v.023a164.346,164.346,0,0,1-6.264,16.594A170.084,170.084,0,1,1,349,178.559" transform="translate(0 -0.17)" fill="#fff"/>
+    </g>
+    <text id="C" transform="matrix(0.436, -0.9, 0.9, 0.436, 53.691, 116.07)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">C</tspan></text>
+    <text id="A" transform="matrix(0.539, -0.842, 0.842, 0.539, 60.695, 102.045)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="R" transform="translate(69.51 88.706) rotate(-50.4)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="E" transform="translate(79.146 77.129) rotate(-43.579)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="E-2" data-name="E" transform="translate(90.023 66.755) rotate(-36.906)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="R-2" data-name="R" transform="translate(102.052 57.675) rotate(-29.757)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="K" transform="matrix(0.927, -0.376, 0.376, 0.927, 116.013, 49.714)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">K</tspan></text>
+    <text id="O" transform="matrix(0.972, -0.235, 0.235, 0.972, 130.218, 43.857)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">O</tspan></text>
+    <text id="M" transform="translate(148.012 40.692) rotate(-3.816)" fill="#fff" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">M</tspan></text>
+    <text id="P" transform="translate(168.545 38.773) rotate(4.605)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">P</tspan></text>
+    <text id="A-2" data-name="A" transform="translate(183.589 40.062) rotate(10.782)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="S" transform="matrix(0.957, 0.291, -0.291, 0.957, 198.911, 44.198)" fill="#fff" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="S-2" data-name="S" transform="translate(212.112 48.381) rotate(22.786)" fill="#fff" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="_" data-name=" " transform="translate(228.483 46.891) rotate(27.254)" fill="#fff" font-size="9" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0"> </tspan></text>
+    <text id="O-2" data-name="O" transform="matrix(0.841, 0.541, -0.541, 0.841, 231.531, 56.228)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">O</tspan></text>
+    <text id="N" transform="translate(246.852 66.423) rotate(40.877)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">N</tspan></text>
+    <text id="L" transform="translate(261.656 76.247) rotate(48.082)" fill="#fff" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">L</tspan></text>
+    <text id="I" transform="translate(269.93 86.524) rotate(53.078)" fill="#fff" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">I</tspan></text>
+    <text id="N-2" data-name="N" transform="translate(273.237 93.851) rotate(59.108)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">N</tspan></text>
+    <text id="E-3" data-name="E" transform="translate(282.299 109.194) rotate(66.746)" fill="#fff" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="C-2" data-name="C" transform="matrix(0.436, -0.9, 0.9, 0.436, 53.691, 116.07)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">C</tspan></text>
+    <text id="A-3" data-name="A" transform="matrix(0.539, -0.842, 0.842, 0.539, 60.695, 102.045)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="R-3" data-name="R" transform="translate(69.51 88.706) rotate(-50.4)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="E-4" data-name="E" transform="translate(79.146 77.129) rotate(-43.579)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="E-5" data-name="E" transform="translate(90.023 66.755) rotate(-36.906)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="R-4" data-name="R" transform="translate(102.052 57.675) rotate(-29.757)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="K-2" data-name="K" transform="matrix(0.927, -0.376, 0.376, 0.927, 116.013, 49.714)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">K</tspan></text>
+    <text id="O-3" data-name="O" transform="matrix(0.972, -0.235, 0.235, 0.972, 130.218, 43.857)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">O</tspan></text>
+    <text id="M-2" data-name="M" transform="translate(148.012 40.692) rotate(-3.816)" fill="#1d1f1b" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">M</tspan></text>
+    <text id="P-2" data-name="P" transform="translate(168.545 38.773) rotate(4.605)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">P</tspan></text>
+    <text id="A-4" data-name="A" transform="translate(183.589 40.062) rotate(10.782)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="S-3" data-name="S" transform="matrix(0.957, 0.291, -0.291, 0.957, 198.911, 44.198)" fill="#1d1f1b" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="S-4" data-name="S" transform="translate(212.112 48.381) rotate(22.786)" fill="#1d1f1b" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="_2" data-name=" " transform="translate(228.483 46.891) rotate(27.254)" fill="#1d1f1b" font-size="9" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0"> </tspan></text>
+    <text id="O-4" data-name="O" transform="matrix(0.841, 0.541, -0.541, 0.841, 231.531, 56.228)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">O</tspan></text>
+    <text id="N-3" data-name="N" transform="translate(246.852 66.423) rotate(40.877)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">N</tspan></text>
+    <text id="L-2" data-name="L" transform="translate(261.656 76.247) rotate(48.082)" fill="#1d1f1b" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">L</tspan></text>
+    <text id="I-2" data-name="I" transform="translate(269.93 86.524) rotate(53.078)" fill="#1d1f1b" font-size="14" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">I</tspan></text>
+    <text id="N-4" data-name="N" transform="translate(273.237 93.851) rotate(59.108)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">N</tspan></text>
+    <text id="E-6" data-name="E" transform="translate(282.299 109.194) rotate(66.746)" fill="#1d1f1b" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="C-3" data-name="C" transform="translate(47.852 243.6) rotate(52.022)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">C</tspan></text>
+    <text id="A-5" data-name="A" transform="matrix(0.705, 0.709, -0.709, 0.705, 59.246, 257.729)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="R-5" data-name="R" transform="matrix(0.785, 0.619, -0.619, 0.785, 71.659, 269.928)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="E-7" data-name="E" transform="matrix(0.851, 0.526, -0.526, 0.851, 85.737, 282.208)" fill="#231f20" font-size="21" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="E-8" data-name="E" transform="translate(100.657 291.365) rotate(25.412)" fill="#231f20" font-size="21" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="R-6" data-name="R" transform="translate(116.764 297.874) rotate(18.867)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">R</tspan></text>
+    <text id="_3" data-name=" " transform="matrix(0.971, 0.24, -0.24, 0.971, 134.91, 300.63)" fill="#231f20" font-size="17" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0"> </tspan></text>
+    <text id="A-6" data-name="A" transform="matrix(0.987, 0.16, -0.16, 0.987, 142.239, 305.628)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">A</tspan></text>
+    <text id="S-5" data-name="S" transform="translate(160.696 306.254) rotate(0.67)" fill="#231f20" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="S-6" data-name="S" transform="translate(176.711 306.259) rotate(-6.12)" fill="#231f20" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="E-9" data-name="E" transform="translate(193.144 307.334) rotate(-12.532)" fill="#231f20" font-size="21" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="S-7" data-name="S" transform="translate(209.14 300.472) rotate(-18.626)" fill="#231f20" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="S-8" data-name="S" transform="translate(224.104 295.213) rotate(-24.374)" fill="#231f20" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">S</tspan></text>
+    <text id="M-3" data-name="M" transform="matrix(0.852, -0.523, 0.523, 0.852, 239.181, 289.404)" fill="#231f20" font-size="19" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">M</tspan></text>
+    <text id="E-10" data-name="E" transform="matrix(0.776, -0.631, 0.631, 0.776, 260.212, 278.933)" fill="#231f20" font-size="21" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">E</tspan></text>
+    <text id="N-5" data-name="N" transform="matrix(0.69, -0.724, 0.724, 0.69, 270.917, 265.751)" fill="#231f20" font-size="18" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">N</tspan></text>
+    <text id="T" transform="matrix(0.596, -0.803, 0.803, 0.596, 286.43, 252.08)" fill="#231f20" font-size="20" font-family="Montserrat-Regular, Montserrat"><tspan x="0" y="0">T</tspan></text>
+    <g id="Group_44474" data-name="Group 44474" transform="translate(284.789 123.142)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44473" data-name="Group 44473">
+        <g id="Group_44472" data-name="Group 44472" clip-path="url(#clip-path)">
+          <path id="Path_26738" data-name="Path 26738" d="M157.976,74.791,154.8,66.878l-3.176,7.913-8.507.577,6.544,5.467-2.08,8.268,7.22-4.532,7.222,4.532-2.08-8.268,6.544-5.467Z" transform="translate(-143.114 -66.879)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_44477" data-name="Group 44477" transform="translate(283.017 203.841)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44476" data-name="Group 44476">
+        <g id="Group_44475" data-name="Group 44475" clip-path="url(#clip-path-2)">
+          <path id="Path_26739" data-name="Path 26739" d="M157.152,112.835l-3.178-7.913-3.176,7.913-8.507.577,6.544,5.467-2.082,8.268,7.222-4.533,7.222,4.533-2.08-8.268,6.544-5.467Z" transform="translate(-142.289 -104.922)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_44480" data-name="Group 44480" transform="translate(289.019 159.861)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44479" data-name="Group 44479">
+        <g id="Group_44478" data-name="Group 44478" clip-path="url(#clip-path-3)">
+          <path id="Path_26740" data-name="Path 26740" d="M163.453,93.989l-3.927-9.782-3.93,9.782-10.518.713,8.09,6.759L150.6,111.686l8.929-5.607,8.927,5.607-2.571-10.226,8.09-6.759Z" transform="translate(-145.079 -84.207)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_44483" data-name="Group 44483" transform="translate(34.038 123.142)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44482" data-name="Group 44482">
+        <g id="Group_44481" data-name="Group 44481" clip-path="url(#clip-path-4)">
+          <path id="Path_26741" data-name="Path 26741" d="M33.071,74.791l3.178-7.913,3.176,7.913,8.507.577-6.544,5.467L43.471,89.1,36.249,84.57,29.027,89.1l2.08-8.268-6.544-5.467Z" transform="translate(-24.563 -66.879)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_44486" data-name="Group 44486" transform="translate(35.813 203.841)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44485" data-name="Group 44485">
+        <g id="Group_44484" data-name="Group 44484" clip-path="url(#clip-path)">
+          <path id="Path_26742" data-name="Path 26742" d="M33.894,112.835l3.178-7.913,3.176,7.913,8.507.577-6.544,5.467,2.082,8.268-7.222-4.533-7.222,4.533,2.08-8.268-6.544-5.467Z" transform="translate(-25.387 -104.922)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <g id="Group_44489" data-name="Group 44489" transform="translate(24.287 159.861)" style="mix-blend-mode: multiply;isolation: isolate">
+      <g id="Group_44488" data-name="Group 44488">
+        <g id="Group_44487" data-name="Group 44487" clip-path="url(#clip-path-6)">
+          <path id="Path_26743" data-name="Path 26743" d="M30.553,93.989l3.93-9.782,3.927,9.782,10.518.713-8.09,6.759,2.571,10.226-8.927-5.607-8.929,5.607,2.571-10.226L20.034,94.7Z" transform="translate(-20.034 -84.207)" fill="#f37a20"/>
+        </g>
+      </g>
+    </g>
+    <path id="Path_26737" data-name="Path 26737" d="M330.5,210.514A160.667,160.667,0,0,1,131.755,329.2C48.854,306.648-1.967,221.541,17.5,137.862A160.665,160.665,0,0,1,216.24,19.175C299.143,41.728,349.966,126.833,330.5,210.514Z" transform="translate(-3.57 -3.709)" fill="none" stroke="#3335cf" stroke-width="2"/>
+  </g>
+</svg>

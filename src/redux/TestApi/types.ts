@@ -1,10 +1,9 @@
 export interface SelectedAnswers {
-  UserId?: string;
-  categoryID: string;
-  TestID: string;
+  questionId: string;
+  answer: string;
 }
 
 export interface InitialState {
   isLoading: boolean;
-  AnswerList: SelectedAnswers;
+  AnswerList: Array<SelectedAnswers>;
 }

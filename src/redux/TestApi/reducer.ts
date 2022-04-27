@@ -1,14 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { postAnswer } from "./api";
-import { InitialState, SelectedAnswers } from "./types";
+import { InitialState } from "./types";
 
 const initialState: InitialState = {
   isLoading: false,
-  AnswerList: {
-    UserId: "",
-    categoryID: "",
-    TestID: "",
-  },
+  AnswerList: [],
 };
 export const TestSlice = createSlice({
   name: "Test",
@@ -16,9 +12,6 @@ export const TestSlice = createSlice({
   reducers: {
     updateHasError: (state, action: PayloadAction<boolean>) => {
       state.isLoading = action.payload;
-    },
-    updateAnswer: (state, action: PayloadAction<SelectedAnswers>) => {
-      state.AnswerList = action.payload;
     },
   },
   extraReducers: {
