@@ -19,7 +19,7 @@ export const FlexWrap = styled.div`
   background-color: #fff2e1;
   height: 100px;
   #logoWrapper {
-    dispaly: flex;
+    display: flex;
   }
 `;
 

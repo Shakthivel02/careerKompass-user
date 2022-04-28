@@ -31,6 +31,7 @@ import {
   ContentPageLogo,
   SideTitles,
   Sticky,
+  LastTitles,
   RelativeWrap,
   CareerKompass,
 } from "./sucomponents";
@@ -78,6 +79,7 @@ const ResultCopy = () => {
           <Title>Your are a Analyst</Title>
           <FlexWrapper justifyContent="space-around">
             <Para>
+
               You love gaining knowledge in various science and engineering
               disciplines.You will like the challenge of contributing to the
               continuous improvement of products.You can immerse yourself in
@@ -86,6 +88,7 @@ const ResultCopy = () => {
               difference in performances of things under different external
               conditions.
               <br />
+              <br/>
               As 'aeronautical engineering' is your favourite stream.you could
               focus on making yourself conversant with laws governing
               flying,quality and performance of flying objects and the materials
@@ -98,8 +101,8 @@ const ResultCopy = () => {
               </RelativeWrap>
             </div>
           </FlexWrapper>
-          <FlexWrapper>
-            <CardWrapper width="60%" height="20%">
+          <FlexWrapper >
+            <CardWrapper width="75%" height="20%" marginleft="10%" >
               <Paras>
                 You can have a great scope as a product analyst in Aeronautical
                 Engineering. To shine as an analyst, focus on mastering the
@@ -118,54 +121,57 @@ const ResultCopy = () => {
           <SideTitles>Certified programs</SideTitles>
           <Paras>
             Cloudkampus offers Certified programs that equip you with the
-            recommended software and technical acumen required for excelling as
+            recommended software and technical acumen <br/>required for excelling as
             an analyst. This program also assures you internship / placement
-            opportunities. Following is the recommended Cloudkampus Certified
+            opportunities.<br/> Following is the recommended Cloudkampus Certified
             program for you:
           </Paras>
           <FlexWrapper>
-            <CardWrapper>
+            <CardWrapper width="25%" height="10%" marginleft="5%">
               <CardLogo src={log} />
               <Titles> Certified FEA Aviation Engineer</Titles>
-              <ViewButton>View program</ViewButton>
-            </CardWrapper>
+              <ViewButton >
+              <span >View Program</span>
+              <FontAwesomeIcon style={{marginLeft:'10px'}} icon={["fas", "chevron-right"]} size="sm"  />
+            </ViewButton>
+          </CardWrapper>
+        </FlexWrapper>
+      <SideTitles>Subscription plan</SideTitles>
+      <Paras>
+        You can choose a subscription plan suitable for you and enroll in a
+        number of individual courses and learn all <br/>the recommended software
+        / skills - without having to pay for each and every course
+        separately. Subscription plans<br/> are the best when you want to learn
+        more than one course.
+      </Paras>
+      <SideTitles>Individual programs</SideTitles>
+      <Paras>
+        CloudKampass offers niche,standalone courses in the recommended
+        software. you can always take up these<br/> courses.
+      </Paras>
+      <FinalFooter>
+        <Text>Enquire Now</Text>
+        <SubmitButton> Email us</SubmitButton>
+        <Buttons>Chat with us</Buttons>
+      </FinalFooter>
+    </FirstWrapper>
+    <ThirdWrapper>
+        <Sticky>
+          <FlexWrapper justifyContent="center">
+            <LastTitles> Your Result Document for</LastTitles>
+            <Heading>Aeronautical-Product Head</Heading>
+            <LastLogo src={ab} />
           </FlexWrapper>
-          <SideTitles>Subscription plan</SideTitles>
-          <Paras>
-            You can choose a subscription plan suitable for you and enroll in a
-            number of individual courses and learn all the recommended software
-            / skills - without having to pay for each and every course
-            separately. Subscription plans are the best when you want to learn
-            more than one course.
-          </Paras>
-          <SideTitles>Individual programs</SideTitles>
-          <Paras>
-            CloudKampass offers niche,standalone courses in the recommended
-            software. you can always take up these couses
-          </Paras>
-          <FinalFooter>
-            <Text>Enquire Now</Text>
-            <SubmitButton> Email us</SubmitButton>
-            <Buttons>Chat with us</Buttons>
-          </FinalFooter>
-        </FirstWrapper>
-        <ThirdWrapper>
-          <Sticky>
-            <FlexWrapper justifyContent="center">
-              <Titles> Your Result Document for</Titles>
-              <Heading>Aeronautical-Product Head</Heading>
-              <LastLogo src={ab} />
-            </FlexWrapper>
-            <FlexWrapper justifyContent="center" marginTop={-8}>
-              <DownloadButton onClick={Download}>
-                <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
-                <span style={{ marginLeft: "3%" }}>Download</span>
-              </DownloadButton>
-            </FlexWrapper>
-          </Sticky>
-        </ThirdWrapper>
-      </FlexWrapper>
-    </PageWrapper>
+          <FlexWrapper justifyContent="center" marginTop={-8}>
+            <DownloadButton onClick={Download}>
+              <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
+              <span style={{ marginLeft: "3%" }}>Download</span>
+            </DownloadButton>
+          </FlexWrapper>
+        </Sticky>
+      </ThirdWrapper>
+      </FlexWrapper >
+    </PageWrapper >
   );
 };
 

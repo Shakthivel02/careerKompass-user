@@ -1,9 +1,6 @@
 import { Button, Figure } from "react-bootstrap";
 import styled from "styled-components";
 
-export const Logo = styled.img`
-  width: 14%;
-`;
 export const Logs = styled.img`
   width: 98%;
   position: absolute;
@@ -27,7 +24,7 @@ export const FinalFooter = styled.div`
   width: 70%;
   margin-left: 10%;
   padding: 3%;
-  border-radius: 10px;
+  border-radius: 17px;
   margin-top: 4%;
 `;
 
@@ -37,18 +34,18 @@ interface ParaProps {
   marginLeft?: string;
 }
 export const Para = styled.p<ParaProps>`
-  font-family: "Open Sans", sans-serif;
-  font-size: 15px;
+  font-family: "Open-Sans", "sans-serif";
+  font-weight:550;
   line-height: 1.6;
   width: 50%;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
-  color: ${({ color }) => (color ? color : "black")};
+  color: ${({ color }) => (color ? color : "#000000")};
 `;
 export const Paras = styled.p<ParaProps>`
   font-weight: 100%;
-  font-family: "Open Sans", sans-serif;
-  font-size: 17px;
+  font-family: "Open-Sans", "sans-serif";
+  font-weight:550;
   line-height: 1.6;
   width: auto;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
@@ -57,17 +54,18 @@ export const Paras = styled.p<ParaProps>`
 `;
 
 export const UListWrapper = styled.ul`
-  margin-left: 6%;
-  line-height: 3;
+  margin-left: 5%;
+  line-height: 2;
 `;
 
 export const ListText = styled.li`
-  font-style: italic;
-  font-size: 16px;
+  font-style: Bold;
+  font-size: 17px;
+  font-weight:550;
 `;
 
 export const ContentPageLogo = styled(Figure.Image)`
-  width: 80%;
+  width: 70%;
   margin-left: 4%;
 `;
 
@@ -77,7 +75,7 @@ export const ContentLogo = styled(Figure.Image)`
 `;
 
 export const CardLogo = styled(Figure.Image)`
-  width: 70%;
+  width:98%;
 `;
 
 export const LastLogo = styled(Figure.Image)`
@@ -85,7 +83,7 @@ export const LastLogo = styled(Figure.Image)`
 `;
 
 export const SideTitles = styled.p`
-  font-weight: 600;
+  font-weight: 800;
   font-family: sans-serif;
   font-size: 15px;
   margin-left: 5%;
@@ -97,19 +95,18 @@ export const SideTitles = styled.p`
 `;
 
 export const Titles = styled.p`
-  font-family: Bold;
-  font-size: 16px;
-  font-weight: 700;
-  color: #000000;
+  font-family: "Open-Sans", "sans-serif";
+  font-size: 12px;
+  font-weight: 800;
+  color: #ff7b00;
   text-align: center;
-  margin-top: 4%;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
 `;
 
 export const Heading = styled.p`
-  font-family: Bold;
+  font-family:  "Open-Sans", "sans-serif";
   font-weight: 600;
   color: #43566d;
   align-items: center;
@@ -129,7 +126,7 @@ export const SubmitButton = styled(Button)`
   color: #ffffff;
   opacity: 1;
   margin-left: 30%;
-
+  border-radius:17px;
   &:hover,
   &:active,
   &:focus {
@@ -137,14 +134,13 @@ export const SubmitButton = styled(Button)`
   }
 `;
 export const ViewButton = styled(Button)`
-  height: 35px;
-  width: 120px;
+  width: 140px;
   background: #3335cf 0% 0% no-repeat padding-box;
-  border: none;
-  font-size: 14px;
+  font-size: 12px;
   color: #ffffff;
+  justify-content: space-around;
   opacity: 1;
-  margin-left: 75%;
+  margin-left:35%;
   &:hover,
   &:active,
   &:focus {
@@ -175,6 +171,7 @@ export const Buttons = styled(Button)`
   border: none;
   font-size: 14px;
   color: #ffffff;
+  border-radius: 17px;
   opacity: 1;
   &:hover,
   &:active,
@@ -198,7 +195,7 @@ export const ThirdWrapper = styled.div`
 export const Label = styled.div`
   color: #ff7b00;
   text-align: center;
-  font-family: serif;
+  font-family:'cursive';
   font-size: 38px;
   padding-top: 2.5%;
   background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
@@ -209,7 +206,16 @@ export const Title = styled.div`
   font-family: normal normal bold 40px/60px Montserrat;
   font-size: 24px;
   font-weight: 700;
-  margin-left: 5%;
+  margin-left: 7%;
+  margin-top: 2%;
+`;
+
+export const LastTitles = styled.div`
+  color: #000000;
+  font-family: normal normal bold 40px/60px Montserrat;
+  font-size: 19px;
+  font-weight: 500;
+  margin-left: 2%;
   margin-top: 2%;
 `;
 
@@ -256,10 +262,10 @@ export const Sticky = styled.div`
 export const RelativeWrap = styled.div`
   position: relative;
   z-index: 1000;
-  margin-left: 26%;
+  margin-left: 23%;
   margin-top: -55%;
 `;
 
 export const CareerKompass = styled(Figure.Image)`
-  width: 48%;
+  width: 45%;
 `;
