@@ -89,23 +89,6 @@ export const StreamWrapper = styled.div`
     width: 100%;
   }
 `;
-export const StreamHeader = styled.div`
-  letter-spacing: 0px;
-  color: #0f1043;
-  opacity: 1;
-  width: 25%;
-  text-align: center;
-  font-size: 23px;
-  font-weight: 600;
-  @media (max-width: 600px) {
-    text-align: center;
-    width: 100%;
-  }
-  @media (max-width: 900px) {
-    margin: 0 auto;
-    width: 100%;
-  }
-`;
 
 export const DropdownWrapper = styled.div`
   margin: auto 12px;

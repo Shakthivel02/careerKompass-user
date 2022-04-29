@@ -14,7 +14,6 @@ import {
   LeftBack,
   LevelCard,
   Para,
-  StreamHeader,
   StreamWrapper,
   TestButton,
 } from "./subcomponent";
@@ -29,7 +28,6 @@ import {
 import { useHistory } from "react-router-dom";
 import ROUTES from "../../const/routes";
 import { DropdownListProps } from "../../components/Dropdown/typings";
-import { validateUsername } from "../../helpers/formValidation";
 import { updateSelectedLevel } from "../../redux/streamMaster/action";
 
 const StreamSelection = (): ReactElement => {

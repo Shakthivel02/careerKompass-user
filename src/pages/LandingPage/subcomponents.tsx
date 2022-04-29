@@ -2,6 +2,7 @@ import {
   Button,
   Card,
   Col,
+  Figure,
   FormControl,
   InputGroup,
   Row,
@@ -18,6 +19,7 @@ export const PageWrapper = styled.div`
     width: 98%;
   }
 `;
+
 export const HeaderWrapper = styled.div`
  display: flex;
   justify-content: space-between; 
@@ -254,6 +256,12 @@ export const Cards = styled(Card)`
       background: #6c6ccf;
     }
   }
+  &:hover,
+  &:active,
+  &:focus {
+    background: #3335cf 0% 0% no-repeat padding-box;
+    color:white;
+  }
 `;
 export const CardHeader = styled(Card.Header)`
   font-size: 25px;
@@ -265,6 +273,9 @@ export const CardHeader = styled(Card.Header)`
   border: none;
   background: none;
   font-weight: bolder;
+  ${Cards}:hover &{
+    color:white;
+  }
 `;
 export const CardBody = styled(Card.Body)`
   display: flex;
@@ -277,11 +288,30 @@ export const CardFooter = styled(Card.Footer)`
   display: flex;
   background: none;
   text-align: center;
+  padding:3%;
   text-align-last: center;
-  margin: 15px 20px;
+  margin: 15px 2px;
   font-size: 14px;
-  font-family: Arial, Helvetica, sans-serif;
-  color: rgba(109, 109, 149, 1);
+  font-family:Arial;
+  color:#000000;
+  ${Cards}:hover &{
+    color:white;
+  }
+`;
+
+export const CareerKompas = styled(Figure.Image)`
+  width:"50";
+  height:"56";
+`;
+
+export const SecondImage = styled(Figure.Image)`
+ width:"50";
+ height:"56";
+`;
+
+export const ThirdImage = styled(Figure.Image)`
+ width:"50";
+ height:"56";
 `;
 
 export const Container3 = styled.div`
@@ -385,6 +415,43 @@ export const Body4 = styled.div`
     font-size: 15px;
   }
 `;
+
+export const Labels = styled.p`
+  font-weight: 800;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-top: 6%;
+  color: #6D6D95;
+  opacity: 1;
+  width: 100%;
+  color: ${({ color }) => (color ? color : null)};
+`;
+
+
+export const LastLabels = styled.p`
+  font-weight: 800;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-left:14%;
+  margin-top: 6%;
+  color: #6D6D95;
+  opacity: 1;
+  width: 100%;
+  color: ${({ color }) => (color ? color : null)};
+`;
+
+export const FirstLabels = styled.p`
+  font-weight: 800;
+  font-family: sans-serif;
+  font-size: 15px;
+  margin-left:3.5%;
+  margin-top: 6%;
+  color: #6D6D95;
+  opacity: 1;
+  width: 100%;
+  color: ${({ color }) => (color ? color : null)};
+`;
+
 export const GCard = styled(Card)`
   background-color: #ffffff;
   width: 95px;
@@ -397,25 +464,33 @@ export const GCard = styled(Card)`
   text-align: center;
   cursor: pointer;
   height: 95px;
-  :hover {
-    background-color: #3335cf;
-    color: red;
+  &:hover,
+  &:active,
+  &:focus {
+    background: #3335cf 0% 0% no-repeat padding-box;
   }
   @media (max-width: 600px) {
     padding-top: 10px;
   }
 `;
+
+
+
 export const Image = styled.img`
   width: 50px;
   height: 50px;
   :hover {
-    background-color: #ffffff;
-    color: red;
+    background-color: #3335cf;
+    color: white;
+  }
+  ${GCard}:hover &{
+    color: white;
   }
   @media (max-width: 600px) {
     width: 50%;
     height: 50px;
   }
+  
 `;
 export const Label = styled.div`
   color: rgba(109, 109, 149, 1);

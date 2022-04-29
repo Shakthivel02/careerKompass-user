@@ -30,15 +30,19 @@ import {
     Body3,
     ContainImg,
     ContainBImg,
+    CareerKompas,
+    ThirdImage,
+    SecondImage
 } from "./subcomponents"
 import logo from '../../assests/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import c1 from '../../assests/c1.png'
-import c2 from '../../assests/c2.png'
-import c3 from '../../assests/c3.png'
+
 import co3 from '../../assests/co3.png'
 import Footers from '../LandingPage/footer/index'
 import Backimage11 from "../../assests/contain1.png";
+import Group from "../../assests/Group 2112.svg";
+import identify from "../../assests/identify.svg";
+import advance from "../../assests/advance.svg";
 import Backimage12 from "../../assests/contain2.png";
 import {
     ModalDialog,
@@ -57,7 +61,7 @@ import {
     ModalLoginButton,
     ModalWrapper,
     LoginWrapper,
-    HelperText
+    HelperText, 
 } from "./Login/subcomponents"
 import lock from '../../assests/login.png'
 import { shallowEqual, useDispatch, useSelector } from "react-redux"
@@ -79,7 +83,9 @@ import {
     ModalRegisterButton,
     Span,
     RegisterTitle,
-    RegisterHelperText
+    RegisterHelperText,
+
+   
 } from "./RegisterStyle/subcomponents"
 import { EditableDropdown, FlexWrapper, Loader } from "../../components"
 import { getProfileDropdown, getCountryDropdown, getStateDropdown } from "../../helpers/dropdown"
@@ -188,7 +194,7 @@ const User = (): ReactElement => {
           <Cards>
             <CardHeader>Explore</CardHeader>
             <CardBody>
-              <img src={c1} width="50" height="60" />
+            <CareerKompas src={Group} />
             </CardBody>
             <CardFooter>
               Careerskompass computes your personality traits, strong interest
@@ -199,7 +205,7 @@ const User = (): ReactElement => {
           <Cards>
             <CardHeader>Idetify</CardHeader>
             <CardBody>
-              <img src={c2} width="50" height="50" />
+              <SecondImage src={identify} />
             </CardBody>
             <CardFooter>
               The testing elements capture your apporach to various scenarious
@@ -210,7 +216,7 @@ const User = (): ReactElement => {
           <Cards>
             <CardHeader>Advance</CardHeader>
             <CardBody>
-              <img src={c3} width="50" height="56" />
+              <ThirdImage src={advance} />
             </CardBody>
             <CardFooter>
               Receive an inventory of career interests and a personalized guide

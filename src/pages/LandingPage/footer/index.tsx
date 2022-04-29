@@ -18,24 +18,27 @@ import {
     CardContainer,
     FinalWrapper,
     Input,
+    FirstLabels,
     Form,
+    LastLabels,
     ButtonS, 
     Title,
     WWraper,
+    Labels,
     CardRow,  
 } from "../subcomponents"
 import logo2 from "../../../assests/logo.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import p1 from "../../../assests/p1.png"
-import p2 from "../../../assests/p2.png"
-import p3 from "../../../assests/p3.png"
-import p4 from "../../../assests/p4.png"
-import p5 from "../../../assests/p5.png"
-import p6 from "../../../assests/p6.png"
-import p7 from "../../../assests/p7.png"
-import p8 from "../../../assests/p8.png"
-import p9 from "../../../assests/p9.png"
-import p10 from "../../../assests/p10.png"
+import product from "../../../assests/product design.svg";
+import structural from "../../../assests/structural.svg";
+import ev from "../../../assests/ev tech.svg";
+import auto from "../../../assests/automotive.svg";
+import aero from "../../../assests/aero.svg";
+import data from "../../../assests/data science.svg";
+import trans from "../../../assests/Group 2540.svg";
+import civil from "../../../assests/Group 41962.svg";
+import arch from "../../../assests/Group 41946.svg";
+import ic from "../../../assests/Group 41999.svg";
 import { Col } from "react-bootstrap"
 
 const Footers = (): ReactElement => {
@@ -53,55 +56,65 @@ const Footers = (): ReactElement => {
                     <CardRow xs={2} sm={5}>
                         <Col>
                             <GCard>
-                                <Image src={p1} />
+                                <Image src={product} />
                             </GCard>
+                            <Labels>Product Design</Labels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p2} />
+                                <Image src={structural} />
                             </GCard>
+                            <FirstLabels>Structural</FirstLabels>
+                        </Col>
+                        <Col>
+                            <GCard> 
+                                <Image src={ev} />
+                            </GCard>
+                            <Labels>EV Technology</Labels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p3} />
+                                <Image src={auto} />
                             </GCard>
+                            <FirstLabels>Automotive</FirstLabels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p4} />
+                                <Image src={aero} />
                             </GCard>
-                        </Col>
-                        <Col>
-                            <GCard>
-                                <Image src={p5} />
-                            </GCard>
+                            <Labels>Aeronautical</Labels>
                         </Col>
                     </CardRow>
                     <CardRow xs={2} sm={5}>
                         <Col>
                             <GCard>
-                                <Image src={p6} />
+                                <Image src={data} />
                             </GCard>
+                            <Labels>Data Science</Labels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p7} />
+                                <Image src={trans} />
                             </GCard>
+                            <Labels>Transportation</Labels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p8} />
+                                <Image src={civil} />
                             </GCard>
+                            <LastLabels>Civil</LastLabels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p9} />
+                                <Image src={arch} />
                             </GCard>
+                            <Labels>Architectural</Labels>
                         </Col>
                         <Col>
                             <GCard>
-                                <Image src={p10} />
+                                <Image src={ic} />
                             </GCard>
+                            <LastLabels>IT&CS</LastLabels>
                         </Col>
                     </CardRow>
                 </CardWrapper1>
