@@ -46,9 +46,10 @@ import { shallowEqual, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 const ResultCopy = () => {
-  const { Stream } = useSelector(
+  const { Stream, userId } = useSelector(
     (state: RootState) => ({
       Stream: state.stream.questions,
+      userId: state.login.userInfo?.userId,
     }),
     shallowEqual
   );
@@ -157,7 +158,11 @@ const ResultCopy = () => {
               <LastLogo src={ab} />
             </FlexWrapper>
             <FlexWrapper justifyContent="center" marginTop={-8}>
-              <DownloadButton onClick={Download}>
+              <DownloadButton
+                onClick={() => {
+                  Download(userId);
+                }}
+              >
                 <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
                 <span style={{ marginLeft: "3%" }}>Download</span>
               </DownloadButton>

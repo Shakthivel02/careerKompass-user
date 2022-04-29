@@ -4,7 +4,7 @@ const apiEndpoints = {
   GetQuestionByTest: "Get_Question",
   GetTestByStream: "Get_Test",
   logout: "Logout",
-  PostAnswers: "PostAnswers",
+  PostAnswers: "StoreResult",
   addUser: "Add_User",
   getProfile: "Get_Profile",
   getLevel: "Get_Level",

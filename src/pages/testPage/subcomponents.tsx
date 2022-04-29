@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import styled from "styled-components";
 import { QuestionSectionProps } from "./typings";
 import { shallowEqual, useSelector, useDispatch } from "react-redux";
@@ -113,6 +113,9 @@ export const Logo = styled.img`
 
 export const OptionText = styled.span`
   float: right;
+  @media (max-width: 600px) {
+    float: right;
+  }
 `;
 
 export const Option = styled.span`
@@ -135,11 +138,13 @@ export const QuestionSection = ({
 }: QuestionSectionProps): ReactElement => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const { TestId, level, SelectAnswer } = useSelector(
+  const { TestId, level, SelectAnswer, TestPayload, userId } = useSelector(
     (state: RootState) => ({
       TestId: state.stream.questions,
       level: state.stream.level.test_level,
       SelectAnswer: state.Test.AnswerList as Array<SelectedAnswers>,
+      TestPayload: state.Test.TestPayload,
+      userId: state.login.userInfo?.userId,
     }),
     shallowEqual
   );
@@ -148,6 +153,9 @@ export const QuestionSection = ({
   const TestID = TestId ? getTestId(TestId) : [];
   const [TestName] = TestID.map((x) => {
     return x.name;
+  });
+  const [Testid] = TestID.map((x) => {
+    return x.id;
   });
 
   //NextButton
@@ -164,13 +172,14 @@ export const QuestionSection = ({
       SetbuttonValue("Submit");
     }
     if (quesId[activeQuestions] === quesId[data.length - 1]) {
-      dispatch(postAnswer(selectedAnswer));
+      dispatch(postAnswer(FinalPayload));
       history.push(ROUTES.RESULTCOPY);
     }
   };
 
   //changeEvent
   const [selectedAnswer, setSelectedAnswer] = useState(SelectAnswer);
+  const [FinalPayload, setFinalPayload] = useState(TestPayload);
 
   const changeHandler = (e: any) => {
     const isQuesIncluded = selectedAnswer.some(
@@ -182,7 +191,7 @@ export const QuestionSection = ({
         if (item?.questionId === `${quesId[activeQuestions]}`) {
           return {
             questionId: `${quesId[activeQuestions]}`,
-            answer: e.target.value,
+            ans: e.target.value,
           };
         }
         return item;
@@ -193,13 +202,17 @@ export const QuestionSection = ({
         ...selectedAnswer,
         {
           questionId: `${quesId[activeQuestions]}`,
-          answer: e.target.value,
+          ans: e.target.value,
         },
       ]);
     }
   };
   console.log(selectedAnswer);
+  console.log(FinalPayload);
 
+  useEffect(() => {
+    setFinalPayload({ testID: Testid, userID: userId, answer: selectedAnswer });
+  }, [selectedAnswer]);
   return (
     <PageWrapper>
       <UserHeader />
