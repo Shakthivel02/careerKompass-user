@@ -59,6 +59,7 @@ const StreamSelection = (): ReactElement => {
   }, [stream]);
 
   const [show, setShow] = useState(false);
+  const canSave = !!stream?.streamID;
 
   return (
     <ContainerWrapper>
@@ -135,6 +136,7 @@ const StreamSelection = (): ReactElement => {
       </Body>
       <FlexWrapper justifyContent="center" noPadding>
         <TestButton
+          disabled={!canSave}
           onClick={() => {
             dispatch(GetQuestionByTest({ testID: TestID.testID }));
             history.push(ROUTES.TEST);
