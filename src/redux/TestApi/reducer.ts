@@ -4,6 +4,11 @@ import { InitialState } from "./types";
 
 const initialState: InitialState = {
   isLoading: false,
+  TestPayload: {
+    testID: "",
+    userID: "",
+    answer: [],
+  },
   AnswerList: [],
 };
 export const TestSlice = createSlice({

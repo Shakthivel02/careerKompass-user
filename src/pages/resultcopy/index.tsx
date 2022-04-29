@@ -47,9 +47,10 @@ import { shallowEqual, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 const ResultCopy = () => {
-  const { Stream } = useSelector(
+  const { Stream, userId } = useSelector(
     (state: RootState) => ({
       Stream: state.stream.questions,
+      userId: state.login.userInfo?.userId,
     }),
     shallowEqual
   );
@@ -136,42 +137,47 @@ const ResultCopy = () => {
             </ViewButton>
           </CardWrapper>
         </FlexWrapper>
-      <SideTitles>Subscription plan</SideTitles>
-      <Paras>
-        You can choose a subscription plan suitable for you and enroll in a
-        number of individual courses and learn all <br/>the recommended software
-        / skills - without having to pay for each and every course
-        separately. Subscription plans<br/> are the best when you want to learn
-        more than one course.
-      </Paras>
-      <SideTitles>Individual programs</SideTitles>
-      <Paras>
-        CloudKampass offers niche,standalone courses in the recommended
-        software. you can always take up these<br/> courses.
-      </Paras>
-      <FinalFooter>
-        <Text>Enquire Now</Text>
-        <SubmitButton> Email us</SubmitButton>
-        <Buttons>Chat with us</Buttons>
-      </FinalFooter>
-    </FirstWrapper>
-    <ThirdWrapper>
-        <Sticky>
-          <FlexWrapper justifyContent="center">
-            <LastTitles> Your Result Document for</LastTitles>
-            <Heading>Aeronautical-Product Head</Heading>
-            <LastLogo src={ab} />
-          </FlexWrapper>
-          <FlexWrapper justifyContent="center" marginTop={-8}>
-            <DownloadButton onClick={Download}>
-              <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
-              <span style={{ marginLeft: "3%" }}>Download</span>
-            </DownloadButton>
-          </FlexWrapper>
-        </Sticky>
-      </ThirdWrapper>
-      </FlexWrapper >
-    </PageWrapper >
+          <SideTitles>Subscription plan</SideTitles>
+          <Paras>
+            You can choose a subscription plan suitable for you and enroll in a
+            number of individual courses and learn all the recommended software
+            / skills - without having to pay for each and every course
+            separately. Subscription plans are the best when you want to learn
+            more than one course.
+          </Paras>
+          <SideTitles>Individual programs</SideTitles>
+          <Paras>
+            CloudKampass offers niche,standalone courses in the recommended
+            software. you can always take up these couses
+          </Paras>
+          <FinalFooter>
+            <Text>Enquire Now</Text>
+            <SubmitButton> Email us</SubmitButton>
+            <Buttons>Chat with us</Buttons>
+          </FinalFooter>
+        </FirstWrapper>
+        <ThirdWrapper>
+          <Sticky>
+            <FlexWrapper justifyContent="center">
+              <Titles> Your Result Document for</Titles>
+              <Heading>Aeronautical-Product Head</Heading>
+              <LastLogo src={ab} />
+            </FlexWrapper>
+            <FlexWrapper justifyContent="center" marginTop={-8}>
+              <DownloadButton
+                onClick={() => {
+                  Download(userId);
+                }}
+              >
+                <FontAwesomeIcon icon={["fas", "download"]} size="sm" />
+                <span style={{ marginLeft: "3%" }}>Download</span>
+              </DownloadButton>
+            </FlexWrapper>
+          </Sticky>
+        </ThirdWrapper>
+      </FlexWrapper>
+    </PageWrapper>
+
   );
 };
 
