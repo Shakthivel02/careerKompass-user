@@ -34,8 +34,8 @@ interface ParaProps {
   marginLeft?: string;
 }
 export const Para = styled.p<ParaProps>`
-  font-family: "Open-Sans", "sans-serif";
-  font-weight:550;
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 550;
   line-height: 1.6;
   width: 50%;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
@@ -44,8 +44,8 @@ export const Para = styled.p<ParaProps>`
 `;
 export const Paras = styled.p<ParaProps>`
   font-weight: 100%;
-  font-family: "Open-Sans", "sans-serif";
-  font-weight:550;
+  font-family: "Open-Sans", sans-serif;
+  font-weight: 550;
   line-height: 1.6;
   width: auto;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
@@ -61,7 +61,7 @@ export const UListWrapper = styled.ul`
 export const ListText = styled.li`
   font-style: Bold;
   font-size: 17px;
-  font-weight:550;
+  font-weight: 550;
 `;
 
 export const ContentPageLogo = styled(Figure.Image)`
@@ -75,7 +75,7 @@ export const ContentLogo = styled(Figure.Image)`
 `;
 
 export const CardLogo = styled(Figure.Image)`
-  width:98%;
+  width: 98%;
 `;
 
 export const LastLogo = styled(Figure.Image)`
@@ -84,7 +84,7 @@ export const LastLogo = styled(Figure.Image)`
 
 export const SideTitles = styled.p`
   font-weight: 800;
-  font-family: sans-serif;
+  font-family: "Open-Sans", sans-serif;
   font-size: 15px;
   margin-left: 5%;
   margin-top: 5%;
@@ -106,7 +106,7 @@ export const Titles = styled.p`
 `;
 
 export const Heading = styled.p`
-  font-family:  "Open-Sans", "sans-serif";
+  font-family: "Open-Sans", "sans-serif";
   font-weight: 600;
   color: #43566d;
   align-items: center;
@@ -126,7 +126,7 @@ export const SubmitButton = styled(Button)`
   color: #ffffff;
   opacity: 1;
   margin-left: 30%;
-  border-radius:17px;
+  border-radius: 17px;
   &:hover,
   &:active,
   &:focus {
@@ -140,7 +140,7 @@ export const ViewButton = styled(Button)`
   color: #ffffff;
   justify-content: space-around;
   opacity: 1;
-  margin-left:35%;
+  margin-left: 35%;
   &:hover,
   &:active,
   &:focus {
@@ -195,7 +195,7 @@ export const ThirdWrapper = styled.div`
 export const Label = styled.div`
   color: #ff7b00;
   text-align: center;
-  font-family:'cursive';
+  font-family: "cursive";
   font-size: 38px;
   padding-top: 2.5%;
   background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
@@ -263,7 +263,7 @@ export const RelativeWrap = styled.div`
   position: relative;
   z-index: 1000;
   margin-left: 23%;
-  margin-top: -55%;
+  margin-top: -50%;
 `;
 
 export const CareerKompass = styled(Figure.Image)`

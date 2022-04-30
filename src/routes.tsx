@@ -2,7 +2,7 @@ import { Switch, Route } from "react-router-dom";
 import ROUTES from "./const/routes";
 import ProtectedRoute from "./container/ProtectedRoute";
 
-import { TestPage, User, StreamSelection, ResultCopy } from "./pages";
+import { TestPage, User, StreamSelection, Result } from "./pages";
 
 const Routes = () => {
   return (
@@ -13,7 +13,7 @@ const Routes = () => {
         component={StreamSelection}
       />
       <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
-      <ProtectedRoute path={ROUTES.RESULTCOPY} component={ResultCopy} />
+      <ProtectedRoute path={ROUTES.RESULTCOPY} component={Result} />
     </Switch>
   );
 };

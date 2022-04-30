@@ -57,7 +57,7 @@ const StreamSelection = (): ReactElement => {
   }, [stream]);
 
   const [show, setShow] = useState(false);
-  const canSave = !!stream?.streamID;
+  const canSave = stream?.streamID;
 
   return (
     <ContainerWrapper>
