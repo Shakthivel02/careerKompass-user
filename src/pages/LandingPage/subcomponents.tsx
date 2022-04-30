@@ -21,8 +21,8 @@ export const PageWrapper = styled.div`
 `;
 
 export const HeaderWrapper = styled.div`
- display: flex;
-  justify-content: space-between; 
+  display: flex;
+  justify-content: space-between;
   width: 90%;
   margin: 20px auto;
   @media (max-width: 600px) {
@@ -260,7 +260,7 @@ export const Cards = styled(Card)`
   &:active,
   &:focus {
     background: #3335cf 0% 0% no-repeat padding-box;
-    color:white;
+    color: white;
   }
 `;
 export const CardHeader = styled(Card.Header)`
@@ -273,8 +273,8 @@ export const CardHeader = styled(Card.Header)`
   border: none;
   background: none;
   font-weight: bolder;
-  ${Cards}:hover &{
-    color:white;
+  ${Cards}:hover & {
+    color: white;
   }
 `;
 export const CardBody = styled(Card.Body)`
@@ -288,30 +288,29 @@ export const CardFooter = styled(Card.Footer)`
   display: flex;
   background: none;
   text-align: center;
-  padding:3%;
+  padding: 4%;
   text-align-last: center;
-  margin: 15px 2px;
   font-size: 14px;
-  font-family:Arial;
-  color:#000000;
-  ${Cards}:hover &{
-    color:white;
+  font-family: Arial;
+  color: #000000;
+  ${Cards}:hover & {
+    color: white;
   }
 `;
 
 export const CareerKompas = styled(Figure.Image)`
-  width:"50";
-  height:"56";
+  width: "50";
+  height: "56";
 `;
 
 export const SecondImage = styled(Figure.Image)`
- width:"50";
- height:"56";
+  width: "50";
+  height: "56";
 `;
 
 export const ThirdImage = styled(Figure.Image)`
- width:"50";
- height:"56";
+  width: "50";
+  height: "56";
 `;
 
 export const Container3 = styled.div`
@@ -421,20 +420,19 @@ export const Labels = styled.p`
   font-family: sans-serif;
   font-size: 15px;
   margin-top: 6%;
-  color: #6D6D95;
+  color: #6d6d95;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
 `;
 
-
 export const LastLabels = styled.p`
   font-weight: 800;
   font-family: sans-serif;
   font-size: 15px;
-  margin-left:14%;
+  margin-left: 14%;
   margin-top: 6%;
-  color: #6D6D95;
+  color: #6d6d95;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -444,9 +442,9 @@ export const FirstLabels = styled.p`
   font-weight: 800;
   font-family: sans-serif;
   font-size: 15px;
-  margin-left:3.5%;
+  margin-left: 3.5%;
   margin-top: 6%;
-  color: #6D6D95;
+  color: #6d6d95;
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
@@ -474,23 +472,19 @@ export const GCard = styled(Card)`
   }
 `;
 
-
-
 export const Image = styled.img`
   width: 50px;
   height: 50px;
   :hover {
     background-color: #3335cf;
-    color: white;
   }
-  ${GCard}:hover &{
+  ${GCard}:hover & {
     color: white;
   }
   @media (max-width: 600px) {
     width: 50%;
     height: 50px;
   }
-  
 `;
 export const Label = styled.div`
   color: rgba(109, 109, 149, 1);

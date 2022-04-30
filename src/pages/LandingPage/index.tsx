@@ -1,97 +1,128 @@
 /* eslint-disable no-empty-pattern */
 /* eslint-disable jsx-a11y/alt-text */
-import { ChangeEvent, ReactElement, SyntheticEvent, useEffect, useState } from "react"
 import {
-    Container1,
-    Container2,
-    LoginButton,
-    Logo,
-    LogoWrapper,
-    MenuContainer,
-    PageWrapper,
-    HeaderWrapper,
-    Wrapper,
-    HamburgerMenu,
-    Header,
-    Body,
-    Footer,
-    Details,
-    Start,
-    Details2,
-    Header2,
-    Body2,
-    Cards,
-    CardWrapper,
-    CardHeader,
-    CardBody,
-    CardFooter,
-    Container3,
-    Header3,
-    Body3,
-    ContainImg,
-    ContainBImg,
-    CareerKompas,
-    ThirdImage,
-    SecondImage
-} from "./subcomponents"
-import logo from '../../assests/logo.png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+  ChangeEvent,
+  ReactElement,
+  SyntheticEvent,
+  useEffect,
+  useState,
+} from "react";
+import {
+  Container1,
+  Container2,
+  LoginButton,
+  Logo,
+  LogoWrapper,
+  MenuContainer,
+  PageWrapper,
+  HeaderWrapper,
+  Wrapper,
+  HamburgerMenu,
+  Header,
+  Body,
+  Footer,
+  Details,
+  Start,
+  Details2,
+  Header2,
+  Body2,
+  Cards,
+  CardWrapper,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Container3,
+  Header3,
+  Body3,
+  ContainImg,
+  ContainBImg,
+  CareerKompas,
+  ThirdImage,
+  SecondImage,
+} from "./subcomponents";
+import logo from "../../assests/logo.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import co3 from '../../assests/co3.png'
-import Footers from '../LandingPage/footer/index'
+import co3 from "../../assests/co3.png";
+import Footers from "../LandingPage/footer/index";
 import Backimage11 from "../../assests/contain1.png";
 import Group from "../../assests/Group 2112.svg";
 import identify from "../../assests/identify.svg";
 import advance from "../../assests/advance.svg";
 import Backimage12 from "../../assests/contain2.png";
 import {
-    ModalDialog,
-    LoginHeaderWrapper,
-    LoginLogo,
-    LoginDialog,
-    LockLogo,
-    Title,
-    BodyWrapper,
-    Input,
-    FormInput,
-    InputBox,
-    CheckboxWrapper,
-    SubTitle,
-    Forgot,
-    ModalLoginButton,
-    ModalWrapper,
-    LoginWrapper,
-    HelperText, 
-} from "./Login/subcomponents"
-import lock from '../../assests/login.png'
-import { shallowEqual, useDispatch, useSelector } from "react-redux"
-import ROUTES from "../../const/routes"
-import { useHistory } from "react-router-dom"
-import { RootState } from "../../redux/store"
-import { handleAuthenticate, updatePassword, updateUserName } from "../../redux/login/action"
+  ModalDialog,
+  LoginHeaderWrapper,
+  LoginLogo,
+  LoginDialog,
+  LockLogo,
+  Title,
+  BodyWrapper,
+  Input,
+  FormInput,
+  InputBox,
+  CheckboxWrapper,
+  SubTitle,
+  Forgot,
+  ModalLoginButton,
+  ModalWrapper,
+  LoginWrapper,
+  HelperText,
+} from "./Login/subcomponents";
+import lock from "../../assests/login.png";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import ROUTES from "../../const/routes";
+import { useHistory } from "react-router-dom";
+import { RootState } from "../../redux/store";
 import {
-    RegisterWrapper,
-    RegisterHeaderWrapper,
-    RegisterLock,
-    RegisterLogo,
-    RegisterModalDialog,
-    RegisterModalWrapper,
-    RegisterTitleWrapper,
-    RegisterBodyWrapper,
-    RegisterInput,
-    RegisterFormInput,
-    ModalRegisterButton,
-    Span,
-    RegisterTitle,
-    RegisterHelperText,
-
-   
-} from "./RegisterStyle/subcomponents"
-import { EditableDropdown, FlexWrapper, Loader } from "../../components"
-import { getProfileDropdown, getCountryDropdown, getStateDropdown } from "../../helpers/dropdown"
-import { getProfile, AddUserApi, getCountries } from "../../redux/Register/action"
-import { DropdownListProps } from "../../components/EditableDropdown/typings"
-import { OTPBodyWrapper, OTPFormInput, OTPHeaderWrapper, OTPHelperText, OTPInput, OTPLock, OTPLogo, OTPModalDialog, OTPSubmitButton, OTPTitle, OTPTitleWrapper, OTPVerifyWrapper, OTPWrapper, ResendButton } from "./OTPStyle/subcomponent"
+  handleAuthenticate,
+  updatePassword,
+  updateUserName,
+} from "../../redux/login/action";
+import {
+  RegisterWrapper,
+  RegisterHeaderWrapper,
+  RegisterLock,
+  RegisterLogo,
+  RegisterModalDialog,
+  RegisterModalWrapper,
+  RegisterTitleWrapper,
+  RegisterBodyWrapper,
+  RegisterInput,
+  RegisterFormInput,
+  ModalRegisterButton,
+  Span,
+  RegisterTitle,
+  RegisterHelperText,
+} from "./RegisterStyle/subcomponents";
+import { EditableDropdown, FlexWrapper, Loader } from "../../components";
+import {
+  getProfileDropdown,
+  getCountryDropdown,
+  getStateDropdown,
+} from "../../helpers/dropdown";
+import {
+  getProfile,
+  AddUserApi,
+  getCountries,
+} from "../../redux/Register/action";
+import { DropdownListProps } from "../../components/EditableDropdown/typings";
+import {
+  OTPBodyWrapper,
+  OTPFormInput,
+  OTPHeaderWrapper,
+  OTPHelperText,
+  OTPInput,
+  OTPLock,
+  OTPLogo,
+  OTPModalDialog,
+  OTPSubmitButton,
+  OTPTitle,
+  OTPTitleWrapper,
+  OTPVerifyWrapper,
+  OTPWrapper,
+  ResendButton,
+} from "./OTPStyle/subcomponent";
 import { getCountryPin, getStates } from "../../redux/Register/api";
 
 const User = (): ReactElement => {
@@ -194,7 +225,7 @@ const User = (): ReactElement => {
           <Cards>
             <CardHeader>Explore</CardHeader>
             <CardBody>
-            <CareerKompas src={Group} />
+              <CareerKompas src={Group} />
             </CardBody>
             <CardFooter>
               Careerskompass computes your personality traits, strong interest
@@ -461,4 +492,4 @@ const User = (): ReactElement => {
   );
 };
 
-export default User
+export default User;
