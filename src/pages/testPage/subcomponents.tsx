@@ -158,25 +158,6 @@ export const QuestionSection = ({
     return x.id;
   });
 
-  //NextButton
-  const [buttonValue, SetbuttonValue] = useState("Next");
-
-  const nextClickHandle = () => {
-    if (data.length > activeQuestions + 1) {
-      onSetActiveQuestion(activeQuestions + 1);
-    } else {
-      onSetActiveQuestion(0);
-    }
-    //Button Value
-    if (quesId[activeQuestions] === quesId[data.length - 2]) {
-      SetbuttonValue("Submit");
-    }
-    if (quesId[activeQuestions] === quesId[data.length - 1]) {
-      dispatch(postAnswer(FinalPayload));
-      history.push(ROUTES.RESULTCOPY);
-    }
-  };
-
   //changeEvent
   const [selectedAnswer, setSelectedAnswer] = useState(SelectAnswer);
   const [FinalPayload, setFinalPayload] = useState(TestPayload);
@@ -207,8 +188,41 @@ export const QuestionSection = ({
       ]);
     }
   };
-  console.log(selectedAnswer);
-  console.log(FinalPayload);
+
+  //NextButton
+  const [buttonValue, SetbuttonValue] = useState("Next");
+
+  const nextClickHandle = () => {
+    if (data.length > activeQuestions + 1) {
+      console.log(selectedAnswer[activeQuestions]);
+
+      if (
+        selectedAnswer[activeQuestions].ans === undefined ||
+        selectedAnswer[activeQuestions] === undefined
+      ) {
+        alert("please select something");
+      } else {
+        onSetActiveQuestion(activeQuestions + 1);
+      }
+    } else {
+      onSetActiveQuestion(data.length - 1);
+    }
+    //Button Value
+    if (quesId[activeQuestions] === quesId[data.length - 2]) {
+      SetbuttonValue("Submit");
+    }
+    if (quesId[activeQuestions] === quesId[data.length - 1]) {
+      if (
+        selectedAnswer[activeQuestions].ans === undefined ||
+        selectedAnswer[activeQuestions] === undefined
+      ) {
+        alert("please select something");
+      } else {
+        dispatch(postAnswer(FinalPayload));
+        history.push(ROUTES.RESULTCOPY);
+      }
+    }
+  };
 
   useEffect(() => {
     setFinalPayload({ testID: Testid, userID: userId, answer: selectedAnswer });

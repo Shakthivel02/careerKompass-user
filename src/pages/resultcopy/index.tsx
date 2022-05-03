@@ -128,7 +128,7 @@ const Result = () => {
             for you:
           </Paras>
           <FlexWrapper>
-            <CardWrapper width="25%" height="10%" marginleft="5%">
+            <CardWrapper width="30%" height="10%" marginleft="5%">
               <CardLogo src={log} />
               <Titles> Certified FEA Aviation Engineer</Titles>
               <ViewButton>

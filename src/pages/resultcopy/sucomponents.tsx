@@ -95,7 +95,7 @@ export const SideTitles = styled.p`
 `;
 
 export const Titles = styled.p`
-  font-family: "Open-Sans", "sans-serif";
+  font-family: "Open-Sans", sans-serif;
   font-size: 12px;
   font-weight: 800;
   color: #ff7b00;
