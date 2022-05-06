@@ -38,6 +38,11 @@ const Bold = styled.p<bold>`
   font-family: Tahoma, Helvetica, sans-serif;
   padding-top: 3%;
   padding-right: 2%;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    width: 60%;
+    margin-left:5%;
+  }
 `;
 const QuestionContainer = styled.div`
   width: 70%;
@@ -66,6 +71,9 @@ const Optoins = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 const OptionButton = styled(Button)`
@@ -86,6 +94,9 @@ const OptionButton = styled(Button)`
   &:focus {
     color: black;
     background: linear-gradient(90deg, #3335cf 20%, #c5c5ff 20%);
+  }
+  @media (max-width: 600px) {
+    margin:0 auto;
   }
 `;
 
@@ -109,12 +120,16 @@ const SubmitButton = styled(Button)`
 export const Logo = styled.img`
   width: 12%;
   float: left;
+  @media (max-width: 600px) {
+    width:10%;
+  }
 `;
 
 export const OptionText = styled.span`
   float: right;
   @media (max-width: 600px) {
-    float: right;
+    width: 100%;
+   
   }
 `;
 
@@ -126,6 +141,7 @@ export const Option = styled.span`
   ${OptionButton}:focus & {
     color: white;
   }
+ 
 `;
 
 export const QuestionSection = ({

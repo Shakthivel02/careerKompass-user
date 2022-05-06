@@ -132,7 +132,7 @@ const StreamSelection = (): ReactElement => {
           </PageWrapper>
         ) : null}
       </Body>
-      <FlexWrapper justifyContent="center" noPadding>
+      <FlexWrapper justifyContent="center" noPadding >
         <TestButton
           disabled={!canSave}
           onClick={() => {
