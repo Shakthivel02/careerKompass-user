@@ -16,9 +16,9 @@ export const Text = styled.div`
   color: white;
   font-size: 20px;
   @media (max-width: 600px) {
-    font-size:10px;
-    width:100%;
-    margin:3% auto;
+    font-size: 10px;
+    width: 100%;
+    margin: 3% auto;
   }
 `;
 
@@ -44,7 +44,7 @@ interface ParaProps {
 }
 export const Para = styled.p<ParaProps>`
   font-family: "Open-Sans", sans-serif;
-  font-weight: 550;
+  font-weight: 400;
   line-height: 1.6;
   width: 50%;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
@@ -57,19 +57,17 @@ export const Para = styled.p<ParaProps>`
   }
 `;
 export const Paras = styled.p<ParaProps>`
-  font-weight: 100%;
   font-family: "Open-Sans", sans-serif;
-  font-weight: 550;
+  font-weight: 400;
   line-height: 1.6;
-  width: auto;
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
   color: ${({ color }) => (color ? color : "black")};
 
   @media (max-width: 600px) {
-     margin: 0 auto;
-     font-size: 9px;
-      width: 100%;
+    margin: 0 auto;
+    font-size: 9px;
+    width: 100%;
   }
 `;
 
@@ -77,13 +75,13 @@ export const UListWrapper = styled.ul`
   margin-left: 5%;
   line-height: 2;
   @media (max-width: 600px) {
-    font-size:10px;
+    font-size: 10px;
   }
 `;
 
 export const ListText = styled.li`
   font-style: Bold;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 550;
   @media (max-width: 600px) {
     font-size: 13px;
@@ -123,9 +121,9 @@ export const SideTitles = styled.p`
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
   @media (max-width: 600px) {
-   margin: 0 auto;
+    margin: 0 auto;
     font-size: 13px;
-    padding-bottom:2%;
+    padding-bottom: 2%;
   }
 `;
 
@@ -194,7 +192,7 @@ export const ViewButton = styled(Button)`
   }
   @media (max-width: 600px) {
     font-size: 9px;
-    width:60%;
+    width: 60%;
   }
 `;
 
@@ -213,7 +211,7 @@ export const DownloadButton = styled(Button)`
     background: #3335cf 0% 0% no-repeat padding-box;
   }
   @media (max-width: 600px) {
-    font-size:68%;
+    font-size: 68%;
     width: 75%;
   }
 `;
@@ -268,7 +266,7 @@ export const Title = styled.div`
   font-family: normal normal bold 40px/60px Montserrat;
   font-size: 24px;
   font-weight: 700;
-  margin-left: 7%;
+  margin-left: 5%;
   margin-top: 2%;
   @media (max-width: 600px) {
     font-size: 15px;
@@ -300,8 +298,7 @@ export const Bold = styled.p<bold>`
   padding-right: 2%;
   @media (max-width: 600px) {
     font-size: 13px;
-    margin-top:8%;
-  
+    margin-top: 8%;
   }
 `;
 
@@ -338,6 +335,6 @@ export const RelativeWrap = styled.div`
 export const CareerKompass = styled(Figure.Image)`
   width: 40%;
   @media (max-width: 650px) {
-   margin-bottom:30%;
+    margin-bottom: 30%;
   }
 `;
