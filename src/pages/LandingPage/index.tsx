@@ -234,7 +234,7 @@ const User = (): ReactElement => {
             </CardFooter>
           </Cards>
           <Cards>
-            <CardHeader>Idetify</CardHeader>
+            <CardHeader>Identify</CardHeader>
             <CardBody>
               <SecondImage src={identify} />
             </CardBody>

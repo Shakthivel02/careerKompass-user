@@ -200,7 +200,6 @@ export const QuestionSection = ({
         selectedAnswer[activeQuestions].ans === undefined ||
         selectedAnswer[activeQuestions] === undefined
       ) {
-        alert("please select something");
       } else {
         onSetActiveQuestion(activeQuestions + 1);
       }
@@ -216,7 +215,6 @@ export const QuestionSection = ({
         selectedAnswer[activeQuestions].ans === undefined ||
         selectedAnswer[activeQuestions] === undefined
       ) {
-        alert("please select something");
       } else {
         dispatch(postAnswer(FinalPayload));
         history.push(ROUTES.RESULTCOPY);
@@ -244,11 +242,11 @@ export const QuestionSection = ({
       </FlexWrap>
       <QuestionContainer>
         <Bold fontSize="16">
-          Question <QuestionNo>{`${quesId[activeQuestions]} of 16`}</QuestionNo>
+          Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
         </Bold>
         <FlexWrapper noPadding>
           <Bold fontWeight="600" fontSize="16">
-            {quesId[activeQuestions]}
+            {activeQuestions + 1}
           </Bold>
           <Bold fontWeight="50" fontSize="16">
             {data[activeQuestions]}
