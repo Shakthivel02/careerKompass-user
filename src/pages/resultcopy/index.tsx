@@ -13,11 +13,9 @@ import {
   Text,
   FirstWrapper,
   Titles,
-  ViewButton,
   LastLogo,
   DownloadButton,
   Heading,
-  CardLogo,
   ThirdWrapper,
   UListWrapper,
   ListText,
@@ -30,13 +28,13 @@ import {
   ContentPageLogo,
   SideTitles,
   Sticky,
-  LastTitles,
   RelativeWrap,
   CareerKompass,
+  CardWrapper2,
+  Recommanded,
+  Paras2,
 } from "./sucomponents";
-import log from "../../assests/ak3.png";
 import badgeImg from "../../assests/badge.svg";
-import logo from "../../assests/ak2.png";
 import Gp from "../../assests/Gp1.png";
 import ab from "../../assests/ak4.png";
 import careerKompass from "../../assests/careerKompass.svg";
@@ -96,12 +94,12 @@ const Result = () => {
               components are.You are also enthusiastic about documenting the
               difference in performances of things under different external
               conditions.
-              <br />
-              <br />
+
               As '{badge}' is your favourite stream.you could focus on making
               yourself conversant with laws governing flying,quality and
               performance of flying objects and the materials they are made
               of,and so on.
+
             </Para>
             <div>
               <ContentPageLogo src={badgeImg} />
@@ -117,51 +115,30 @@ const Result = () => {
                 Engineering. To shine as an analyst, focus on mastering the
                 following CAD tools:
               </Paras>
-              <FlexWrapper>
+              <FlexWrapper justifyContent="center">
                 <UListWrapper>
                   {tools.map((x) => (
                     <ListText>{x.tool}</ListText>
                   ))}
                 </UListWrapper>
               </FlexWrapper>
-            </CardWrapper>
+            </CardWrapper2>
           </FlexWrapper>
-          <SideTitles>Certified programs</SideTitles>
-          <Paras>
-            Cloudkampus offers Certified programs that equip you with the
-            recommended software and technical acumen <br />
-            required for excelling as an analyst. This program also assures you
-            internship / placement opportunities.
-            <br /> Following is the recommended Cloudkampus Certified program
-            for you:
-          </Paras>
-          <FlexWrapper>
-            <CardWrapper width="30%" height="10%" marginleft="5%">
-              <CardLogo src={log} />
-              <Titles> Certified FEA Aviation Engineer</Titles>
-              <ViewButton>
-                <span>View Program</span>
-                <FontAwesomeIcon
-                  style={{ marginLeft: "10px" }}
-                  icon={["fas", "chevron-right"]}
-                  size="sm"
-                />
-              </ViewButton>
-            </CardWrapper>
-          </FlexWrapper>
-          <SideTitles>Subscription plan</SideTitles>
-          <Paras>
+          <Recommanded>Following are the recommended CloudKampus Certified programs for you:</Recommanded>
+
+          <SideTitles>Subscription plan :</SideTitles>
+          <Paras2>
             You can choose a subscription plan suitable for you and enroll in a
             number of individual courses and learn all the recommended software
             / skills - without having to pay for each and every course
             separately. Subscription plans are the best when you want to learn
             more than one course.
-          </Paras>
-          <SideTitles>Individual programs</SideTitles>
-          <Paras>
+          </Paras2>
+          <SideTitles>Individual programs :</SideTitles>
+          <Paras2>
             CloudKampass offers niche,standalone courses in the recommended
             software. you can always take up these courses
-          </Paras>
+          </Paras2>
           <FinalFooter>
             <Text>Enquire Now</Text>
             <SubmitButton> Email us</SubmitButton>

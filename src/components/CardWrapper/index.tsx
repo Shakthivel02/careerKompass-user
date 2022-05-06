@@ -5,7 +5,11 @@ const CardWrapper = styled(Card)`
   width: ${({ width }) => (width ? width : "60%")};
   margin-left: ${({ marginleft }) => (marginleft ? marginleft : "")};
   padding: 12px 32px 16px;
-  @media (max-width: 415px) {
+  @media (max-width: 500px) {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 900px) {
     width: 100%;
     margin-bottom: 16px;
   }
