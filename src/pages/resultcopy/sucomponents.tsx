@@ -1,5 +1,6 @@
 import { Button, Card, Figure } from "react-bootstrap";
 import styled from "styled-components";
+import "../../fonts/textura/TexturaModern.ttf";
 
 export const Logs = styled.img`
   width: 98%;
@@ -19,6 +20,11 @@ export const Text = styled.div`
     font-size: 10px;
     width: 100%;
     margin: 3% auto;
+  }
+  @media (max-width: 1200px) {
+    font-size: 15px;
+    width: 100%;
+    margin:auto 0  ;
   }
 `;
 
@@ -48,7 +54,7 @@ export const Para = styled.p<ParaProps>`
   font-weight: 400;
   line-height: 1.6;
   width: 50%;
- margin: 0 auto;
+  margin: 0 auto;
   color: ${({ color }) => (color ? color : "#000000")};
   @media (max-width: 600px) {
     margin: 0 auto;
@@ -107,7 +113,7 @@ export const ContentPageLogo = styled(Figure.Image)`
   justify-content: center;
 
   @media (max-width: 500px) {
-    margin: auto 0;
+    
   }
   @media (max-width: 900px) {
   }
@@ -136,7 +142,7 @@ export const SideTitles = styled.p`
   font-size: 16px;
   margin-top: 5px;
   float: right;
-  color: #FF7B00;
+  color: #3335CF;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
   @media (max-width: 600px) {
@@ -195,6 +201,12 @@ export const SubmitButton = styled(Button)`
     font-size: 4px;
     height: fit-content;
     margin: 2% auto;
+  }
+  @media (max-width: 1200px) {
+    font-size: 12px;
+    width: 50%;
+    margin: auto 0;
+    margin-right: 10px;
   }
 `;
 export const ViewButton = styled(Button)`
@@ -255,6 +267,11 @@ export const Buttons = styled(Button)`
     height: fit-content;
     margin: 2% auto;
   }
+  @media (max-width: 1200px) {
+    font-size: 12px;
+    width: 50%;
+    margin: 3% auto;
+  }
 `;
 
 export const FirstWrapper = styled.div`
@@ -283,14 +300,20 @@ export const Label = styled.div`
 
 export const Title = styled.div`
   color: #3335cf;
-  font-family: normal normal bold 40px/60px Montserrat;
+  font-family: 'Montserrat', sans-serif; 
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 1000;
   margin-left: 5%;
   margin-top: 2%;
   @media (max-width: 600px) {
     font-size: 15px;
     margin: 0 auto;
+  }
+  @media (max-width: 1200px) {
+    font-size: 18px;
+    margin: 0 auto;
+
+   margin-top: 10px;
   }
 `;
 
@@ -317,7 +340,7 @@ export const Bold = styled.p<bold>`
   margin: auto 0;
   @media (max-width: 600px) {
     font-size: 13px;
-   margin: auto 0;
+    margin: auto 0;
     width: 100%;
   }
 `;
@@ -361,40 +384,43 @@ export const CareerKompass = styled(Figure.Image)`
 `;
 
 export const CardWrapper2 = styled(Card)`
-  width: 98%;
+  width: 75%;
   padding: 12px 32px 16px;
-  @media (max-width: 500px) {
-    width: 100%;
-    margin: 0 auto;
-    padding: 5px 5px 5px 5px;
+  border-radius: 8px;
+  @media (max-width: 500px) { 
+     margin: 0 auto; 
+     padding: 5px 5px 5px 5px;
   }
-  @media (max-width: 900px) {
-       width: 100%;
-    margin: 0 auto;
+  @media (max-width: 1200px) {
+   margin-top: 150px;
+    width: 100%;
   }
 `;
 
-export const Recommanded = styled.div` 
-float: left;
-color: black;
-font-size: 15px;
-font-weight: 700;
-@media (max-width: 500px) {
+export const Recommanded = styled.div`
+  float: left;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 0px 10px 0px;
+  @media (max-width: 500px) {
     width: 100%;
-  font-size: 12px;
+    font-size: 12px;
   }
   @media (max-width: 900px) {
     width: 100%;
-  font-size: 12px;
-   
+    font-size: 12px;
   }
-`
+`;
 
 export const Paras2 = styled.p<ParaProps>`
-  font-family: "Open-Sans", sans-serif; 
+  font-family: "Open-Sans", sans-serif;
   font-size: 14px;
-  padding: 10px 10px;
+  font-weight: 32px;
+  padding: 1px 0px 10px 0px;
   margin: auto 0;
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Roboto', sans-serif;
   color: ${({ color }) => (color ? color : "black")};
   @media (max-width: 600px) {
     margin: 0 auto;
@@ -406,4 +432,26 @@ export const Paras2 = styled.p<ParaProps>`
     font-size: 13px;
     width: 100%;
   }
+`;
+
+export const CongratWrapper = styled.div`
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid lightgray;
+`;
+export const CongratLine = styled.div`
+  margin: auto 0;
+  font-size: 35px;
+  color: #FF7B00;
+  font-weight: 1000;
+  @font-face {
+    font-family: "TexturaModern";
+    src:  url("../../fonts/textura/TexturaModern.ttf");
+    font-weight: bold;
+  }
+ font-family: "TexturaModern";
+
 `;

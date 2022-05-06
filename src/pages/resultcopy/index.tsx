@@ -1,7 +1,6 @@
 import {
   ActionButton,
   UserHeader,
-  CardWrapper,
   FlexWrapper,
 } from "../../components";
 import {
@@ -9,7 +8,6 @@ import {
   FlexWrap,
   PageWrapper,
   Logs,
-  Label,
   Text,
   FirstWrapper,
   Titles,
@@ -33,6 +31,8 @@ import {
   CardWrapper2,
   Recommanded,
   Paras2,
+  CongratLine,
+  CongratWrapper
 } from "./sucomponents";
 import badgeImg from "../../assests/badge.svg";
 import Gp from "../../assests/Gp1.png";
@@ -58,6 +58,7 @@ const Result = () => {
   const [badge] = Stream.map((x) => x.stream_name);
   const [FrstName] = userName.map((x) => x.user_name);
   const [LastName] = userName.map((x) => x.last_name);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [course] = cat.map((x) => x.course);
 
   return (
@@ -79,11 +80,11 @@ const Result = () => {
 
       <FlexWrapper>
         <FirstWrapper>
-          <CardWrapper width="100%" marginleft="-4%">
-            <Label>
+          <CongratWrapper>
+            <CongratLine>
               Congratulation.. {FrstName} {LastName}
-            </Label>
-          </CardWrapper>
+            </CongratLine>
+          </CongratWrapper>
           <Title>Your are a Analyst</Title>
           <FlexWrapper justifyContent="space-around">
             <Para>
@@ -108,8 +109,9 @@ const Result = () => {
               </RelativeWrap>
             </div>
           </FlexWrapper>
+
           <FlexWrapper justifyContent="center">
-            <CardWrapper width="75%" height="20%">
+            <CardWrapper2 >
               <Paras>
                 You can have a great scope as a product analyst in Aeronautical
                 Engineering. To shine as an analyst, focus on mastering the
@@ -124,21 +126,23 @@ const Result = () => {
               </FlexWrapper>
             </CardWrapper2>
           </FlexWrapper>
-          <Recommanded>Following are the recommended CloudKampus Certified programs for you:</Recommanded>
+          <FlexWrapper>
+            <Recommanded>Following are the recommended CloudKampus Certified programs for you:</Recommanded>
 
-          <SideTitles>Subscription plan :</SideTitles>
-          <Paras2>
-            You can choose a subscription plan suitable for you and enroll in a
-            number of individual courses and learn all the recommended software
-            / skills - without having to pay for each and every course
-            separately. Subscription plans are the best when you want to learn
-            more than one course.
-          </Paras2>
-          <SideTitles>Individual programs :</SideTitles>
-          <Paras2>
-            CloudKampass offers niche,standalone courses in the recommended
-            software. you can always take up these courses
-          </Paras2>
+            <SideTitles>Subscription plan :</SideTitles>
+            <Paras2>
+              You can choose a subscription plan suitable for you and enroll in a
+              number of individual courses and learn all the recommended software
+              / skills - without having to pay for each and every course
+              separately. Subscription plans are the best when you want to learn
+              more than one course.
+            </Paras2>
+            <SideTitles>Individual programs :</SideTitles>
+            <Paras2>
+              CloudKampass offers niche,standalone courses in the recommended
+              software. you can always take up these courses
+            </Paras2>
+          </FlexWrapper>
           <FinalFooter>
             <Text>Enquire Now</Text>
             <SubmitButton> Email us</SubmitButton>

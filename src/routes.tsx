@@ -13,7 +13,7 @@ const Routes = () => {
         component={StreamSelection}
       />
       <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
-      <Route path={ROUTES.RESULTCOPY} component={Result} />
+      <ProtectedRoute path={ROUTES.RESULTCOPY} component={Result} />
     </Switch>
   );
 };
