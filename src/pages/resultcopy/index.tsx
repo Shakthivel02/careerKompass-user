@@ -16,7 +16,6 @@ import {
   ViewButton,
   LastLogo,
   DownloadButton,
-  ContentLogo,
   Heading,
   CardLogo,
   ThirdWrapper,
@@ -47,14 +46,22 @@ import { shallowEqual, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 
 const Result = () => {
-  const { Stream, userId } = useSelector(
+  const { Stream, userId, level, userName, cat, tools } = useSelector(
     (state: RootState) => ({
       Stream: state.stream.questions,
       userId: state.login.userInfo?.userId,
+      level: state.stream.level.test_level,
+      userName: state.Test.TestResponce.user,
+      cat: state.Test.TestResponce.cat,
+      tools: state.Test.TestResponce.tools,
     }),
     shallowEqual
   );
   const [badge] = Stream.map((x) => x.stream_name);
+  const [FrstName] = userName.map((x) => x.user_name);
+  const [LastName] = userName.map((x) => x.last_name);
+  const [course] = cat.map((x) => x.course);
+
   return (
     <PageWrapper>
       <UserHeader />
@@ -75,7 +82,9 @@ const Result = () => {
       <FlexWrapper>
         <FirstWrapper>
           <CardWrapper width="100%" marginleft="-4%">
-            <Label>Congratulation.. suresh Kumar</Label>
+            <Label>
+              Congratulation.. {FrstName} {LastName}
+            </Label>
           </CardWrapper>
           <Title>Your are a Analyst</Title>
           <FlexWrapper justifyContent="space-around">
@@ -89,10 +98,10 @@ const Result = () => {
               conditions.
               <br />
               <br />
-              As 'aeronautical engineering' is your favourite stream.you could
-              focus on making yourself conversant with laws governing
-              flying,quality and performance of flying objects and the materials
-              they are made of,and so on.
+              As '{badge}' is your favourite stream.you could focus on making
+              yourself conversant with laws governing flying,quality and
+              performance of flying objects and the materials they are made
+              of,and so on.
             </Para>
             <div>
               <ContentPageLogo src={badgeImg} />
@@ -101,8 +110,8 @@ const Result = () => {
               </RelativeWrap>
             </div>
           </FlexWrapper>
-          <FlexWrapper>
-            <CardWrapper width="75%" height="20%" marginleft="10%">
+          <FlexWrapper justifyContent="center">
+            <CardWrapper width="75%" height="20%">
               <Paras>
                 You can have a great scope as a product analyst in Aeronautical
                 Engineering. To shine as an analyst, focus on mastering the
@@ -110,11 +119,10 @@ const Result = () => {
               </Paras>
               <FlexWrapper>
                 <UListWrapper>
-                  <ListText>Ansys</ListText>
-                  <ListText> Ansys Fluent</ListText>
-                  <ListText> HyperMesh</ListText>
+                  {tools.map((x) => (
+                    <ListText>{x.tool}</ListText>
+                  ))}
                 </UListWrapper>
-                <ContentLogo src={logo} />
               </FlexWrapper>
             </CardWrapper>
           </FlexWrapper>
@@ -164,7 +172,9 @@ const Result = () => {
           <Sticky>
             <FlexWrapper justifyContent="center">
               <Titles> Your Result Document for</Titles>
-              <Heading>Aeronautical-Product Head</Heading>
+              <Heading>
+                {badge} - {level}
+              </Heading>
               <LastLogo src={ab} />
             </FlexWrapper>
             <FlexWrapper justifyContent="center" marginTop={-8}>
