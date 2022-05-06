@@ -15,6 +15,11 @@ export const Text = styled.div`
   margin-top: 2;
   color: white;
   font-size: 20px;
+  @media (max-width: 600px) {
+    font-size:10px;
+    width:100%;
+    margin:3% auto;
+  }
 `;
 
 export const FinalFooter = styled.div`
@@ -26,6 +31,10 @@ export const FinalFooter = styled.div`
   padding: 3%;
   border-radius: 17px;
   margin-top: 4%;
+  @media (max-width: 600px) {
+    margin: 5% auto;
+    width: 100%;
+  }
 `;
 
 interface ParaProps {
@@ -41,6 +50,11 @@ export const Para = styled.p<ParaProps>`
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
   color: ${({ color }) => (color ? color : "#000000")};
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    font-size: 9px;
+    width: 100%;
+  }
 `;
 export const Paras = styled.p<ParaProps>`
   font-weight: 100%;
@@ -51,17 +65,29 @@ export const Paras = styled.p<ParaProps>`
   margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
   margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
   color: ${({ color }) => (color ? color : "black")};
+
+  @media (max-width: 600px) {
+     margin: 0 auto;
+     font-size: 9px;
+      width: 100%;
+  }
 `;
 
 export const UListWrapper = styled.ul`
   margin-left: 5%;
   line-height: 2;
+  @media (max-width: 600px) {
+    font-size:10px;
+  }
 `;
 
 export const ListText = styled.li`
   font-style: Bold;
   font-size: 17px;
   font-weight: 550;
+  @media (max-width: 600px) {
+    font-size: 13px;
+  }
 `;
 
 export const ContentPageLogo = styled(Figure.Image)`
@@ -72,6 +98,10 @@ export const ContentPageLogo = styled(Figure.Image)`
 export const ContentLogo = styled(Figure.Image)`
   width: 40%;
   margin-left: 20%;
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    width: 100%;
+  }
 `;
 
 export const CardLogo = styled(Figure.Image)`
@@ -92,6 +122,11 @@ export const SideTitles = styled.p`
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
+  @media (max-width: 600px) {
+   margin: 0 auto;
+    font-size: 13px;
+    padding-bottom:2%;
+  }
 `;
 
 export const Titles = styled.p`
@@ -103,6 +138,9 @@ export const Titles = styled.p`
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
+  @media (max-width: 600px) {
+    font-size: 8px;
+  }
 `;
 
 export const Heading = styled.p`
@@ -114,6 +152,9 @@ export const Heading = styled.p`
   opacity: 1;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
+  @media (max-width: 600px) {
+    font-size: 55%;
+  }
 `;
 
 export const SubmitButton = styled(Button)`
@@ -132,6 +173,11 @@ export const SubmitButton = styled(Button)`
   &:focus {
     background: #3335cf 0% 0% no-repeat padding-box;
   }
+  @media (max-width: 600px) {
+    font-size: 4px;
+    height: fit-content;
+    margin: 2% auto;
+  }
 `;
 export const ViewButton = styled(Button)`
   width: 140px;
@@ -145,6 +191,10 @@ export const ViewButton = styled(Button)`
   &:active,
   &:focus {
     background: #ff7b00 0% 0% no-repeat padding-box;
+  }
+  @media (max-width: 600px) {
+    font-size: 9px;
+    width:60%;
   }
 `;
 
@@ -162,6 +212,10 @@ export const DownloadButton = styled(Button)`
   &:focus {
     background: #3335cf 0% 0% no-repeat padding-box;
   }
+  @media (max-width: 600px) {
+    font-size:68%;
+    width: 75%;
+  }
 `;
 
 export const Buttons = styled(Button)`
@@ -177,6 +231,11 @@ export const Buttons = styled(Button)`
   &:active,
   &:focus {
     background: #3335cf 0% 0% no-repeat padding-box;
+  }
+  @media (max-width: 600px) {
+    font-size: 4px;
+    height: fit-content;
+    margin: 2% auto;
   }
 `;
 
@@ -199,6 +258,9 @@ export const Label = styled.div`
   font-size: 38px;
   padding-top: 2.5%;
   background: var(--unnamed-color-ff7b00) 0% 0% no-repeat padding-box;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
 `;
 
 export const Title = styled.div`
@@ -208,6 +270,10 @@ export const Title = styled.div`
   font-weight: 700;
   margin-left: 7%;
   margin-top: 2%;
+  @media (max-width: 600px) {
+    font-size: 15px;
+    margin: 0 auto;
+  }
 `;
 
 export const LastTitles = styled.div`
@@ -233,9 +299,9 @@ export const Bold = styled.p<bold>`
   padding-top: 2%;
   padding-right: 2%;
   @media (max-width: 600px) {
-    margin: 0 auto;
-    font-size: 18px;
-    width: 100%;
+    font-size: 13px;
+    margin-top:8%;
+  
   }
 `;
 
@@ -264,8 +330,14 @@ export const RelativeWrap = styled.div`
   z-index: 1000;
   margin-left: 23%;
   margin-top: -50%;
+  @media (max-width: 650px) {
+    width: 100%;
+  }
 `;
 
 export const CareerKompass = styled(Figure.Image)`
-  width: 45%;
+  width: 40%;
+  @media (max-width: 650px) {
+   margin-bottom:30%;
+  }
 `;

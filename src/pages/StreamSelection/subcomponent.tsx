@@ -48,6 +48,10 @@ export const Header1 = styled.div`
   font-weight: 900;
   position: relative;
   z-index: 100;
+  @media (max-width: 650px) {
+    width: 100%;
+    font-size:160%;
+  }
 `;
 
 interface Header2props {
@@ -62,6 +66,10 @@ export const Header2 = styled.div<Header2props>`
   font-weight: 600;
   position: relative;
   z-index: 100;
+  @media (max-width: 650px) {
+    width: 100%;
+    font-size:70%;
+  }
 `;
 
 export const Body = styled.div`
@@ -72,6 +80,10 @@ export const Para = styled.p`
   font-size: 14px;
   font-weight: 600;
   width: 60%;
+  @media (max-width: 650px) {
+    width: 100%;
+    font-size:70%;
+  }
 `;
 export const StreamWrapper = styled.div`
   margin: 3rem 5rem;
@@ -105,6 +117,7 @@ export const DropdownWrapper = styled.div`
     margin: auto 12px;
     width: 80%;
     margin-bottom: 3rem;
+   
   }
 `;
 
@@ -125,10 +138,12 @@ export const LevelCard = styled(Button)`
     background-color: #ff7b00;
     color: white;
   }
+  @media (max-width: 600px) {
+    width: 50%;
+  }
 `;
 
 export const TestButton = styled(Button)`
-  margin-top: 12px;
   position: absolute;
   height: 35px;
   font-weight: 1000;
@@ -140,6 +155,9 @@ export const TestButton = styled(Button)`
   border: none;
   :hover {
     background: #0f1043;
+  }
+  @media (max-width: 600px) {
+  
   }
 `;
 
