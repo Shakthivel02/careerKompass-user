@@ -367,7 +367,7 @@ export const CardWrapper2 = styled(Card)`
     padding: 5px 5px 5px 5px;
   }
   @media (max-width: 900px) {
-    width: 100%;
+       width: 100%;
     margin: 0 auto;
   }
 `;
