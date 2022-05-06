@@ -82,8 +82,8 @@ export const LoginButton = styled(Button)`
   letter-spacing: 0px;
   color: rgba(255, 123, 0, 1);
   text-transform: capitalize;
-  font-family: "Montserrat";
-  font-weight: bolder;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
   font-size: 12px;
   cursor: pointer;
   padding: 5px 23px 5px 23px;
@@ -126,9 +126,8 @@ export const Details = styled.div`
 `;
 export const Header = styled.header`
   font-size: 40px;
-  font-weight: 700;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  font-family: "Open-sans", sans-serif;
   color: #0f1043;
   @media (max-width: 600px) {
     font-size: 25px;
@@ -146,12 +145,11 @@ export const Body = styled.body`
   }
 `;
 export const Footer = styled.footer`
-  font-size: 12px;
+  font-size: 14px;
   width: 50%;
   margin-top: 10px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
   @media (max-width: 600px) {
     width: 80%;
   }
@@ -209,8 +207,7 @@ export const Header2 = styled.header`
 
 export const CardWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  margin-left: 13em;
+  justify-content: center;
   @media (max-width: 600px) {
     margin: 0px auto;
     width: 80%;
@@ -239,8 +236,8 @@ export const Cards = styled(Card)`
   box-shadow: 0 1px 10px 0 lightgray;
   border-radius: 10px;
   border: none;
-  width: 25%;
-  height: 300px;
+  width: 24%;
+  height: 320px;
 
   @media (max-width: 600px) {
     width: auto;
@@ -416,8 +413,8 @@ export const Body4 = styled.div`
 `;
 
 export const Labels = styled.p`
-  font-weight: 800;
-  font-family: sans-serif;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   margin-top: 6%;
   color: #6d6d95;
@@ -427,7 +424,7 @@ export const Labels = styled.p`
 `;
 
 export const LastLabels = styled.p`
-  font-weight: 800;
+  font-weight: 600;
   font-family: sans-serif;
   font-size: 15px;
   margin-left: 14%;
@@ -439,7 +436,7 @@ export const LastLabels = styled.p`
 `;
 
 export const FirstLabels = styled.p`
-  font-weight: 800;
+  font-weight: 600;
   font-family: sans-serif;
   font-size: 15px;
   margin-left: 3.5%;
