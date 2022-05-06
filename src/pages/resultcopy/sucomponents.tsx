@@ -45,7 +45,7 @@ interface ParaProps {
 
 export const Para = styled.p<ParaProps>`
   font-family: "Open-Sans", sans-serif;
-  font-weight: 550;
+  font-weight: 400;
   line-height: 1.6;
   width: 50%;
  margin: 0 auto;
@@ -64,6 +64,7 @@ export const Para = styled.p<ParaProps>`
 `;
 export const Paras = styled.p<ParaProps>`
   font-family: "Open-Sans", sans-serif;
+
   font-weight: 550;
   font-size: 15px;
   margin: auto 0;
@@ -90,7 +91,7 @@ export const UListWrapper = styled.ul`
 
 export const ListText = styled.li`
   font-style: Bold;
-  font-size: 17px;
+  font-size: 14px;
   font-weight: 550;
   @media (max-width: 500px) {
     font-size: 12px;
@@ -139,9 +140,10 @@ export const SideTitles = styled.p`
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
   @media (max-width: 600px) {
-    font-size: 13px;
-    line-height: 2;
     float: right;
+    margin: 0 auto;
+    font-size: 13px;
+    padding-bottom: 2%;
   }
 `;
 
@@ -284,7 +286,7 @@ export const Title = styled.div`
   font-family: normal normal bold 40px/60px Montserrat;
   font-size: 24px;
   font-weight: 700;
-  margin-left: 7%;
+  margin-left: 5%;
   margin-top: 2%;
   @media (max-width: 600px) {
     font-size: 15px;
@@ -315,7 +317,7 @@ export const Bold = styled.p<bold>`
   margin: auto 0;
   @media (max-width: 600px) {
     font-size: 13px;
-    margin: auto 0;
+   margin: auto 0;
     width: 100%;
   }
 `;

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { postAnswer } from "./api";
-import { InitialState } from "./types";
+import { InitialState, TestResponce } from "./types";
 
 const initialState: InitialState = {
   isLoading: false,
@@ -10,6 +10,11 @@ const initialState: InitialState = {
     answer: [],
   },
   AnswerList: [],
+  TestResponce: {
+    user: [],
+    cat: [],
+    tools: [],
+  },
 };
 export const TestSlice = createSlice({
   name: "Test",
@@ -23,8 +28,12 @@ export const TestSlice = createSlice({
     [postAnswer.pending.toString()]: (state) => {
       state.isLoading = true;
     },
-    [postAnswer.fulfilled.toString()]: (state) => {
+    [postAnswer.fulfilled.toString()]: (
+      state,
+      action: PayloadAction<TestResponce>
+    ) => {
       state.isLoading = false;
+      state.TestResponce = action?.payload;
     },
     [postAnswer.rejected.toString()]: (state) => {
       state.isLoading = false;
