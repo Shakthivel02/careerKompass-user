@@ -1,4 +1,4 @@
-import { Button, Figure } from "react-bootstrap";
+import { Button, Card, Figure } from "react-bootstrap";
 import styled from "styled-components";
 
 export const Logs = styled.img`
@@ -16,9 +16,9 @@ export const Text = styled.div`
   color: white;
   font-size: 20px;
   @media (max-width: 600px) {
-    font-size:10px;
-    width:100%;
-    margin:3% auto;
+    font-size: 10px;
+    width: 100%;
+    margin: 3% auto;
   }
 `;
 
@@ -42,42 +42,49 @@ interface ParaProps {
   color?: string;
   marginLeft?: string;
 }
+
 export const Para = styled.p<ParaProps>`
   font-family: "Open-Sans", sans-serif;
   font-weight: 550;
   line-height: 1.6;
   width: 50%;
-  margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
-  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
+ margin: 0 auto;
   color: ${({ color }) => (color ? color : "#000000")};
   @media (max-width: 600px) {
     margin: 0 auto;
     font-size: 9px;
     width: 100%;
   }
+  @media (max-width: 1200px) {
+    margin: 0 auto;
+    font-size: 14px;
+    font-weight: 550;
+    width: 100%;
+  }
 `;
 export const Paras = styled.p<ParaProps>`
-  font-weight: 100%;
   font-family: "Open-Sans", sans-serif;
   font-weight: 550;
-  line-height: 1.6;
-  width: auto;
-  margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "5%")};
-  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
+  font-size: 15px;
+  margin: auto 0;
   color: ${({ color }) => (color ? color : "black")};
-
   @media (max-width: 600px) {
-     margin: 0 auto;
-     font-size: 9px;
-      width: 100%;
+    margin: 0 auto;
+    font-size: 9px;
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    margin: 0 auto;
+    font-size: 13px;
+    width: 100%;
   }
 `;
 
 export const UListWrapper = styled.ul`
-  margin-left: 5%;
+  margin: auto 0;
   line-height: 2;
   @media (max-width: 600px) {
-    font-size:10px;
+    font-size: 10px;
   }
 `;
 
@@ -85,14 +92,24 @@ export const ListText = styled.li`
   font-style: Bold;
   font-size: 17px;
   font-weight: 550;
-  @media (max-width: 600px) {
-    font-size: 13px;
+  @media (max-width: 500px) {
+    font-size: 12px;
+  }
+  @media (max-width: 900px) {
+    font-size: 12px;
   }
 `;
 
 export const ContentPageLogo = styled(Figure.Image)`
   width: 70%;
-  margin-left: 4%;
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 500px) {
+    margin: auto 0;
+  }
+  @media (max-width: 900px) {
+  }
 `;
 
 export const ContentLogo = styled(Figure.Image)`
@@ -113,19 +130,18 @@ export const LastLogo = styled(Figure.Image)`
 `;
 
 export const SideTitles = styled.p`
-  font-weight: 800;
+  font-weight: 650;
   font-family: "Open-Sans", sans-serif;
-  font-size: 15px;
-  margin-left: 5%;
-  margin-top: 5%;
-  color: #3335cf;
-  opacity: 1;
+  font-size: 16px;
+  margin-top: 5px;
+  float: right;
+  color: #FF7B00;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
   @media (max-width: 600px) {
-   margin: 0 auto;
     font-size: 13px;
-    padding-bottom:2%;
+    line-height: 2;
+    float: right;
   }
 `;
 
@@ -194,7 +210,7 @@ export const ViewButton = styled(Button)`
   }
   @media (max-width: 600px) {
     font-size: 9px;
-    width:60%;
+    width: 60%;
   }
 `;
 
@@ -213,7 +229,7 @@ export const DownloadButton = styled(Button)`
     background: #3335cf 0% 0% no-repeat padding-box;
   }
   @media (max-width: 600px) {
-    font-size:68%;
+    font-size: 68%;
     width: 75%;
   }
 `;
@@ -296,12 +312,11 @@ export const Bold = styled.p<bold>`
   font-family: normal normal bold 36px/60px Montserrat;
   z-index: 100;
   color: #3335cf;
-  padding-top: 2%;
-  padding-right: 2%;
+  margin: auto 0;
   @media (max-width: 600px) {
     font-size: 13px;
-    margin-top:8%;
-  
+    margin: auto 0;
+    width: 100%;
   }
 `;
 
@@ -314,9 +329,10 @@ export const FlexWrap = styled.div`
   #logoWrapper {
     display: row;
     flex-direction: row;
-  }
-  @media (max-width: 600px) {
-    display: flex;
+    @media (max-width: 500px) {
+      display: row;
+      flex-direction: column;
+    }
   }
 `;
 
@@ -338,6 +354,54 @@ export const RelativeWrap = styled.div`
 export const CareerKompass = styled(Figure.Image)`
   width: 40%;
   @media (max-width: 650px) {
-   margin-bottom:30%;
+    margin-bottom: 30%;
+  }
+`;
+
+export const CardWrapper2 = styled(Card)`
+  width: 98%;
+  padding: 12px 32px 16px;
+  @media (max-width: 500px) {
+    width: 100%;
+    margin: 0 auto;
+    padding: 5px 5px 5px 5px;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+`;
+
+export const Recommanded = styled.div` 
+float: left;
+color: black;
+font-size: 15px;
+font-weight: 700;
+@media (max-width: 500px) {
+    width: 100%;
+  font-size: 12px;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  font-size: 12px;
+   
+  }
+`
+
+export const Paras2 = styled.p<ParaProps>`
+  font-family: "Open-Sans", sans-serif; 
+  font-size: 14px;
+  padding: 10px 10px;
+  margin: auto 0;
+  color: ${({ color }) => (color ? color : "black")};
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    font-size: 9px;
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    margin: 0 auto;
+    font-size: 13px;
+    width: 100%;
   }
 `;
