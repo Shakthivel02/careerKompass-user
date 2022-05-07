@@ -641,10 +641,11 @@ export const FormCardInput = styled.input`
   width: 40%;
   border-radius: 20px;
   border: none;
+  outline: none;
   ::placeholder {
    font-family: 'Montserrat', sans-serif; 
-    font-size: 12px;
-    font-weight: 550;
+    font-size: 14px;
+    font-weight: 500;
   }
   @media (max-width: 650px) {
     width: 60%;
@@ -681,7 +682,7 @@ export const FormCardButton = styled.button`
     font-size: 10px;
     margin-right: 7%;
     margin-top: 5%;
-    height:20px;
+    height: 20px;
     width: 15%;
   }
 `;

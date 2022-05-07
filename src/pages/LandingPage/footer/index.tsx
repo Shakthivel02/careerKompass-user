@@ -118,7 +118,7 @@ const Footers = (): ReactElement => {
           <FormCard>
             <FormCardContent>
               <FormCardText>Subscribe For Newsletter</FormCardText>
-              <FormCardInput placeholder="   Email here" />
+              <FormCardInput type="email" placeholder="   Email here" />
               <FormCardButton>Send</FormCardButton>
             </FormCardContent>
           </FormCard>
