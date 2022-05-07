@@ -97,7 +97,6 @@ import {
 } from "./RegisterStyle/subcomponents";
 import { EditableDropdown, FlexWrapper, Loader } from "../../components";
 import {
-  getProfileDropdown,
   getCountryDropdown,
   getStateDropdown,
 } from "../../helpers/dropdown";
@@ -129,7 +128,6 @@ const User = (): ReactElement => {
   const {
     isLoading,
     isLoggedIn,
-    profileData,
     registerDetails,
     countryList,
     stateList,
@@ -138,7 +136,6 @@ const User = (): ReactElement => {
     (state: RootState) => ({
       isLoading: state.login.isLoading,
       isLoggedIn: state.login.isLoggedIn,
-      profileData: state.register.profileData,
       registerDetails: state.register.registerDetails,
       countryList: state.register.countryData,
       stateList: state.register.stateData,
@@ -147,7 +144,6 @@ const User = (): ReactElement => {
     shallowEqual
   );
 
-  const ProfileDropdown = profileData ? getProfileDropdown(profileData) : [];
   const CountyDropdown = countryList ? getCountryDropdown(countryList) : [];
   const StateDropDown = stateList ? getStateDropdown(stateList) : [];
 
@@ -179,9 +175,12 @@ const User = (): ReactElement => {
   useEffect(() => {
     setPin(countryPin.map((x) => x.contact_no_code)[0]);
   }, [countryPin]);
+
   useEffect(() => {
     dispatch(getStates({ id: "101" }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
   return (
     <PageWrapper>
       <Container1>
@@ -219,18 +218,16 @@ const User = (): ReactElement => {
       <Container2>
         <Details2>
           <Header2>Discover your best Career path</Header2>
-          <Body2>with careerkompass's top-notch proffession guidance</Body2>
+          <Body2>with Careerkompass’s top-notch professional guidance</Body2>
         </Details2>
-        <CardWrapper>
-          <Cards>
+        <CardWrapper  >
+          <Cards xs={1} sm={3}>
             <CardHeader>Explore</CardHeader>
             <CardBody>
               <CareerKompas src={Group} />
             </CardBody>
             <CardFooter>
-              Careerskompass computes your personality traits, strong interest
-              and align them with work skills to determine the besr career
-              options in varied work enviroment
+              Careerkompass computes your personality traits, strong interests and aligns them with work skills to determine the best career options in varied work environments
             </CardFooter>
           </Cards>
           <Cards>
@@ -239,9 +236,7 @@ const User = (): ReactElement => {
               <SecondImage src={identify} />
             </CardBody>
             <CardFooter>
-              The testing elements capture your apporach to various scenarious
-              identifying your strength attitude,aptitude,and more.Also
-              established on the lines of real jobs
+              The testing elements capture your approach to various scenarios, identifying your strengths, attitude, aptitude, and more. Also, established on the lines of real jobs and industries for career satisfaction
             </CardFooter>
           </Cards>
           <Cards>
@@ -250,8 +245,7 @@ const User = (): ReactElement => {
               <ThirdImage src={advance} />
             </CardBody>
             <CardFooter>
-              Receive an inventory of career interests and a personalized guide
-              to stter your career forward on a new journey!
+              Receive an inventory of career interests and a personalized guide to steer your career forward on a new journey!
             </CardFooter>
           </Cards>
         </CardWrapper>
@@ -311,7 +305,7 @@ const User = (): ReactElement => {
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
                       dispatch(updatePassword(event?.target?.value))
                     }
-                    // type="password"
+                  // type="password"
                   />
                 </Input>
                 <CheckboxWrapper>
@@ -389,7 +383,7 @@ const User = (): ReactElement => {
                   <RegisterInput>
                     <RegisterFormInput
                       placeholder="Comfirm Password"
-                      onChange={() => {}}
+                      onChange={() => { }}
                       type="text"
                     />
                   </RegisterInput>
@@ -430,6 +424,7 @@ const User = (): ReactElement => {
                     />
                   </RegisterInput>
                   <RegisterInput>
+
                     <Span>{values.country == "India" ? "+91" : pin}</Span>
                     <RegisterFormInput
                       placeholder="Mobile No"
