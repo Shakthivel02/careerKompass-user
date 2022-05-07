@@ -27,14 +27,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png"
 
 const AboutPage = () => {
-    const { Stream, userId } = useSelector(
-        (state: RootState) => ({
-            Stream: state.stream.questions,
-            userId: state.login.userInfo?.userId,
-        }),
-        shallowEqual
-    );
-    const [badge] = Stream.map((x) => x.stream_name);
+
     return (
         <PageWrapper>
             <FlexWrap>
