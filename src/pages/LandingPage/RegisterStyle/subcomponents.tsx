@@ -1,4 +1,4 @@
-import { Button, Figure, Form, FormControl, InputGroup, Modal } from "react-bootstrap";
+import { Button, Form, FormControl, InputGroup, Modal } from "react-bootstrap";
 import styled from "styled-components";
 
 export const RegisterModalDialog = styled(Modal)`

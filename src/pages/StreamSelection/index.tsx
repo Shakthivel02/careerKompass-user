@@ -52,8 +52,10 @@ const StreamSelection = (): ReactElement => {
 
   const [stream, setStream] = useState(SelectStream);
   const [TestID, setTestID] = useState(TestId);
+
   useEffect(() => {
     dispatch(SelectedStream(stream));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stream]);
 
   const [show, setShow] = useState(false);
@@ -95,7 +97,7 @@ const StreamSelection = (): ReactElement => {
                 Select The Career Roadmap According To Your Level Of Experience
               </Header2>
             </FlexWrapper>
-            <FlexWrapper justifyContent="center">
+            <FlexWrapper justifyContent="center" noPadding>
               {LevelDropdown.map((x) => {
                 if (x.name === "expert") {
                   return (
@@ -132,7 +134,7 @@ const StreamSelection = (): ReactElement => {
           </PageWrapper>
         ) : null}
       </Body>
-      <FlexWrapper justifyContent="center" noPadding >
+      <FlexWrapper justifyContent="center" height={80}>
         <TestButton
           disabled={!canSave}
           onClick={() => {

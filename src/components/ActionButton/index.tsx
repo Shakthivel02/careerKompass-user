@@ -17,6 +17,9 @@ const ActionButton = styled(Button)`
   &:active {
     background-color: #f47f34;
   }
+  @media (max-width:450px) {
+    font-size: 13px;
+  }
 `;
 
 export default ActionButton;
