@@ -29,26 +29,37 @@ export const Container1 = styled.div`
   background-size: cover;
   @media (max-width: 900px) {
     width: 100%;
-    height: 400px;
+    height: 450px;
   }
 `;
 
 export const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 90%;
-  margin: 20px auto;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
   @media (max-width: 600px) {
     margin: 10px 0px 10px -10px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
 export const LogoWrapper = styled.div`
-  width: 120px;
-  height: 35%;
   display: flex;
-  margin: auto 6px;
+  margin: auto 60px;
+  @media (max-width: 500px) {
+    margin: auto 6px;
+  }
 `;
 export const Logo = styled.img`
   margin: 0 auto;
@@ -61,6 +72,10 @@ export const Logo = styled.img`
 export const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  margin-right: 85px;
+  @media (max-width: 500px) {
+    margin-right: 0px;
+  }
 `;
 
 export const LoginButton = styled(Button)`
@@ -380,15 +395,19 @@ export const ThirdImage = styled(Figure.Image)`
 
 export const Container3 = styled.div`
   width: 100%;
-  height: 520px;
+  height: 550px;
   background: url(${Backimage1});
   background-size: cover;
   background-position: fixed;
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     width: 100%;
     margin: auto;
-    height: auto;
   }
+  @media (max-width: 1000px) {
+    width: 100%;
+    margin: auto;
+  }
+   
 `;
 export const Header3 = styled.header`
   font-size: 33px;
@@ -413,23 +432,21 @@ export const Header3 = styled.header`
 `;
 export const Body3 = styled.img`
   color: #6d6d95;
-  width: 27%;
-  margin: 14vh 75vh;
+  width: 27%; 
+  margin: 12vh 75vh;
   font-weight: 700;
-  @media (max-width: 600px) {
+  @media (max-width: 450px) {
     width: 80%;
-    margin: 25px;
     height: auto;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1000px) {
     width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
     margin-top: 5rem;
-    text-align: center;
-    height: auto;
+    text-align: center; 
   }
 `;
 
@@ -460,7 +477,7 @@ export const Header4 = styled.header`
   text-align: center;
   @media (max-width: 450px) {
     margin: 0 auto;
-    text-align: center; 
+    text-align: center;
     font-size: 2px;
   }
   @media (max-width: 1000px) {
@@ -492,7 +509,7 @@ export const CardWrapper1 = styled.div`
   margin-left: 35px;
   @media (max-width: 900px) {
     margin: 0 auto;
-    width: 100%; 
+    width: 100%;
   }
 `;
 
@@ -615,7 +632,7 @@ export const CardContainer = styled(Card)`
 
 export const WWraper = styled.div`
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   @media (max-width: 600px) {
     margin: auto 0;
   }
@@ -629,7 +646,7 @@ export const Title = styled.div`
   font-size: 17px;
   @media (max-width: 600px) {
     font-size: 12px;
-    margin:auto;
+    margin: auto;
     font-weight: 500;
   }
   /* @media (max-width: 900px) {
@@ -647,8 +664,8 @@ export const Input = styled(InputGroup)`
 
   @media (max-width: 600px) {
     width: 40%;
-    height: -20px; 
-   margin: auto;
+    height: -20px;
+    margin: auto;
   }
   /* @media (max-width: 900px) {
     width: auto;
@@ -668,7 +685,7 @@ export const Form = styled(FormControl)`
   }
   @media (max-width: 600px) {
     width: 100%;
-    height:30px;
+    height: 30px;
     margin: auto;
   }
 `;
@@ -707,7 +724,7 @@ export const PrivacyContainer = styled.div`
     height: auto;
     margin-bottom: 10px;
   }
-  
+
   @media (max-width: 900px) {
     width: auto;
     height: 300px;

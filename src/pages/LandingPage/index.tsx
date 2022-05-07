@@ -184,7 +184,7 @@ const User = (): ReactElement => {
 
   return (
     <PageWrapper>
-      <Container1>
+      <Container1> 
         <HeaderWrapper>
           <LogoWrapper>
             <Logo src={logo} alt="logo" />

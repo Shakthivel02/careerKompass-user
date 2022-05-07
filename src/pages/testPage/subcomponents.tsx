@@ -6,7 +6,6 @@ import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
 import { ActionButton, FlexWrapper, UserHeader } from "../../components";
 import { Button } from "react-bootstrap";
-import log from "../../assests/aero.png";
 import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
@@ -66,12 +65,11 @@ const TestWrapper = styled.div`
   max-width: 90%;
   height: 100px;
   font-family: "Montserrat", sans-serif;
-  @media (max-width:1000px){
+  @media (max-width: 1000px) {
     max-width: 90%;
   }
-  @media (max-width:500px){
-   max-width: 90%;
-   height: auto;
+  @media (max-width: 450px) {
+    max-width: 90%;
   }
 `;
 
@@ -79,12 +77,13 @@ const Optoins = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
-  @media (max-width: 1000px) {
+   @media (max-width: 1000px) {
     width: 42%;
-  }
-  @media (max-width:500px){ 
-     width: 100%;
-     margin: auto 0;
+  } 
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 30px;
+    margin: auto 0;
   }
 `;
 
@@ -108,7 +107,7 @@ const OptionButton = styled(Button)`
     background: linear-gradient(90deg, #3335cf 20%, #c5c5ff 20%);
   }
   @media (max-width: 500px) {
-    //margin: 10px auto;
+    margin: 10px auto;
   }
   @media (max-width: 1000px) {
     margin: 10px auto;
@@ -148,11 +147,11 @@ export const OptionText = styled.span`
     justify-content: center;
     margin: auto 0;
   }
-  @media (max-width: 1000px) {
+   @media (max-width: 1000px) {
     width: 100%;
     justify-content: center;
     margin: auto 0;
-  }
+  } 
 `;
 
 export const Option = styled.span`
@@ -305,12 +304,22 @@ export const QuestionSection = ({
             {data[activeQuestions]}
           </Bold>
         </FlexWrapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <TestWrapper>
-          <Optoins
-            onClick={(e) => {
-              changeHandler(e);
-            }}
-          >
+          <Optoins onClick={(e) => {changeHandler(e);}}>
             <OptionButton value="True">
               <Option>A</Option>
               <OptionText>True</OptionText>
@@ -327,6 +336,16 @@ export const QuestionSection = ({
             </OptionButton>
           </Optoins>
         </TestWrapper>
+
+
+
+
+
+
+
+
+
+
         <FlexWrapper justifyContent="end">
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </FlexWrapper>

@@ -13,6 +13,13 @@ export const ModalDialog = styled(Modal)`
   .modal-content {
     border: none;
     border-radius: 20px !important;
+    @media (max-width: 1000px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 0;
+      background-color: red;
+    }
   }
 `;
 export const ModalWrapper = styled.div`
@@ -139,7 +146,7 @@ export const Forgot = styled.div`
   text-align: right;
   text-transform: capitalize;
   opacity: 0.67;
-  &:hover{
+  &:hover {
     color: #3e3e9e;
   }
 `;
@@ -158,7 +165,7 @@ export const ModalLoginButton = styled(Button)`
   opacity: 1;
   &:hover,
   &:active,
-  &:focus{
+  &:focus {
     background: #ff7b00 0% 0% no-repeat padding-box;
   }
 `;
