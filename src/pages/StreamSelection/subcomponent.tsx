@@ -154,8 +154,7 @@ export const TestButton = styled(Button)`
   position: absolute;
   height: 35px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  //background-color: #8d8d9c;
+  font-family: "Montserrat", sans-serif; 
   font-size: 13px;
   color: #ffffff;
   opacity: 1;

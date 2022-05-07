@@ -124,7 +124,7 @@ export const Details = styled.div`
 
 export const Header = styled.header`
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 1000;
   font-family: 'Montserrat', sans-serif;
   color: #0f1043;
   @media (max-width: 500px) {
@@ -237,7 +237,7 @@ export const Details2 = styled.div`
 
 export const Header2 = styled.header`
   font-size: 33px;
-  font-weight: 800;
+  font-weight: 900;
   font-family: 'Montserrat', sans-serif; 
   color: rgba(15, 16, 67, 1);
   text-align: center;
@@ -416,7 +416,7 @@ export const Container3 = styled.div`
 `;
 export const Header3 = styled.header`
   font-size: 33px;
-  font-weight: 800;
+  font-weight: 900;
   font-family: 'Montserrat', sans-serif; 
   color: #0f1043;
   margin-top: 50px;
@@ -474,7 +474,7 @@ export const Details4 = styled.div`
 
 export const Header4 = styled.header`
   font-size: 33px;
-  font-weight: 800;
+  font-weight: 900;
   font-family: 'Montserrat', sans-serif; 
   color: #0f1043;
   text-align: center;
@@ -641,6 +641,7 @@ export const FormCardInput = styled.input`
   width: 40%;
   border-radius: 20px;
   border: none;
+  outline:none;
   ::placeholder {
    font-family: 'Montserrat', sans-serif; 
     font-size: 12px;
