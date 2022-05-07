@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable jsx-a11y/alt-text */
 import {
@@ -221,7 +222,7 @@ const User = (): ReactElement => {
           <Body2>with Careerkompass’s top-notch professional guidance</Body2>
         </Details2>
         <CardWrapper  >
-          <Cards xs={1} sm={3}>
+          <Cards>
             <CardHeader>Explore</CardHeader>
             <CardBody>
               <CareerKompas src={Group} />
@@ -257,6 +258,9 @@ const User = (): ReactElement => {
       </Container3>
 
       <Footers />
+
+      {/* -------------------------------------------------loginModal-------------------------------------------------- */}
+
       {showLogin && (
         <ModalDialog
           show={true}
@@ -323,6 +327,9 @@ const User = (): ReactElement => {
           </LoginDialog>
         </ModalDialog>
       )}
+
+      {/* --------------------------------------------registerModal-------------------------------------------------- */}
+
       {showRegister && (
         <RegisterModalDialog
           show={true}
@@ -424,7 +431,6 @@ const User = (): ReactElement => {
                     />
                   </RegisterInput>
                   <RegisterInput>
-
                     <Span>{values.country == "India" ? "+91" : pin}</Span>
                     <RegisterFormInput
                       placeholder="Mobile No"
@@ -443,6 +449,9 @@ const User = (): ReactElement => {
           </RegisterWrapper>
         </RegisterModalDialog>
       )}
+
+      {/* --------------------------------------------otpModal-------------------------------------------------- */}
+
       {showOtp && (
         <OTPModalDialog
           show={true}
