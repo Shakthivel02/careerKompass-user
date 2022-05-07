@@ -14,8 +14,10 @@ export const PageWrapper = styled.div`
 `;
 export const Text = styled.div`
   margin-top: 2;
+  font-family: 'Montserrat', sans-serif;
   color: white;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 600;
   @media (max-width: 600px) {
     font-size: 10px;
     width: 100%;
@@ -50,10 +52,11 @@ interface ParaProps {
 }
 
 export const Para = styled.p<ParaProps>`
-  font-family: "Open-Sans", sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
   line-height: 1.6;
   width: 50%;
+  font-size: 14px;
   margin: 0 auto;
   color: ${({ color }) => (color ? color : "#000000")};
   @media (max-width: 600px) {
@@ -69,10 +72,9 @@ export const Para = styled.p<ParaProps>`
   }
 `;
 export const Paras = styled.p<ParaProps>`
-  font-family: "Open-Sans", sans-serif;
-
-  font-weight: 550;
-  font-size: 15px;
+font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
   margin: auto 0;
   color: ${({ color }) => (color ? color : "black")};
   @media (max-width: 600px) {
@@ -138,7 +140,7 @@ export const LastLogo = styled(Figure.Image)`
 
 export const SideTitles = styled.p`
   font-weight: 650;
-  font-family: "Open-Sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-size: 16px;
   margin-top: 5px;
   float: right;
@@ -156,8 +158,8 @@ export const SideTitles = styled.p`
 export const Titles = styled.p`
   font-family: "Open-Sans", sans-serif;
   font-size: 12px;
-  font-weight: 800;
-  color: #ff7b00;
+  font-weight: 600;
+  color: #000000;
   text-align: center;
   opacity: 1;
   width: 100%;
@@ -168,7 +170,7 @@ export const Titles = styled.p`
 `;
 
 export const Heading = styled.p`
-  font-family: "Open-Sans", "sans-serif";
+  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   color: #43566d;
   align-items: center;
@@ -183,11 +185,11 @@ export const Heading = styled.p`
 
 export const SubmitButton = styled(Button)`
   height: 35px;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
   width: 100px;
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
-  font-size: 14px;
+  font-size: 13px;
   color: #ffffff;
   opacity: 1;
   margin-left: 30%;
@@ -246,6 +248,9 @@ export const DownloadButton = styled(Button)`
     font-size: 68%;
     width: 75%;
   }
+  span{
+    font-family: 'Montserrat', sans-serif;
+  }
 `;
 
 export const Buttons = styled(Button)`
@@ -253,7 +258,8 @@ export const Buttons = styled(Button)`
   width: 120px;
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
-  font-size: 14px;
+  font-size: 13px;
+  font-family: 'Montserrat', sans-serif;
   color: #ffffff;
   border-radius: 17px;
   opacity: 1;
@@ -334,7 +340,7 @@ export const Bold = styled.p<bold>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
   color: #3335cf;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "25px")};
-  font-family: normal normal bold 36px/60px Montserrat;
+  font-family: 'Montserrat', sans-serif;
   z-index: 100;
   color: #3335cf;
   margin: auto 0;
@@ -402,6 +408,7 @@ export const Recommanded = styled.div`
   color: black;
   font-size: 15px;
   font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
   padding: 10px 0px 10px 0px;
   @media (max-width: 500px) {
     width: 100%;
@@ -414,13 +421,11 @@ export const Recommanded = styled.div`
 `;
 
 export const Paras2 = styled.p<ParaProps>`
-  font-family: "Open-Sans", sans-serif;
-  font-size: 14px;
-  font-weight: 32px;
-  padding: 1px 0px 10px 0px;
-  margin: auto 0;
   font-family: 'Montserrat', sans-serif;
-font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 1px 0px 10px 0px;
+  margin: auto 0;  
   color: ${({ color }) => (color ? color : "black")};
   @media (max-width: 600px) {
     margin: 0 auto;

@@ -57,7 +57,8 @@ export const OTPVerifyWrapper = styled.div`
 
 export const OTPTitle = styled.div`
   font-size: 23px;
-  font-weight: 1000;
+  font-weight: 900;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 0px;
   color: #0f1043;
   opacity: 1;
@@ -95,7 +96,9 @@ export const OTPFormInput = styled(FormControl)`
   ::placeholder {
     color: #6d6d95;
     text-transform: capitalize;
+    font-family: 'Montserrat', sans-serif;
     opacity: 0.57;
+    font-weight: 600;
     font-size: 12px;
   }
   .input[type="text"] {
@@ -132,7 +135,7 @@ export const OTPSubmitButton = styled(Button)`
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
   font-size: 14px;
-  font-weight: 1000;
+  font-weight: 550;
   color: #ffffff;
   opacity: 1;
   &:hover,

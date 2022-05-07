@@ -20,7 +20,9 @@ export const ListInput = styled(InputGroup)`
   }
   .dropdown-menu.show {
     max-height: 300px;
+    font-family: 'Montserrat', sans-serif; 
     overflow: auto;
+    font-weight: 600;
     transform: translate(0, 40px) !important;
   }
 `;
@@ -34,14 +36,17 @@ export const DropdownInput = styled(FormControl)`
   ::placeholder {
     color: #7d7da3;
     text-transform: capitalize;
-    opacity: 0.60;
-    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.57;
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;  
   }
   .input[type="text"] {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    font-family: 'Montserrat', sans-serif; 
     resize: vertical;
     color: red;
   }

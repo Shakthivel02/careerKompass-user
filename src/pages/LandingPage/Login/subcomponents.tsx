@@ -61,8 +61,9 @@ export const LockLogo = styled.img`
 `;
 
 export const Title = styled.div`
-  font-size: 23px;
-  font-weight: 1000;
+  font-size: 24px;
+  font-weight: 800;
+   font-family: 'Montserrat', sans-serif; 
   letter-spacing: 0px;
   color: #0f1043;
   opacity: 1;
@@ -108,7 +109,7 @@ export const InputBox = styled(FormCheck)`
 
 export const SubTitle = styled.div`
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   letter-spacing: 0px;
   color: #6d6d95;
@@ -122,6 +123,7 @@ export const SubTitle = styled.div`
 export const FormInput = styled(FormControl)`
   border: none;
   ::placeholder {
+   font-family: 'Montserrat', sans-serif; 
     color: #6d6d95;
     text-transform: capitalize;
     opacity: 0.57;
@@ -141,7 +143,7 @@ export const Forgot = styled.div`
   color: #6d6d95;
   font-size: 12px;
   cursor: pointer;
-  font-weight: 1000;
+  font-weight: 500;
   font-family: "Montserrat", sans-serif;
   text-align: right;
   text-transform: capitalize;
@@ -155,7 +157,7 @@ export const ModalLoginButton = styled(Button)`
   margin-top: 20px;
   width: 150px;
   height: 35px;
-  font-weight: 1000;
+  font-weight: 550;
   font-family: "Montserrat", sans-serif;
   width: 100px;
   background: #ff7b00 0% 0% no-repeat padding-box;

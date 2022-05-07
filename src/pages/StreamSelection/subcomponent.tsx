@@ -44,6 +44,7 @@ export const Header1 = styled.div`
   letter-spacing: 0px;
   color: #0f1043;
   opacity: 1;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
   font-size: 38px;
   font-weight: 900;
@@ -62,8 +63,9 @@ export const Header2 = styled.div<Header2props>`
   letter-spacing: 0px;
   color: #6d6d95;
   opacity: 1;
+  font-family: 'Montserrat', sans-serif;
   text-align: center;
-  font-size: ${({ fontSize }) => (fontSize ? fontSize : "30px")};
+  font-size: ${({ fontSize }) => (fontSize ? fontSize : "28px")};
   font-weight: 600;
   position: relative;
   z-index: 100;
@@ -80,6 +82,7 @@ export const Para = styled.p`
   text-align: center;
   font-size: 14px;
   font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
   width: 60%;
   @media (max-width: 650px) {
     width: 100%;
@@ -142,23 +145,20 @@ export const LevelCard = styled(Button)`
   @media (max-width: 600px) {
     width: 50%;
   }
+  span{
+    font-family: 'Montserrat', sans-serif;
+  }
 `;
 
 export const TestButton = styled(Button)`
   position: absolute;
   height: 35px;
-  font-weight: 1000;
+  font-weight: 600;
   font-family: "Montserrat", sans-serif;
-  background: #8d8d9c;
-  font-size: 14px;
+  //background-color: #8d8d9c;
+  font-size: 13px;
   color: #ffffff;
   opacity: 1;
   border: none;
-  :hover {
-    background: #0f1043;
-  }
-  @media (max-width: 600px) {
-  
-  }
 `;
 
