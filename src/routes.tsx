@@ -8,11 +8,11 @@ const Routes = () => {
   return (
     <Switch>
       <Route exact path={ROUTES.LOGIN} component={User} />
-      <ProtectedRoute
+      < Route
         path={ROUTES.STREAMSELECTION}
         component={StreamSelection}
       />
-      <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
+      < Route path={ROUTES.TEST} component={TestPage} />
       <Route path={ROUTES.RESULTCOPY} component={Result} />
     </Switch>
   );

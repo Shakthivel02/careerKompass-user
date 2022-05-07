@@ -30,18 +30,19 @@ export const PageWrapper = styled.div`
 interface bold {
   fontSize?: string;
   fontWeight?: string;
+  padding?: boolean;
 }
 const Bold = styled.p<bold>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
   color: #0f1043;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "20px")};
   font-family: Tahoma, Helvetica, sans-serif;
-  padding-top: 3%;
-  padding-right: 2%;
+  margin: auto 0;
+  padding: ${({ padding }) => (padding ? "10px" : "0")};
   @media (max-width: 600px) {
     font-size: 12px;
     width: 60%;
-    margin-left:5%;
+    margin-left: 5%;
   }
 `;
 const QuestionContainer = styled.div`
@@ -61,18 +62,29 @@ const TestWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 100%;
-  max-width: 80%;
+  width: 90%;
+  max-width: 90%;
   height: 100px;
   font-family: "Montserrat", sans-serif;
+  @media (max-width:1000px){
+    max-width: 90%;
+  }
+  @media (max-width:500px){
+   max-width: 90%;
+   height: auto;
+  }
 `;
 
 const Optoins = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
-  @media (max-width: 600px) {
-    width: 100%;
+  @media (max-width: 1000px) {
+    width: 42%;
+  }
+  @media (max-width:500px){ 
+     width: 100%;
+     margin: auto 0;
   }
 `;
 
@@ -95,8 +107,11 @@ const OptionButton = styled(Button)`
     color: black;
     background: linear-gradient(90deg, #3335cf 20%, #c5c5ff 20%);
   }
-  @media (max-width: 600px) {
-    margin:0 auto;
+  @media (max-width: 500px) {
+    //margin: 10px auto;
+  }
+  @media (max-width: 1000px) {
+    margin: 10px auto;
   }
 `;
 
@@ -121,27 +136,47 @@ export const Logo = styled.img`
   width: 12%;
   float: left;
   @media (max-width: 600px) {
-    width:10%;
+    width: 10%;
   }
 `;
 
 export const OptionText = styled.span`
-  float: right;
-  @media (max-width: 600px) {
+  padding: 10px;
+  margin: auto 0;
+  @media (max-width: 500px) {
     width: 100%;
-   
+    justify-content: center;
+    margin: auto 0;
+  }
+  @media (max-width: 1000px) {
+    width: 100%;
+    justify-content: center;
+    margin: auto 0;
   }
 `;
 
 export const Option = styled.span`
   float: left;
+  margin-left: auto;
   ${OptionButton}:hover & {
     color: white;
   }
   ${OptionButton}:focus & {
     color: white;
   }
- 
+  @media (max-width: 1000px) {
+    width: 10%;
+    margin-left: auto;
+    justify-content: center;
+    display: flex;
+    background-color: red;
+  }
+  @media (max-width: 415px) {
+    margin: auto 0;
+    justify-content: center;
+    display: flex;
+    background-color: red;
+  }
 `;
 
 export const QuestionSection = ({
@@ -240,7 +275,9 @@ export const QuestionSection = ({
 
   useEffect(() => {
     setFinalPayload({ testID: Testid, userID: userId, answer: selectedAnswer });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAnswer]);
+
   return (
     <PageWrapper>
       <UserHeader />
@@ -252,17 +289,17 @@ export const QuestionSection = ({
             marginTop="30"
             backgroundColor="#3335CF"
           >
-            <Logo src={log} /> {TestName} - {level}
+            {TestName} - {level}
           </ActionButton>
         </div>
       </FlexWrap>
       <QuestionContainer>
-        <Bold fontSize="16">
+        <Bold fontSize="16" padding>
           Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
         </Bold>
-        <FlexWrapper noPadding>
+        <FlexWrapper>
           <Bold fontWeight="600" fontSize="16">
-            {activeQuestions + 1}
+            {activeQuestions + 1}.
           </Bold>
           <Bold fontWeight="50" fontSize="16">
             {data[activeQuestions]}
@@ -290,7 +327,7 @@ export const QuestionSection = ({
             </OptionButton>
           </Optoins>
         </TestWrapper>
-        <FlexWrapper justifyContent="center" noPadding>
+        <FlexWrapper justifyContent="end">
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </FlexWrapper>
       </QuestionContainer>

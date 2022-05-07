@@ -13,8 +13,7 @@ import {
   Logo1,
   Links,
   FHeader,
-  BrandIcon,
-  Label,
+  BrandIcon, 
   CardContainer,
   FinalWrapper,
   Input,
@@ -117,9 +116,9 @@ const Footers = (): ReactElement => {
         </CardWrapper1>
         <CardContainer>
           <WWraper>
-            <Title>Subscribe for NewLetter</Title>
+            <Title>Subscribe for NewsLetter</Title>
             <Input>
-              <Form placeholder="Email here..." />
+              <Form placeholder="Email here" />
             </Input>
             <ButtonS>Send</ButtonS>
           </WWraper>
