@@ -1,41 +1,35 @@
-import {
-    Button,
-    Card,
-    Figure,
-    FormControl,
-    InputGroup
-} from "react-bootstrap";
+import { Button, Card, Figure, FormControl, InputGroup } from "react-bootstrap";
 import styled from "styled-components";
 
 export const Title = styled.p`
- margin-left:43%;
- color: #0F1043;
- font-size: 40px;
- font-weight:550;
- font-family: sans-serif;
+  margin-left: 43%;
+  color: #0f1043;
+  font-size: 40px;
+  font-weight: 550;
+  font-family: "Montserrat", sans-serif;
 `;
 
 interface ParaProps {
-    marginTop?: string;
-    color?: string;
-    marginLeft?: string;
+  marginTop?: string;
+  color?: string;
+  marginLeft?: string;
 }
 export const Para = styled.p<ParaProps>`
-    font-family:  sans-serif;
-    font-weight: 530;
-    font-size: 20px;
-    margin-left:50px;
-    width: 50%;
-    margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "3%")};
-    margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
-    color: ${({ color }) => (color ? color : "#000000")};
-    margin: 3% auto;
-    @media (max-width: 600px) {
-      margin: 0 auto;
-      font-size: 9px;
-      width: 100%;
-    }
-  `;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 530;
+  font-size: 20px;
+  margin-left: 70%;
+  width: 55%;
+  margin-left: ${({ marginLeft }) => (marginLeft ? `${marginLeft}%` : "3%")};
+  margin-top: ${({ marginTop }) => (marginTop ? `${marginTop}%` : "0%")};
+  color: ${({ color }) => (color ? color : "#000000")};
+  margin: 3% auto;
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    font-size: 9px;
+    width: 100%;
+  }
+`;
 
 export const FlexWrap = styled.div`
   justify-content: space-around;
@@ -48,9 +42,8 @@ export const FlexWrap = styled.div`
 `;
 
 export const AboutImage = styled(Figure.Image)`
-width: 35%;
+  width: 40%;
 `;
-
 
 export const CardContainer = styled(Card)`
   width: 45%;
@@ -72,11 +65,10 @@ export const CardContainer = styled(Card)`
   }
   @media (max-width: 900px) {
     width: 70%;
-    height: 90px;
+    height: 50px;
     left: 5em;
-    bottom: -39px;
+    bottom: -30px;
     border-radius: 10px;
-    margin: 0px auto;
     position: absolute;
     background-color: #3335cf;
   }
@@ -85,12 +77,16 @@ export const CardContainer = styled(Card)`
 export const WWraper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 600px) {
+    margin: 5% auto;
+    width: 100%;
+  }
 `;
 
 export const Container4 = styled.div`
   height: 100px;
   position: relative;
-  background-color:#FCFCFF;
+  background-color: #fcfcff;
   @media (max-width: 600px) {
     width: auto;
     height: auto;
@@ -153,7 +149,6 @@ export const ButtonS = styled(Button)`
   border: none;
 `;
 
-
 export const PrivacyContainer = styled.div`
   background-color: #ebebf8;
   height: 300px;
@@ -175,7 +170,6 @@ export const Logo1 = styled.img`
   display: flex;
   width: 45%;
 `;
-
 
 export const BrandIcon = styled(Button)`
   background: none;
@@ -205,7 +199,6 @@ export const FinalFooter = styled.div`
   }
 `;
 
-
 export const FHeader = styled.div`
   padding: 10px;
   color: black;
@@ -222,6 +215,4 @@ export const Links = styled.div`
   font-size: 13px;
 `;
 
-export const FinalWrapper = styled.div`
-  min-height: 900px;
-`;
+export const FinalWrapper = styled.div``;
