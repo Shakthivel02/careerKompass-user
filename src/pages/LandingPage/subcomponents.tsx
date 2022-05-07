@@ -76,7 +76,7 @@ export const LoginButton = styled(Button)`
   color: rgba(255, 123, 0, 1);
   text-transform: capitalize;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 12px;
   cursor: pointer;
   padding: 5px 23px 5px 23px;
@@ -90,6 +90,7 @@ export const LoginButton = styled(Button)`
 
 export const MenuContainer = styled.div`
   color: #0f1043;
+   font-family: 'Montserrat', sans-serif; 
   text-transform: capitalize;
   opacity: 1;
   font-size: 12px;
@@ -124,7 +125,7 @@ export const Details = styled.div`
 export const Header = styled.header`
   font-size: 40px;
   font-weight: 900;
-  font-family: "Open-sans", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: #0f1043;
   @media (max-width: 500px) {
     font-size: 25px;
@@ -139,7 +140,8 @@ export const Body = styled.body`
   font-size: 28px;
   background: none;
   margin-top: 5px;
-  font-weight: 700;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif; 
   @media (max-width: 450px) {
     font-size: 23px;
   }
@@ -152,7 +154,7 @@ export const Footer = styled.footer`
   font-size: 14px;
   width: 50%;
   margin-top: 10px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   font-weight: 700;
   @media (max-width: 600px) {
     width: 80%;
@@ -170,6 +172,7 @@ export const Start = styled(Button)`
   cursor: pointer;
   border-radius: 5px;
   font-size: 12px;
+  font-family: 'Montserrat', sans-serif; 
   font-weight: 600;
   padding: 10px 20px 10px 20px;
   &:hover,
@@ -235,8 +238,7 @@ export const Details2 = styled.div`
 export const Header2 = styled.header`
   font-size: 33px;
   font-weight: 800;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   color: rgba(15, 16, 67, 1);
   text-align: center;
 
@@ -256,9 +258,10 @@ export const Header2 = styled.header`
 
 export const Body2 = styled.body`
   color: rgba(109, 109, 149, 1);
-  font-size: 23px;
+  font-size: 22px;
   margin-top: 5px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif; 
   background: none;
   font-weight: 600;
   @media (max-width: 600px) {
@@ -325,7 +328,8 @@ export const CardHeader = styled(Card.Header)`
   color: rgba(51, 53, 207, 1);
   text-transform: capitalize;
   opacity: 1;
-  display: flex;
+  display: flex; 
+   font-family: 'Montserrat', sans-serif; 
   justify-content: center;
   border: none;
   background: none;
@@ -344,15 +348,15 @@ export const CardBody = styled(Card.Body)`
 `;
 
 export const CardFooter = styled(Card.Footer)`
-  font-size: 12px;
   border: none;
   display: flex;
   background: none;
   text-align: center;
   padding: 4%;
   text-align-last: center;
-  font-size: 14px;
-  font-family: Arial;
+  font-size: 13px;
+  font-weight: 550;
+  font-family: 'Montserrat', sans-serif; 
   color: #000000;
   ${Cards}:hover & {
     color: white;
@@ -413,8 +417,7 @@ export const Container3 = styled.div`
 export const Header3 = styled.header`
   font-size: 33px;
   font-weight: 800;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   color: #0f1043;
   margin-top: 50px;
   text-align: center;
@@ -472,8 +475,7 @@ export const Details4 = styled.div`
 export const Header4 = styled.header`
   font-size: 33px;
   font-weight: 800;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   color: #0f1043;
   text-align: center;
   @media (max-width: 450px) {
@@ -490,7 +492,8 @@ export const Header4 = styled.header`
 
 export const Body4 = styled.div`
   color: #6d6d95;
-  font-size: 23px;
+   font-family: 'Montserrat', sans-serif; 
+  font-size: 22px;
   font-weight: 700;
   text-align: center;
   @media (max-width: 450px) {
@@ -529,7 +532,7 @@ export const CardRow = styled(Row)`
 
 export const LastLabels = styled.p`
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   font-size: 15px;
   margin-left: 14%;
   margin-top: 6%;
@@ -589,7 +592,7 @@ export const Labels = styled.p`
 
 export const FirstLabels = styled.p`
   font-weight: 600;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif; 
   font-size: 15px;
   margin-left: 3.5%;
   margin-top: 6%;
@@ -639,7 +642,8 @@ export const FormCardInput = styled.input`
   border-radius: 20px;
   border: none;
   ::placeholder {
-    font-size: 14px;
+   font-family: 'Montserrat', sans-serif; 
+    font-size: 12px;
     font-weight: 550;
   }
   @media (max-width: 650px) {
@@ -649,6 +653,7 @@ export const FormCardInput = styled.input`
 `;
 export const FormCardText = styled(Card.Body)`
   font-weight: 700;
+   font-family: 'Montserrat', sans-serif; 
   color: white;
   margin: auto 0;
   padding-top: 4%;
@@ -661,6 +666,7 @@ export const FormCardText = styled(Card.Body)`
 export const FormCardButton = styled.button`
   z-index: 1000;
   margin-top: 3.6%;
+   font-family: 'Montserrat', sans-serif; 
   margin-left: 79%;
   text-align: center;
   position: absolute;
@@ -716,6 +722,7 @@ export const BrandIcon = styled(Button)`
 
 export const FHeader = styled.div`
   padding: 10px;
+   font-family: 'Montserrat', sans-serif; 
   color: black;
   cursor: pointer;
   font-weight: 800;
@@ -724,6 +731,7 @@ export const FHeader = styled.div`
 
 export const Links = styled.div`
   display: flex;
+   font-family: 'Montserrat', sans-serif; 
   flex-direction: column;
   padding: 2px 0px 5px 10px;
   color: rgba(138, 138, 138, 1);
@@ -739,6 +747,7 @@ export const FinalFooter = styled.div`
   margin-top: 20px;
   justify-content: space-between;
   display: flex;
+   font-family: 'Montserrat', sans-serif; 
   flex-wrap: wrap;
   cursor: pointer;
   background: #ebebf8;

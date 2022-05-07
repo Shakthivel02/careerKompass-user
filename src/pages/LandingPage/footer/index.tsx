@@ -157,7 +157,7 @@ const Footers = (): ReactElement => {
             <Links>Chennai 600-004</Links>
           </div>
         </FooterWrapper>
-        <FinalFooter>
+        <FinalFooter >
           <div>Copyright & Designed By CareerKompass</div>
           <div>Terms | Privacy Policy</div>
         </FinalFooter>

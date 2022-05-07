@@ -136,6 +136,7 @@ const StreamSelection = (): ReactElement => {
       </Body>
       <FlexWrapper justifyContent="center" height={80}>
         <TestButton
+        variant='secondary'
           disabled={!canSave}
           onClick={() => {
             dispatch(GetQuestionByTest({ testID: TestID.testID }));
