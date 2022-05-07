@@ -58,7 +58,8 @@ export const RegisterTitleWrapper = styled.div`
 
 export const RegisterTitle = styled.div`
   font-size: 23px;
-  font-weight: 1000;
+   font-family: 'Montserrat', sans-serif; 
+  font-weight: 800;
   letter-spacing: 0px;
   color: #0f1043;
   opacity: 1;
@@ -100,10 +101,12 @@ export const RegisterFormInput = styled(FormControl)`
   border: none;
 
   ::placeholder {
-    color: #7d7da3;
+    color: #141A45;
+   font-family: 'Montserrat', sans-serif; 
     text-transform: capitalize;
+    font-weight: 500;
     opacity: 0.57;
-    font-size: 12px;
+    font-size: 11px;
   }
   .input {
     width: 100%;
@@ -120,6 +123,7 @@ export const ModalRegisterButton = styled(Button)`
   width: 150px;
   height: 35px;
   width: 100px;
+  font-family: 'Montserrat', sans-serif; 
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
   font-size: 14px;

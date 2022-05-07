@@ -3,6 +3,7 @@ import ROUTES from "./const/routes";
 import ProtectedRoute from "./container/ProtectedRoute";
 
 import { TestPage, User, StreamSelection, Result } from "./pages";
+import AboutPage from "./pages/AboutPage";
 
 const Routes = () => {
   return (
@@ -14,6 +15,7 @@ const Routes = () => {
       />
       < Route path={ROUTES.TEST} component={TestPage} />
       <Route path={ROUTES.RESULTCOPY} component={Result} />
+      <Route path={ROUTES.ABOUT} component={AboutPage} />
     </Switch>
   );
 };

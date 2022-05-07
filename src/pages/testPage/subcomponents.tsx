@@ -111,6 +111,7 @@ const SubmitButton = styled(Button)`
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
+  font-family: 'Montserrat', sans-serif;
   margin-left: 14%;
   margin-top: 4%;
   &:hover,
