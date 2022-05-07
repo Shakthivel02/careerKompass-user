@@ -395,7 +395,7 @@ export const ThirdImage = styled(Figure.Image)`
 
 export const Container3 = styled.div`
   width: 100%;
-  height: 550px;
+  height: auto;
   background: url(${Backimage1});
   background-size: cover;
   background-position: fixed;
@@ -407,7 +407,6 @@ export const Container3 = styled.div`
     width: 100%;
     margin: auto;
   }
-   
 `;
 export const Header3 = styled.header`
   font-size: 33px;
@@ -432,7 +431,7 @@ export const Header3 = styled.header`
 `;
 export const Body3 = styled.img`
   color: #6d6d95;
-  width: 27%; 
+  width: 27%;
   margin: 12vh 75vh;
   font-weight: 700;
   @media (max-width: 450px) {
@@ -446,7 +445,7 @@ export const Body3 = styled.img`
     align-items: center;
     margin: auto;
     margin-top: 5rem;
-    text-align: center; 
+    text-align: center;
   }
 `;
 
