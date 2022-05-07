@@ -1,11 +1,4 @@
-import {
-  Button,
-  Card,
-  Figure,
-  FormControl,
-  InputGroup,
-  Row,
-} from "react-bootstrap";
+import { Button, Card, Figure, Row } from "react-bootstrap";
 import styled from "styled-components";
 import Backimage from "../../assests/container1.jpg";
 import Backimage1 from "../../assests/container3.jpg";
@@ -193,7 +186,9 @@ export const ContainBImg = styled.img`
   position: relative;
   bottom: 32rem;
   left: 48rem;
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
+    /* position: relative;
+  left: 28rem;  */
   }
 `;
 
@@ -202,7 +197,11 @@ export const ContainImg = styled.img`
   position: relative;
   bottom: 26.5rem;
   left: 11rem;
-  @media (max-width: 500px) {
+  @media (max-width: 1000px) {
+    position: relative;
+    height: 330px;
+    bottom: 2rem;
+    left: 16rem;
   }
 `;
 
@@ -217,6 +216,7 @@ export const Container2 = styled.div`
   @media (max-width: 1000px) {
     width: 100%;
     height: auto;
+    z-index: 100;
   }
 `;
 
@@ -227,7 +227,7 @@ export const Details2 = styled.div`
     height: auto;
   }
   @media (max-width: 1000px) {
-    margin: auto 0 10px 10px;
+    margin: 15px 0 10px 10px;
     height: auto;
   }
 `;
@@ -402,9 +402,11 @@ export const Container3 = styled.div`
   @media (max-width: 450px) {
     width: 100%;
     margin: auto;
+    height: auto;
   }
   @media (max-width: 1000px) {
     width: 100%;
+    height: auto;
     margin: auto;
   }
 `;
@@ -458,7 +460,7 @@ export const Container4 = styled.div`
   @media (max-width: 580px) {
     width: 100%;
     height: 950px;
-    margin-bottom: 10px;
+    //margin-bottom: 10px;
   }
 `;
 
@@ -599,117 +601,82 @@ export const FirstLabels = styled.p`
 
 /*-------------------------------------Subscribe Card Container------------------------------------------*/
 
-export const CardContainer = styled(Card)`
-  width: 45%;
-  height: 100px;
-  right: 23em;
-  bottom: -50px;
-  border-radius: 10px;
-  position: absolute;
-  background-color: #3335cf;
-  @media (max-width: 450px) {
-    width: 65%;
-    height: 80px;
-    left: 4em;
-    bottom: -34px;
-    border-radius: 10px;
-    margin: 0px auto;
-    position: absolute;
-    background-color: #3335cf;
-  }
-  /* @media (max-width: 900px) {
-    width: 60%;
-    height: 90px;
-    left: 9rem;
-    bottom: -40px;
-    border-radius: 10px;
-    margin: 0px auto;
-    position: absolute;
-    background-color: #3335cf;
-  } */
-`;
-
-export const WWraper = styled.div`
+export const FormCard = styled(Card)`
   display: flex;
-  flex-wrap: wrap;
-  @media (max-width: 600px) {
-    margin: auto 0;
-  }
-`;
-
-export const Title = styled.div`
-  color: white;
-  margin-top: 23px;
-  padding: 15px;
-  font-weight: 500;
-  font-size: 17px;
-  @media (max-width: 600px) {
-    font-size: 12px;
-    margin: auto;
-    font-weight: 500;
-  }
+  justify-content: space-around;
+  z-index: 1000;
+  margin-top: 7rem;
+  background-color: rgb(51, 53, 207);
+  width: 50%;
+  height: 80px;
   /* @media (max-width: 900px) {
-    font-size: 12px;
-    margin: auto 0;
-    padding: 15px;
-    font-weight: 500;
-  } */
-`;
-
-export const Input = styled(InputGroup)`
-  width: 57%;
-  height: 22px;
-  margin-top: 33px;
-
-  @media (max-width: 600px) {
-    width: 40%;
-    height: -20px;
-    margin: auto;
+  width: 60%; 
+  margin-top: 18%;
+} */
+  @media (max-width: 415px) {
+    width: 85%;
+    margin-top: -3%;
   }
-  /* @media (max-width: 900px) {
-    width: auto;
-    height: -20px;
-    margin: auto 0;
-  } */
 `;
-export const Form = styled(FormControl)`
+
+export const FormCardContent = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+export const FormCardWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+`;
+
+export const FormCardInput = styled.input`
+  margin-right: 4%;
+  margin-top: 3%;
+  height: 55%;
+  width: 40%;
   border-radius: 20px;
   border: none;
   ::placeholder {
-    color: #6d6d95;
-    text-transform: capitalize;
-    opacity: 0.57;
-    font-size: 11px;
-    margin: auto 0;
+    font-size: 14px;
+    font-weight: 550;
   }
-  @media (max-width: 600px) {
-    width: 100%;
-    height: 30px;
-    margin: auto;
+  @media (max-width: 650px) {
+    width: 60%;
+    height: 50%;
+  }
+`;
+export const FormCardText = styled(Card.Body)`
+  font-weight: 700;
+  color: white;
+  margin: auto 0;
+  padding-top: 4%;
+  padding-left: 8%;
+  @media (max-width: 800px) {
+    font-size: 12px;
   }
 `;
 
-export const ButtonS = styled(Button)`
-  border-radius: 20px;
-  background-color: #ff7b00;
-  color: white;
-  margin-left: -38px;
-  border: none;
+export const FormCardButton = styled.button`
+  z-index: 1000;
+  margin-top: 3.6%;
+  margin-left: 79%;
+  text-align: center;
   position: absolute;
-  right: 3.5rem;
-  top: 38px;
-  height: 25px;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  @media (max-width: 600px) {
-    position: sticky;
-    left: 1rem;
-    top: 38px;
-    height: 25px;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
+  height: 36%;
+  width: 11%;
+  border: none;
+  font-size: 12px;
+  border-radius: 20px;
+  background-color: rgb(255, 123, 0);
+  color: rgb(255, 242, 230);
+  @media (max-width: 800px) {
+    font-size: 10px;
+    margin-right: 7%;
+    margin-top: 5%;
+    height:20px;
+    width: 15%;
   }
 `;
 

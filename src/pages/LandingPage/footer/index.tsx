@@ -13,18 +13,18 @@ import {
   Logo1,
   Links,
   FHeader,
-  BrandIcon, 
-  CardContainer,
+  BrandIcon,
   FinalWrapper,
-  Input,
   FirstLabels,
-  Form,
   LastLabels,
-  ButtonS,
-  Title,
-  WWraper,
   Labels,
   CardRow,
+  FormCardWrapper,
+  FormCard,
+  FormCardText,
+  FormCardButton,
+  FormCardContent,
+  FormCardInput,
 } from "../subcomponents";
 import logo2 from "../../../assests/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -114,15 +114,15 @@ const Footers = (): ReactElement => {
             </Col>
           </CardRow>
         </CardWrapper1>
-        <CardContainer>
-          <WWraper>
-            <Title>Subscribe for NewsLetter</Title>
-            <Input>
-              <Form placeholder="Email here" />
-            </Input>
-            <ButtonS>Send</ButtonS>
-          </WWraper>
-        </CardContainer>
+        <FormCardWrapper>
+          <FormCard>
+            <FormCardContent>
+              <FormCardText>Subscribe For Newsletter</FormCardText>
+              <FormCardInput placeholder="   Email here" />
+              <FormCardButton>Send</FormCardButton>
+            </FormCardContent>
+          </FormCard>
+        </FormCardWrapper>
       </Container4>
 
       <PrivacyContainer>

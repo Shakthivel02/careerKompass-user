@@ -285,7 +285,7 @@ export const QuestionSection = ({
         <div id="logoWrapper">
           <ActionButton
             id="logoWrapper"
-            marginTop="30"
+            marginTop="32"
             backgroundColor="#3335CF"
           >
             {TestName} - {level}
@@ -304,20 +304,6 @@ export const QuestionSection = ({
             {data[activeQuestions]}
           </Bold>
         </FlexWrapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <TestWrapper>
           <Optoins onClick={(e) => {changeHandler(e);}}>
             <OptionButton value="True">
@@ -336,16 +322,6 @@ export const QuestionSection = ({
             </OptionButton>
           </Optoins>
         </TestWrapper>
-
-
-
-
-
-
-
-
-
-
         <FlexWrapper justifyContent="end">
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </FlexWrapper>
