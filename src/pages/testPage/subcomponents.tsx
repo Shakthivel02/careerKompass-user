@@ -39,13 +39,12 @@ const Bold = styled.p<bold>`
   margin: auto 0;
   padding: ${({ padding }) => (padding ? "10px" : "0")};
   @media (max-width: 600px) {
-    font-size: 12px;
-    width: 60%;
-    margin-left: 5%;
+    font-size: 14px;
+    width: 100%;
   }
 `;
 const QuestionContainer = styled.div`
-  width: 70%;
+  width: 80%;
   margin-left: 12%;
 `;
 const QuestionNo = styled.span`
@@ -59,27 +58,18 @@ const QuestionNo = styled.span`
 
 const TestWrapper = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 90%;
-  max-width: 90%;
-  height: 100px;
+  justify-content: space-around;
+  width: 80%;
   font-family: "Montserrat", sans-serif;
-  @media (max-width: 1000px) {
-    max-width: 90%;
-  }
-  @media (max-width: 450px) {
-    max-width: 90%;
-  }
 `;
 
 const Optoins = styled.div`
   display: flex;
   width: 50%;
   align-items: center;
-   @media (max-width: 1000px) {
+  @media (max-width: 1000px) {
     width: 42%;
-  } 
+  }
   @media (max-width: 500px) {
     width: 100%;
     height: 30px;
@@ -93,10 +83,10 @@ const OptionButton = styled(Button)`
   border-bottom-right-radius: 5px;
   border: none;
   color: #000124;
-  width: 50%;
+  width: 40%;
   font-size: 12px;
-  font-weight: 1000;
-  padding: 0.6rem 7rem 0.6rem 1.2rem;
+  font-weight: 400;
+  padding: 10px;
   box-shadow: 0px 1px 4px lightgray;
   opacity: 1;
   cursor: pointer;
@@ -106,11 +96,10 @@ const OptionButton = styled(Button)`
     color: black;
     background: linear-gradient(90deg, #3335cf 20%, #c5c5ff 20%);
   }
-  @media (max-width: 500px) {
-    margin: 10px auto;
-  }
-  @media (max-width: 1000px) {
-    margin: 10px auto;
+  @media (max-width: 900px) {
+    background: linear-gradient(90deg, #0000001a 20%, #fcfcff 20%);
+    padding: 6px;
+    width: 80%;
   }
 `;
 
@@ -140,41 +129,22 @@ export const Logo = styled.img`
 `;
 
 export const OptionText = styled.span`
-  padding: 10px;
-  margin: auto 0;
-  @media (max-width: 500px) {
-    width: 100%;
-    justify-content: center;
-    margin: auto 0;
+  align-self: center;
+  @media (max-width: 900px) {
+    font-size: 10px;
   }
-   @media (max-width: 1000px) {
-    width: 100%;
-    justify-content: center;
-    margin: auto 0;
-  } 
 `;
 
 export const Option = styled.span`
   float: left;
-  margin-left: auto;
   ${OptionButton}:hover & {
     color: white;
   }
   ${OptionButton}:focus & {
     color: white;
   }
-  @media (max-width: 1000px) {
-    width: 10%;
-    margin-left: auto;
-    justify-content: center;
-    display: flex;
-    background-color: red;
-  }
-  @media (max-width: 415px) {
-    margin: auto 0;
-    justify-content: center;
-    display: flex;
-    background-color: red;
+  @media (max-width: 800px) {
+    font-size: 10px;
   }
 `;
 
@@ -297,15 +267,16 @@ export const QuestionSection = ({
           Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
         </Bold>
         <FlexWrapper>
-          <Bold fontWeight="600" fontSize="16">
-            {activeQuestions + 1}.
-          </Bold>
-          <Bold fontWeight="50" fontSize="16">
-            {data[activeQuestions]}
+          <Bold fontWeight="500" fontSize="16" padding>
+            {activeQuestions + 1}. {data[activeQuestions]}
           </Bold>
         </FlexWrapper>
         <TestWrapper>
-          <Optoins onClick={(e) => {changeHandler(e);}}>
+          <Optoins
+            onClick={(e) => {
+              changeHandler(e);
+            }}
+          >
             <OptionButton value="True">
               <Option>A</Option>
               <OptionText>True</OptionText>
@@ -322,7 +293,7 @@ export const QuestionSection = ({
             </OptionButton>
           </Optoins>
         </TestWrapper>
-        <FlexWrapper justifyContent="end">
+        <FlexWrapper justifyContent="center">
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </FlexWrapper>
       </QuestionContainer>
