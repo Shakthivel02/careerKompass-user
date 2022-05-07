@@ -184,24 +184,24 @@ const User = (): ReactElement => {
 
   return (
     <PageWrapper>
-      <Container1> 
-        <HeaderWrapper>
-          <LogoWrapper>
-            <Logo src={logo} alt="logo" />
-          </LogoWrapper>
-          <Wrapper>
-            <LoginButton
-              classNameName="login"
-              onClick={() => setShowLogin(true)}
-            >
-              Login
-            </LoginButton>
-            <MenuContainer>Menu</MenuContainer>
-            <HamburgerMenu>
-              <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
-            </HamburgerMenu>
-          </Wrapper>
-        </HeaderWrapper>
+      <HeaderWrapper>
+        <LogoWrapper>
+          <Logo src={logo} alt="logo" />
+        </LogoWrapper>
+        <Wrapper>
+          <LoginButton
+            classNameName="login"
+            onClick={() => setShowLogin(true)}
+          >
+            Login
+          </LoginButton>
+          <MenuContainer>Menu</MenuContainer>
+          <HamburgerMenu>
+            <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
+          </HamburgerMenu>
+        </Wrapper>
+      </HeaderWrapper>
+      <Container1>
         <Details>
           <Header> Welcome to Careerkompass</Header>
           <Body>your ideal career pointer !!</Body>
