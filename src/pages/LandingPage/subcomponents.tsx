@@ -129,8 +129,11 @@ export const Header = styled.header`
   font-weight: 900;
   font-family: "Open-sans", sans-serif;
   color: #0f1043;
-  @media (max-width: 600px) {
-    font-size: 25px;
+  @media (max-width: 415px) {
+    font-size: 5px;
+  }
+  @media (max-width: 900px) {
+    font-size: 30px;
   }
 `;
 
@@ -143,6 +146,9 @@ export const Body = styled.body`
   @media (max-width: 600px) {
     font-size: 25px;
   }
+  @media (max-width: 900px) {
+    font-size: 25px;
+  }
 `;
 export const Footer = styled.footer`
   font-size: 14px;
@@ -152,6 +158,9 @@ export const Footer = styled.footer`
   font-weight: 700;
   @media (max-width: 600px) {
     width: 80%;
+  }
+  @media (max-width: 900px) {
+    font-size: 12px;
   }
 `;
 export const Start = styled(Button)`
@@ -168,6 +177,8 @@ export const Start = styled(Button)`
   &:active,
   &:focus {
     background-color: #ff7b00;
+  }
+  @media (max-width: 600px) {
   }
 `;
 export const Container2 = styled.div`
@@ -203,6 +214,11 @@ export const Header2 = styled.header`
     font-size: 22px;
     width: 100%;
   }
+  @media (max-width: 900px) {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 25px;
+  }
 `;
 
 export const CardWrapper = styled.div`
@@ -229,6 +245,11 @@ export const Body2 = styled.body`
     text-align: center;
     font-size: 15px;
   }
+  @media (max-width: 900px) {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 17px;
+  }
 `;
 export const Cards = styled(Card)`
   background-color: #ffffff;
@@ -238,10 +259,10 @@ export const Cards = styled(Card)`
   border: none;
   width: 24%;
   height: 320px;
-
   @media (max-width: 600px) {
     width: auto;
     height: auto;
+    margin: 0 auto;
     :hover {
       background: #6c6ccf;
     }
@@ -273,6 +294,12 @@ export const CardHeader = styled(Card.Header)`
   ${Cards}:hover & {
     color: white;
   }
+  @media (max-width: 600px) {
+    font-size: 20px;
+  }
+  @media (max-width: 900px) {
+    font-size: 20px;
+  }
 `;
 export const CardBody = styled(Card.Body)`
   display: flex;
@@ -293,21 +320,38 @@ export const CardFooter = styled(Card.Footer)`
   ${Cards}:hover & {
     color: white;
   }
+  @media (max-width: 900px) {
+    font-size: 13px;
+    color: black;
+    font-weight: 550;
+  }
 `;
 
 export const CareerKompas = styled(Figure.Image)`
-  width: "50";
+  width: 40%;
   height: "56";
+  @media (max-width: 900px) {
+    width: 45%;
+    height: "56";
+  }
 `;
 
 export const SecondImage = styled(Figure.Image)`
-  width: "50";
+  width: 40%;
   height: "56";
+  @media (max-width: 900px) {
+    width: 45%;
+    height: "56";
+  }
 `;
 
 export const ThirdImage = styled(Figure.Image)`
-  width: "50";
+  width: 40%;
   height: "56";
+  @media (max-width: 900px) {
+    width: 45%;
+    height: "56";
+  }
 `;
 
 export const Container3 = styled.div`
@@ -340,7 +384,7 @@ export const Header3 = styled.header`
     margin: 10px auto;
     justify-content: center;
     text-align: center;
-    // height:auto;
+    font-size: 25px;
   }
 `;
 export const Body3 = styled.img`
@@ -355,7 +399,12 @@ export const Body3 = styled.img`
   }
   @media (max-width: 900px) {
     width: 40%;
-    margin: 14vh 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
     height: auto;
   }
 `;
@@ -363,15 +412,14 @@ export const Container4 = styled.div`
   height: 650px;
   position: relative;
   background-color: #fff2e1;
-  @media (max-width: 600px) {
-    width: auto;
-    height: auto;
+  @media (max-width: 500px) {
+    width: 100%;
+    height: 200px;
     margin-bottom: 10px;
   }
   @media (max-width: 900px) {
-    width: auto;
-    height: auto;
-    margin-bottom: 10px;
+    width: 100%;
+    height: 550px;
   }
 `;
 export const Details4 = styled.div`
@@ -399,6 +447,12 @@ export const Header4 = styled.header`
     font-size: 22px;
     width: 100%;
   }
+  @media (max-width: 900px) {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 25px;
+    width: 100%;
+  }
 `;
 export const Body4 = styled.div`
   color: #6d6d95;
@@ -409,6 +463,11 @@ export const Body4 = styled.div`
     margin: 0px auto;
     text-align: center;
     font-size: 15px;
+  }
+  @media (max-width: 900px) {
+    margin: 0px auto;
+    text-align: center;
+    font-size: 17px;
   }
 `;
 
@@ -462,7 +521,7 @@ export const GCard = styled(Card)`
   &:hover,
   &:active,
   &:focus {
-    background: #3335cf 0% 0% no-repeat padding-box;
+    background: #3335cf 0% 0% no-repeat;
   }
   @media (max-width: 600px) {
     padding-top: 10px;
@@ -516,7 +575,7 @@ export const PrivacyContainer = styled.div`
   }
   @media (max-width: 900px) {
     width: auto;
-    height: auto;
+    height: 300px;
   }
 `;
 export const FooterWrapper = styled.div`
@@ -570,7 +629,7 @@ export const FHeader = styled.div`
 export const Links = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 2px 0px 5px 10px;
   color: rgba(138, 138, 138, 1);
   font-weight: 600;
   font-size: 13px;
@@ -613,10 +672,10 @@ export const CardContainer = styled(Card)`
     background-color: #3335cf;
   }
   @media (max-width: 900px) {
-    width: 70%;
+    width: 60%;
     height: 90px;
-    left: 5em;
-    bottom: -39px;
+    left: 9rem;
+    bottom: -40px;
     border-radius: 10px;
     margin: 0px auto;
     position: absolute;
@@ -634,14 +693,23 @@ export const Input = styled(InputGroup)`
     margin-top: 15px;
   }
   @media (max-width: 900px) {
-    width: 50%;
+    width: auto;
     height: -20px;
-    margin: 30px auto;
+    margin: auto 0;
   }
 `;
 export const Form = styled(FormControl)`
   border-radius: 20px;
   border: none;
+  ::placeholder {
+    color: #6d6d95;
+    text-transform: capitalize;
+    opacity: 0.57;
+    font-size: 11px;
+    margin: auto 0;
+  } @media (max-width: 900px) {
+    width: auto;
+  }
 `;
 export const ButtonS = styled(Button)`
   border-radius: 20px;
@@ -649,6 +717,22 @@ export const ButtonS = styled(Button)`
   color: white;
   margin-left: -38px;
   border: none;
+  position: absolute;
+  right: 3.5rem;
+  top: 38px;
+  height: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center; 
+  @media (max-width: 900px) {
+    position: absolute;
+  right: 3.5rem;
+  top: 38px;
+  height: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  }
 `;
 export const Title = styled.div`
   color: white;
@@ -664,7 +748,7 @@ export const Title = styled.div`
   }
   @media (max-width: 900px) {
     font-size: 12px;
-    margin: 30px auto;
+    margin: auto 0;
     padding: 15px;
     font-weight: 500;
   }
@@ -672,4 +756,7 @@ export const Title = styled.div`
 export const WWraper = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 900px) {
+    margin: auto 0;
+  }
 `;

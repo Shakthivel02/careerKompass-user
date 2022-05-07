@@ -48,7 +48,7 @@ const Footers = (): ReactElement => {
         <Details4>
           <Header4>Guiding professionals</Header4>
           <Body4>
-            on the path of making informed career choices in jus 30 minutes!!
+            on the path of making informed career choices in just 30 minutes!!
           </Body4>
         </Details4>
         <CardWrapper1>
@@ -120,8 +120,8 @@ const Footers = (): ReactElement => {
             <Title>Subscribe for NewLetter</Title>
             <Input>
               <Form placeholder="Email here..." />
-              <ButtonS>Send</ButtonS>
             </Input>
+            <ButtonS>Send</ButtonS>
           </WWraper>
         </CardContainer>
       </Container4>
