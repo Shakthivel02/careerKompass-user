@@ -19,7 +19,7 @@ export const Container1 = styled.div`
   height: 600px;
   background: url(${Backimage});
   background-position: center;
-  background-size: cover;
+  background-size: cover; 
   @media (max-width: 900px) {
     width: 100%;
     height: 450px;
