@@ -35,7 +35,7 @@ export const HeaderWrapper = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   background-color: #FFFFFF;
   box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
   margin: 0 auto;

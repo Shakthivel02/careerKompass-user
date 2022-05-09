@@ -5,11 +5,13 @@ import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
 import { ActionButton, FlexWrapper, UserHeader } from "../../components";
-import { Button } from "react-bootstrap";
+import { Button, ProgressBar } from "react-bootstrap";
 import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
 import { SelectedAnswers } from "../../redux/TestApi/types";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import 'react-circular-progressbar/dist/styles.css';
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -111,7 +113,7 @@ const SubmitButton = styled(Button)`
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin-left: 14%;
   margin-top: 4%;
   &:hover,
@@ -148,6 +150,35 @@ export const Option = styled.span`
     font-size: 10px;
   }
 `;
+
+export const PageDivideWrapper = styled.div`
+  width: 70%;
+`;
+export const ProgressDivider = styled.div`
+  width: 30%;
+  height: auto;
+  background-color: #babace;
+`;
+export const ContentWrapper = styled.div`
+  display: flex; 
+  flex-wrap: wrap;
+  height: 100%;
+`;
+
+export const ProgessWrapper = styled.div` 
+width: 100%;
+  max-width: 80%;
+  //height: 300px;
+  margin: 100px auto ;
+  @media (min-width: 749px) {
+    width: 60%;
+  }
+`
+
+export const Progess = styled(CircularProgressbar)`
+//width: 50%;
+margin: center;
+`
 
 export const QuestionSection = ({
   data,
@@ -263,41 +294,62 @@ export const QuestionSection = ({
           </ActionButton>
         </div>
       </FlexWrap>
-      <QuestionContainer>
-        <Bold fontSize="16" padding>
-          Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
-        </Bold>
-        <FlexWrapper>
-          <Bold fontWeight="500" fontSize="16" padding>
-            {activeQuestions + 1}. {data[activeQuestions]}
-          </Bold>
-        </FlexWrapper>
-        <TestWrapper>
-          <Optoins
-            onClick={(e) => {
-              changeHandler(e);
-            }}
-          >
-            <OptionButton value="True">
-              <Option>A</Option>
-              <OptionText>True</OptionText>
-            </OptionButton>
-          </Optoins>
-          <Optoins
-            onClick={(e) => {
-              changeHandler(e);
-            }}
-          >
-            <OptionButton value="False">
-              <Option>B</Option>
-              <OptionText>False</OptionText>
-            </OptionButton>
-          </Optoins>
-        </TestWrapper>
-        <FlexWrapper justifyContent="center">
-          <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
-        </FlexWrapper>
-      </QuestionContainer>
+      <ContentWrapper>
+        <PageDivideWrapper>
+          <QuestionContainer>
+            <Bold fontSize="16" padding>
+              Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
+            </Bold>
+            <FlexWrapper>
+              <Bold fontWeight="500" fontSize="16" padding>
+                {activeQuestions + 1}. {data[activeQuestions]}
+              </Bold>
+            </FlexWrapper>
+            <TestWrapper>
+              <Optoins
+                onClick={(e) => {
+                  changeHandler(e);
+                }}
+              >
+                <OptionButton value="True">
+                  <Option>A</Option>
+                  <OptionText>True</OptionText>
+                </OptionButton>
+              </Optoins>
+              <Optoins
+                onClick={(e) => {
+                  changeHandler(e);
+                }}
+              >
+                <OptionButton value="False">
+                  <Option>B</Option>
+                  <OptionText>False</OptionText>
+                </OptionButton>
+              </Optoins>
+            </TestWrapper>
+            <FlexWrapper justifyContent="center">
+              <SubmitButton onClick={nextClickHandle}>
+                {buttonValue}
+              </SubmitButton>
+            </FlexWrapper>
+          </QuestionContainer>
+        </PageDivideWrapper>
+        <ProgressDivider>
+          <ProgessWrapper> 
+            <Progess
+              value={95}
+              text={`${95}% completed`}
+              strokeWidth={5}
+              styles={buildStyles({
+                textColor: "#003B0A",
+                textSize:"4px",
+                pathColor: "green",
+                trailColor: "lightgreen"
+              })}
+            />
+          </ProgessWrapper>
+        </ProgressDivider>
+      </ContentWrapper>
     </PageWrapper>
   );
 };
