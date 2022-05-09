@@ -1,5 +1,5 @@
 
-import { FlexWrapper, UserHeader } from "../../components";
+import { FlexWrapper } from "../../components";
 import {
   Para,
   Title,
@@ -27,13 +27,14 @@ import Ab from "../../assests/Group.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png";
 import logo from "../../assests/APG.svg"
+import { Header } from "../../components";
+import { ReactElement } from "react";
 
-const AboutPage = () => {
-
+const AboutPage = ():ReactElement => {
   return (
     <PageWrapper>
+      <Header />
       <FlexWrap>
-        <UserHeader />
       </FlexWrap>
       <Title>About</Title>
       <FlexWrapper>

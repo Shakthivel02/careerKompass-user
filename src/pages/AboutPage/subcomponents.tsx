@@ -1,4 +1,4 @@
-import { Button, Card, Figure, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Card, Figure } from "react-bootstrap";
 import styled from "styled-components";
 
 export const Title = styled.p`
@@ -156,7 +156,6 @@ export const FinalWrapper = styled.div`
 `;
 
 export const PageWrapper = styled.div`
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   @media (max-width: 415px) {

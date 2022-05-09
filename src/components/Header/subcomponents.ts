@@ -1,119 +1,87 @@
+import { Button } from "react-bootstrap";
 import styled from "styled-components";
-import { InputGroup, Dropdown, FormControl, Button } from "react-bootstrap";
-import { colors } from "../../const/theme";
-import fonts from "../../const/fonts";
 
-export const HeaderWrapper = styled.header`
+export const HeaderWrapper = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+height: 80px;
+position: -webkit-sticky;
+position: sticky;
+top: 0;
+z-index: 1000;
+background-color: #FFFFFF;
+box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
+margin: 0 auto;
+@media (max-width: 600px) {
+  margin: 10px 0px 10px -10px;
   width: 100%;
-  height: 70px;
   display: flex;
-  background: white;
-  border-bottom: 1px solid lightgray;
+  justify-content: space-between;
+  align-items: center;
+}
 `;
 
 export const LogoWrapper = styled.div`
-  width: 120px;
-  height: 50%;
-  display: flex;
-  align-items: center;
-  margin: auto 12px;
+display: flex;
+margin: auto 60px;
+@media (max-width: 500px) {
+  margin: auto 6px;
+}
+`;
+export const Logo = styled.img`
+margin: 0 auto;
+width: 90px;
+height: 35%;
+display: flex;
+margin: auto 12px;
 `;
 
-export const LogoBrand = styled.div`
-  font-size: 28px;
-  font-weight: 1000;
-  font-style: italic;
-  font-family: "Roboto", sans-serif;
-  color: #f47f34;
+export const Wrapper = styled.div`
+display: flex;
+flex-wrap: wrap;
+margin-right: 85px;
+@media (max-width: 500px) {
+  margin-right: 0px;
+}
 `;
-export const SubBrand = styled.div`
-  font-size: 28px;
-  font-weight: 1000;
-  font-style: italic;
-  font-family: "Roboto", sans-serif;
-  color: blue;
+
+export const LoginButton = styled(Button)`
+letter-spacing: 0px;
+color: rgba(255, 123, 0, 1);
+text-transform: capitalize;
+font-family: "Montserrat", sans-serif;
+font-weight: 600;
+font-size: 12px;
+cursor: pointer;
+padding: 5px 23px 5px 23px;
+border-radius: 15px;
+background-color: white;
+box-shadow: 0px 0px 8px #888888;
+border-color: blue;
+justify-content: flex-end;
+margin: 12px 15px 12px 12px;
 `;
+
+export const MenuContainer = styled.div`
+color: #0f1043;
+ font-family: 'Montserrat', sans-serif; 
+text-transform: capitalize;
+opacity: 1;
+font-size: 12px;
+cursor: pointer;
+margin: 16px 2px;
+font-weight: 700;
+`;
+
 export const HamburgerMenu = styled(Button)`
-  background: none;
-  border: none;
-  font-size: ${fonts.medium}px;
-  color: ${({ theme }) => theme?.hamburgerMenu};
-`;
-export const ProfileWrapper = styled.div`
-  display: flex;
-  width: 65%;
-  float: right;
-  margin-left: auto;
-  margin-right: 24px;
-  position: relative;
-  @media (min-width: 769px) {
-    width: 40%;
-  }
-`;
-
-export const CourseList = styled(InputGroup)`
-  margin: auto 0;
-  width: 100%;
-  #course-id {
-    border: 1px solid ${({ theme }) => theme.border};
-    &:hover,
-    &:focus {
-      background: ${({ theme: { dropDown } }) => dropDown.background};
-      color: ${({ theme: { dropDown } }) => dropDown.color};
-    }
-    color: ${colors.white};
-  }
-  @media (min-width: 769px) {
-    width: 50%;
-  }
-`;
-
-export const ProfileDropDown = styled(Dropdown)`
-  margin: auto;
-  margin-right: 0;
-  #profile-dropdown {
-    color: #2d2d2e;
-    border: none;
-    display: flex;
-    background: none;
-  }
-`;
-export const DropdownToggle = styled(Dropdown.Toggle)`
-  ::after {
-    display: none !important;
-  }
-`;
-export const UserId = styled.div`
-  color: #2d2d2e;
-  margin: auto 12px;
-  font-size: 13px;
-  @media (max-width: 415px) {
-    display: none;
-  }
-`;
-export const UserName = styled.label`
-  color: #2d2d2e;
-  margin: auto 12px;
-  @media (max-width: 415px) {
-    display: none;
-  }
-`;
-
-export const DesktopWrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  @media (max-width: 415px) {
-    display: none;
-  }
-`;
-export const MobileWrapper = styled.div`
-  display: flex;
-  @media (min-width: 415px) {
-    display: none;
-  }
-`;
-
-export const CourseInput = styled(FormControl)`
-  background: ${colors.white} !important;
+background: none;
+border: none;
+:hover {
+  background: white;
+  color: #3335cf;
+}
+font-size: 17px;
+color: #3335cf;
 `;
