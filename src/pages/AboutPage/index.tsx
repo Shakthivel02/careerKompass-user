@@ -16,6 +16,7 @@ import {
   FHeader,
   Links,
   FinalWrapper,
+  LogoWrapper,
   FormCardWrapper,
   FormCard,
   FormCardContent,
@@ -26,7 +27,7 @@ import {
 import Ab from "../../assests/Group.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png";
-import logo from "../../assests/APG.svg"
+import logo from "../../assests/about.png"
 import { Header } from "../../components";
 import { ReactElement } from "react";
 
@@ -58,12 +59,14 @@ const AboutPage = ():ReactElement => {
           personality and skills. Along with assessment and matching preferences,
           Careerkampus also plotsacourse for the future with two different levels,
           one for beginners and another for experienced individuals.
-          <Logo src={logo} />
+          
         </Para>
 
       </FlexWrapper>
 
-
+      <LogoWrapper >
+      <Logo src={logo} />
+      </LogoWrapper>
       <FinalWrapper>
         <Container4>
           <FormCardWrapper>
