@@ -13,7 +13,7 @@ const Routes = (): ReactElement => {
         path={ROUTES.STREAMSELECTION}
         component={StreamSelection}
       />
-      <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
+      < Route path={ROUTES.TEST} component={TestPage} />
       <ProtectedRoute path={ROUTES.RESULTCOPY} component={Result} />
       <ProtectedRoute path={ROUTES.ABOUT} component={AboutPage} />
     </Switch>
