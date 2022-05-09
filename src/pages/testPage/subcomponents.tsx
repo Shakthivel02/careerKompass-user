@@ -5,13 +5,13 @@ import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
 import { ActionButton, FlexWrapper, UserHeader } from "../../components";
-import { Button, ProgressBar } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
 import { SelectedAnswers } from "../../redux/TestApi/types";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
-import 'react-circular-progressbar/dist/styles.css';
+import "react-circular-progressbar/dist/styles.css";
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -37,7 +37,7 @@ const Bold = styled.p<bold>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
   color: #0f1043;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "20px")};
-  font-family: Tahoma, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: auto 0;
   padding: ${({ padding }) => (padding ? "10px" : "0")};
   @media (max-width: 600px) {
@@ -54,7 +54,7 @@ const QuestionNo = styled.span`
   color: #0f1043;
   font-size: 16px;
   margin-left: 8px;
-  font-family: Tahoma, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   opacity: 0.6;
 `;
 
@@ -62,7 +62,11 @@ const TestWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 80%;
+  padding-left: 60px;
   font-family: "Montserrat", sans-serif;
+  @media (max-width: 1000px) {
+    padding: 0px;
+  }
 `;
 
 const Optoins = styled.div`
@@ -151,34 +155,38 @@ export const Option = styled.span`
   }
 `;
 
+/*-----------------Circular bar----------------- */
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+  height: 74%;
+`;
+
 export const PageDivideWrapper = styled.div`
   width: 70%;
 `;
 export const ProgressDivider = styled.div`
   width: 30%;
-  height: auto;
+  height: 100%;
   background-color: #babace;
 `;
-export const ContentWrapper = styled.div`
-  display: flex; 
-  flex-wrap: wrap;
-  height: 100%;
+ 
+export const ProgessWrapper = styled.div`
+  width: 100%;
+  max-width: 80%;
+  margin: 30% auto;
+  @media (min-width: 749px) {
+    width: 53%;
+  }
 `;
 
-export const ProgessWrapper = styled.div` 
-width: 100%;
-  max-width: 80%;
-  //height: 300px;
-  margin: 100px auto ;
-  @media (min-width: 749px) {
-    width: 60%;
-  }
-`
-
 export const Progess = styled(CircularProgressbar)`
-//width: 50%;
-margin: center;
-`
+  margin: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+`;
 
 export const QuestionSection = ({
   data,
@@ -301,7 +309,7 @@ export const QuestionSection = ({
               Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
             </Bold>
             <FlexWrapper>
-              <Bold fontWeight="500" fontSize="16" padding>
+              <Bold fontWeight="500" fontSize="15" padding>
                 {activeQuestions + 1}. {data[activeQuestions]}
               </Bold>
             </FlexWrapper>
@@ -327,7 +335,7 @@ export const QuestionSection = ({
                 </OptionButton>
               </Optoins>
             </TestWrapper>
-            <FlexWrapper justifyContent="center">
+            <FlexWrapper justifyContent="end">
               <SubmitButton onClick={nextClickHandle}>
                 {buttonValue}
               </SubmitButton>
@@ -335,16 +343,17 @@ export const QuestionSection = ({
           </QuestionContainer>
         </PageDivideWrapper>
         <ProgressDivider>
-          <ProgessWrapper> 
+          <ProgessWrapper>
             <Progess
-              value={95}
-              text={`${95}% completed`}
-              strokeWidth={5}
+              value={40}
+              text={`${55}% completed`}
+              strokeWidth={6}
               styles={buildStyles({
                 textColor: "#003B0A",
-                textSize:"4px",
+                textSize: "6px",
                 pathColor: "green",
-                trailColor: "lightgreen"
+                trailColor: "lightgreen",
+                strokeLinecap: "butt",
               })}
             />
           </ProgessWrapper>

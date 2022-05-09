@@ -19,8 +19,7 @@ export const ContainerWrapper = styled.div`
   background: url(${Back});
   background-position: center;
   background-size: cover;
-  width: 100%;
-  overflow: auto;
+  width: 100%; 
   @media (max-width: 700px) {
     width: 100%;
   overflow: auto;
