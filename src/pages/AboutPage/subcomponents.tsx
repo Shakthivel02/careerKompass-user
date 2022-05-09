@@ -156,7 +156,7 @@ export const FinalWrapper = styled.div`
 `;
 
 export const PageWrapper = styled.div`
-  overflow: hidden;
+  //overflow: hidden;
   display: flex;
   flex-direction: column;
   @media (max-width: 415px) {
