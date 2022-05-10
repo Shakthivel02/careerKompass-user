@@ -54,8 +54,8 @@ const Bold = styled.p<bold>`
   }
 `;
 const QuestionContainer = styled.div`
-  width: 70%;
-  //margin-left: 12%;
+  width: 70%; 
+  background-color: #FCFCFF;
   padding-left: 7%;
 `;
 const QuestionNo = styled.span`
@@ -182,7 +182,7 @@ export const PageDivideWrapper = styled.div`
 `;
 export const ProgressDivider = styled.div`
   width: 30%;
-  background-color: #babace;
+  background-color: #F6F6FE;
 `;
 
 export const ProgessWrapper = styled.div`
@@ -298,6 +298,8 @@ export const QuestionSection = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAnswer]);
 
+
+
   return (
     <PageWrapper>
       <UserHeader />
@@ -353,7 +355,7 @@ export const QuestionSection = ({
         <ProgressDivider>
           <ProgessWrapper>
             <Progess
-              value={40}
+              value={data.length * activeQuestions+1 }
               text={`${55}% completed`}
               strokeWidth={6}
               styles={buildStyles({
