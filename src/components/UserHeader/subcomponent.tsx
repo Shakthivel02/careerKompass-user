@@ -45,7 +45,7 @@ export const MenuContainer = styled.div`
   text-transform: capitalize;
   opacity: 1;
   font-size: 12px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   cursor: pointer;
   margin: 16px 2px;
   font-weight: 700;

@@ -119,6 +119,7 @@ const StreamSelection = (): ReactElement => {
                     <LevelCard
                       onClick={() => {
                         setTestID({ testID: x.id });
+                        dispatch(updateSelectedLevel({ test_level: x.name }));
                       }}
                     >
                       {x.name}
@@ -136,7 +137,7 @@ const StreamSelection = (): ReactElement => {
       </Body>
       <FlexWrapper justifyContent="center" height={80}>
         <TestButton
-        variant='secondary'
+          variant="secondary"
           disabled={!canSave}
           onClick={() => {
             dispatch(GetQuestionByTest({ testID: TestID.testID }));
