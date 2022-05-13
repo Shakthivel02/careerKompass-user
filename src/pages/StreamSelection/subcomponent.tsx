@@ -19,8 +19,7 @@ export const ContainerWrapper = styled.div`
   background: url(${Back});
   background-position: center;
   background-size: cover;
-  width: 100%;
-  overflow: auto;
+  width: 100%; 
   @media (max-width: 700px) {
     width: 100%;
   overflow: auto;
@@ -154,8 +153,7 @@ export const TestButton = styled(Button)`
   position: absolute;
   height: 35px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif;
-  //background-color: #8d8d9c;
+  font-family: "Montserrat", sans-serif; 
   font-size: 13px;
   color: #ffffff;
   opacity: 1;

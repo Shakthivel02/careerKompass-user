@@ -4,11 +4,11 @@ import Backimage from "../../assests/container1.jpg";
 import Backimage1 from "../../assests/container3.jpg";
 
 export const PageWrapper = styled.div`
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   @media (max-width: 415px) {
     width: 98%;
+    overflow: auto;
   }
 `;
 
@@ -19,7 +19,7 @@ export const Container1 = styled.div`
   height: 600px;
   background: url(${Backimage});
   background-position: center;
-  background-size: cover;
+  background-size: cover; 
   @media (max-width: 900px) {
     width: 100%;
     height: 450px;
@@ -35,7 +35,8 @@ export const HeaderWrapper = styled.div`
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  background-color: #FFFFFF;
   box-shadow: 0 2px 3px -1px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
   @media (max-width: 600px) {
@@ -124,7 +125,7 @@ export const Details = styled.div`
 
 export const Header = styled.header`
   font-size: 40px;
-  font-weight: 900;
+  font-weight: 800;
   font-family: 'Montserrat', sans-serif;
   color: #0f1043;
   @media (max-width: 500px) {
@@ -644,7 +645,7 @@ export const FormCardInput = styled.input`
   outline: none;
   ::placeholder {
    font-family: 'Montserrat', sans-serif; 
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
   }
   @media (max-width: 650px) {

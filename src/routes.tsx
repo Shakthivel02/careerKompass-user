@@ -1,3 +1,4 @@
+import { ReactElement } from "react";
 import { Switch, Route } from "react-router-dom";
 import ROUTES from "./const/routes";
 import ProtectedRoute from "./container/ProtectedRoute";
@@ -5,7 +6,7 @@ import ProtectedRoute from "./container/ProtectedRoute";
 import { TestPage, User, StreamSelection, Result } from "./pages";
 import AboutPage from "./pages/AboutPage";
 
-const Routes = () => {
+const Routes = ():ReactElement => {
   return (
     <Switch>
       <Route exact path={ROUTES.LOGIN} component={User} />

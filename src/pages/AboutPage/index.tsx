@@ -1,99 +1,85 @@
-import { shallowEqual, useSelector } from "react-redux";
-import {
-  ActionButton,
-  FlexWrapper,
-  PageWrapper,
-  UserHeader,
-} from "../../components";
-import { RootState } from "../../redux/store";
+
+import { FlexWrapper } from "../../components";
 import {
   Para,
   Title,
   AboutImage,
   FlexWrap,
-  CardContainer,
   Container4,
-  WWraper,
-  Titles,
-  Input,
-  Form,
-  ButtonS,
   PrivacyContainer,
   FooterWrapper,
+  Logo,
   Logo1,
   FinalFooter,
   BrandIcon,
+  PageWrapper,
   FHeader,
   Links,
   FinalWrapper,
+  LogoWrapper,
+  FormCardWrapper,
+  FormCard,
+  FormCardContent,
+  FormCardText,
+  FormCardInput,
+  FormCardButton
 } from "../AboutPage/subcomponents";
-import Ab from "../../assests/Group.png";
+import Ab from "../../assests/Group.png"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png";
+import logo from "../../assests/about.png"
+import { Header } from "../../components";
+import { ReactElement } from "react";
 
-const AboutPage = () => {
+const AboutPage = ():ReactElement => {
   return (
     <PageWrapper>
+      <Header />
       <FlexWrap>
-        <UserHeader />
       </FlexWrap>
       <Title>About</Title>
       <FlexWrapper>
         <AboutImage src={Ab} />
         <Para>
           Transforming education for millions of aspirants with various learning
-          <br />
-          modes and innovative teaching techniques, Cloudkampus has arrived asa
-          <br />
+          modes and innovative teaching techniques, Cloudkampus has arrived as a
           reputed global online institution, settingaworld-class learning
-          <br />
           environment.
           <br />
-          <br />
-          With well-designed study materials, specially curated courses, and{" "}
-          <br />
-          certifications to develop in-demand technology, design, and management{" "}
-          <br />
-          skills, Cloudkampus aims to goastep beyond and revolutionize the
-          practice <br />
+          With well-designed study materials, specially curated courses, and
+          certifications to develop in-demand technology, design, and management
+          skills, Cloudkampus aims to goastep beyond and revolutionize the practice
           of career decision-making with Careerkompass's App.
           <br />
-          <br />
-          Careerkompass helps students and professionals steer their course
-          towards
-          <br />
-          findingascientific approach to making crucial work decisions. Building
-          on
-          <br />
-          self-exploration, strength identification, and maximizing inputs fora
-          <br />
-          successful future, Careerkompass empowers students to establish
-          possible
-          <br />
+          Careerkompass helps students and professionals steer their course towards
+          findingascientific approach to making crucial work decisions. Building on
+          self-exploration, strength identification, and maximizing inputs for a
+          successful future, Careerkompass empowers students to establish possible
           success and fulfilment with different career options based on their
-          <br />
-          personality and skills. Along with assessment and matching
-          preferences,
-          <br />
-          Careerkampus also plotsacourse for the future with two different
-          levels,
-          <br />
+          personality and skills. Along with assessment and matching preferences,
+          Careerkampus also plotsacourse for the future with two different levels,
           one for beginners and another for experienced individuals.
+          
         </Para>
+
       </FlexWrapper>
 
+      <LogoWrapper >
+      <Logo src={logo} />
+      </LogoWrapper>
       <FinalWrapper>
         <Container4>
-          <CardContainer>
-            <WWraper>
-              <Titles>Subscribe for NewLetter</Titles>
-              <Input>
-                <Form placeholder="Email here..." />
-                <ButtonS>Send</ButtonS>
-              </Input>
-            </WWraper>
-          </CardContainer>
+          <FormCardWrapper>
+            <FormCard>
+              <FormCardContent>
+                <FormCardText>Subscribe For Newsletter</FormCardText>
+                <FormCardInput placeholder="   Email here" />
+                <FormCardButton>Send</FormCardButton>
+              </FormCardContent>
+            </FormCard>
+          </FormCardWrapper>
         </Container4>
+
         <PrivacyContainer>
           <FooterWrapper>
             <div>
@@ -126,7 +112,7 @@ const AboutPage = () => {
               <Links>Chennai 600-004</Links>
             </div>
           </FooterWrapper>
-          <FinalFooter>
+          <FinalFooter >
             <div>Copyright & Designed By CareerKompass</div>
             <div>Terms | Privacy Policy</div>
           </FinalFooter>

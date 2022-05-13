@@ -38,6 +38,12 @@ import {
   faFileAlt,
 } from "@fortawesome/free-regular-svg-icons";
 
+import {
+  faFacebook,
+  faLinkedin,
+  faTwitter
+} from '@fortawesome/free-brands-svg-icons'
+
 library.add(
   faMobile,
   faUser,
@@ -71,5 +77,8 @@ library.add(
   faMedal,
   faTools,
   faBook,
-  faDownload
+  faDownload,
+  faFacebook,
+  faTwitter,
+  faLinkedin
 );

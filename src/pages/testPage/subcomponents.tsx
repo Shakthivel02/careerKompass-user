@@ -10,9 +10,15 @@ import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
 import { SelectedAnswers } from "../../redux/TestApi/types";
+import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
+import "react-circular-progressbar/dist/styles.css";
+import Background from "../../assests/testHeader.svg";
 
 export const FlexWrap = styled.div`
   display: flex;
+  background: url(${Background});
+  background-position: center;
+  background-size: 1000px;
   justify-content: space-around;
   width: 100%;
   background-color: #fff2e1;
@@ -30,29 +36,34 @@ interface bold {
   fontSize?: string;
   fontWeight?: string;
   padding?: boolean;
+  color?: string;
+  paddingRight?: boolean;
 }
 const Bold = styled.p<bold>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
-  color: #0f1043;
-  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "20px")};
-  font-family: Tahoma, Helvetica, sans-serif;
+  color: #3335cf;
+  font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "21px")};
+  color: ${({ color }) => (color ? `${color}` : "#000124")};
+  font-family: "Montserrat", sans-serif;
   margin: auto 0;
-  padding: ${({ padding }) => (padding ? "10px" : "0")};
+  padding: ${({ padding }) => (padding ? "14px" : "0")};
+  padding-right: ${({ paddingRight }) => (paddingRight ? "190px" : "0")};
   @media (max-width: 600px) {
     font-size: 14px;
     width: 100%;
   }
 `;
 const QuestionContainer = styled.div`
-  width: 80%;
-  margin-left: 12%;
+  width: 70%; 
+  background-color: #FCFCFF;
+  padding-left: 7%;
 `;
 const QuestionNo = styled.span`
   font-weight: 700;
   color: #0f1043;
   font-size: 16px;
   margin-left: 8px;
-  font-family: Tahoma, Helvetica, sans-serif;
+  font-family: "Montserrat", sans-serif;
   opacity: 0.6;
 `;
 
@@ -60,12 +71,16 @@ const TestWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 80%;
+  padding-left: 60px;
   font-family: "Montserrat", sans-serif;
+  @media (max-width: 1000px) {
+    padding: 0px;
+  }
 `;
 
 const Optoins = styled.div`
   display: flex;
-  width: 50%;
+  width: 80%;
   align-items: center;
   @media (max-width: 1000px) {
     width: 42%;
@@ -83,7 +98,7 @@ const OptionButton = styled(Button)`
   border-bottom-right-radius: 5px;
   border: none;
   color: #000124;
-  width: 40%;
+  width: 80%;
   font-size: 12px;
   font-weight: 400;
   padding: 10px;
@@ -106,14 +121,15 @@ const OptionButton = styled(Button)`
 const SubmitButton = styled(Button)`
   height: 35px;
   width: 100px;
-  background: #ff7b00 0% 0% no-repeat padding-box;
+  background: #ff7b00;
   border: none;
+  float: right;
   font-size: 14px;
   color: #ffffff;
   opacity: 1;
-  font-family: 'Montserrat', sans-serif;
-  margin-left: 14%;
-  margin-top: 4%;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 7%;
+  margin-right: 100px;
   &:hover,
   &:active,
   &:focus {
@@ -138,6 +154,9 @@ export const OptionText = styled.span`
 
 export const Option = styled.span`
   float: left;
+  display: flex; 
+  justify-content: center;
+  width: 10%; 
   ${OptionButton}:hover & {
     color: white;
   }
@@ -147,6 +166,37 @@ export const Option = styled.span`
   @media (max-width: 800px) {
     font-size: 10px;
   }
+`;
+
+/*-----------------Circular bar----------------- */
+
+export const ContentWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 74%;
+`;
+
+export const PageDivideWrapper = styled.div`
+  width: 70%;
+`;
+export const ProgressDivider = styled.div`
+  width: 30%;
+  background-color: #F6F6FE;
+`;
+
+export const ProgessWrapper = styled.div`
+  width: 100%;
+  max-width: 80%;
+  margin: 30% auto;
+  @media (min-width: 749px) {
+    width: 53%;
+  }
+`;
+
+export const Progess = styled(CircularProgressbar)`
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
 `;
 
 export const QuestionSection = ({
@@ -248,56 +298,77 @@ export const QuestionSection = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAnswer]);
 
+
+
   return (
     <PageWrapper>
       <UserHeader />
       <FlexWrap>
-        <Bold>Selected Stream & Level</Bold>
+        <Bold paddingRight>
+          Your brightest path is out there. Get started!!
+        </Bold>
         <div id="logoWrapper">
           <ActionButton
             id="logoWrapper"
             marginTop="32"
             backgroundColor="#3335CF"
           >
-            {TestName} - {level}
+            {TestName}-{level}
           </ActionButton>
         </div>
       </FlexWrap>
-      <QuestionContainer>
-        <Bold fontSize="16" padding>
-          Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
-        </Bold>
-        <FlexWrapper>
-          <Bold fontWeight="500" fontSize="16" padding>
-            {activeQuestions + 1}. {data[activeQuestions]}
+      <ContentWrapper>
+        <QuestionContainer>
+          <Bold fontSize="16" padding>
+            Question <QuestionNo>{`${activeQuestions + 1} of 16`}</QuestionNo>
           </Bold>
-        </FlexWrapper>
-        <TestWrapper>
-          <Optoins
-            onClick={(e) => {
-              changeHandler(e);
-            }}
-          >
-            <OptionButton value="True">
-              <Option>A</Option>
-              <OptionText>True</OptionText>
-            </OptionButton>
-          </Optoins>
-          <Optoins
-            onClick={(e) => {
-              changeHandler(e);
-            }}
-          >
-            <OptionButton value="False">
-              <Option>B</Option>
-              <OptionText>False</OptionText>
-            </OptionButton>
-          </Optoins>
-        </TestWrapper>
-        <FlexWrapper justifyContent="center">
+          <FlexWrapper>
+            <Bold fontWeight="500" fontSize="15" padding>
+              {activeQuestions + 1}.{data[activeQuestions]}
+            </Bold>
+          </FlexWrapper>
+          <TestWrapper>
+            <Optoins
+              onClick={(e) => {
+                changeHandler(e);
+              }}
+            >
+              <OptionButton value="True">
+                <Option>A</Option>
+                <OptionText>True</OptionText>
+              </OptionButton>
+            </Optoins>
+            <Optoins
+              onClick={(e) => {
+                changeHandler(e);
+              }}
+            >
+              <OptionButton value="False">
+                <Option>B</Option>
+                <OptionText>False</OptionText>
+              </OptionButton>
+            </Optoins>
+          </TestWrapper>
+
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
-        </FlexWrapper>
-      </QuestionContainer>
+        </QuestionContainer>
+        <ProgressDivider>
+          <ProgessWrapper>
+            <Progess
+              value={data.length * activeQuestions+1 }
+              text={`${55}% completed`}
+              strokeWidth={6}
+              styles={buildStyles({
+                textColor: "#003B0A",
+                textSize: "6px",
+                pathColor: "green",
+                trailColor: "lightgreen",
+                strokeLinecap: "butt",
+              })}
+            />
+          </ProgessWrapper>
+        </ProgressDivider>
+      </ContentWrapper>
     </PageWrapper>
   );
 };
