@@ -64,3 +64,13 @@ export interface InitialState {
   testID: SelectedTest;
   level: SelectedLevel;
 }
+
+export interface opt {
+  username: string
+  password: string
+  to: string
+  from: string
+  text: string
+  token: string
+  dlrmask: string
+}

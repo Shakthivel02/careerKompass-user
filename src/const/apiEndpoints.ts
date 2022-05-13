@@ -11,6 +11,7 @@ const apiEndpoints = {
   getCountries: "Get_Countries",
   getState: "Get_States",
   getCountryPin: "Contact_Code",
+  otp:'smpp/sendsms'
 };
 
 export default apiEndpoints;

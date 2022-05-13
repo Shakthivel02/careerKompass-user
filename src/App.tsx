@@ -1,6 +1,6 @@
 import { ReactElement, useEffect } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import theme, { colors } from "./const/theme"; 
+import theme, { colors } from "./const/theme";
 import Header from "./components/Header";
 import { Router } from "react-router-dom";
 import styled from "styled-components";
@@ -40,8 +40,9 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
   body {
     @import url('https://fonts.googleapis.com/css?family=Open+Sans');
     font-family: "Open Sans", sans-serif;
+    overflow-x: hidden;
     overflow: ${({ isMobileMenuOpen }) =>
-      isMobileMenuOpen ? "hidden" : "auto"};
+    isMobileMenuOpen ? "hidden" : "auto"}; 
   }
   #container {
     z-index: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "-1" : "0")};

@@ -356,7 +356,7 @@ export const QuestionSection = ({
           <ProgessWrapper>
             <Progess
               value={data.length * activeQuestions+1 }
-              text={`${55}% completed`}
+              text={`${data.length * activeQuestions+1}% completed`}
               strokeWidth={6}
               styles={buildStyles({
                 textColor: "#003B0A",

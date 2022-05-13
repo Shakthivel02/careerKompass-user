@@ -1,21 +1,21 @@
-import { Button, Form, FormControl, InputGroup, Modal } from "react-bootstrap";
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
 import styled from "styled-components";
+import { Modal } from "../../../components";
 
 export const RegisterModalDialog = styled(Modal)`
   display: flex !important;
-  .modal-content {
-    border: none;
-    border-radius: 20px !important;
-  }
 `;
 
 export const RegisterWrapper = styled.div`
   text-align: center;
-  height: 570px;
-  width: 750px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 520px;
+  width: 700px;
   border-radius: 20px;
   border: none;
-  padding: 20px;
+  padding: 20px ;
   @media (max-width: 900px) {
     width: auto;
   }
@@ -140,9 +140,10 @@ export const Span = styled.div`
   border: none;
   display: flex;
   align-items: center;
+  font-family: 'Montserrat', sans-serif; 
   background: #eeeeff 0% 0% no-repeat padding-box;
-  padding: 5px;
+  padding: 10px;
   text-transform: capitalize;
-  opacity: 0.57;
+  opacity: 0.8;
   font-size: 12px;
 `;

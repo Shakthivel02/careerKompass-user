@@ -1,8 +1,8 @@
 import { ReactElement } from 'react'
-import { Modal as BootstrapModal } from 'react-bootstrap'
 import { colors } from '../../const/theme'
 import { Body, H3 } from '../../typography'
 import ModalProps from './typings'
+import { BootstrapModal } from './subcomponent'
 
 const Modal = ({
   title,
@@ -15,11 +15,12 @@ const Modal = ({
       show={true}
       onHide={handleCancel}
       size={isLargeModal ? 'lg' : 'sm'}
-      centered={true} 
-      backdrop="static"
+      centered={true}
+      backdrop="false"
+      dialogClassName='dialog'
       keyboard={false}
     >
-      <BootstrapModal.Header closeButton>
+      <BootstrapModal.Header style={{ border: 'none' }}>
         {title && <H3 color={colors.purple}>{title}</H3>}
       </BootstrapModal.Header>
 

@@ -15,6 +15,7 @@ export interface EditableDropdownProps {
   error?: string
   isDisabled?: boolean
   defaultValue?: DropdownListProps | null
+  reset?: boolean
 }
 
 export interface EditDropdownWrapperProps {

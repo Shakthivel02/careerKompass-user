@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable eqeqeq */
 /* eslint-disable no-empty-pattern */
 /* eslint-disable jsx-a11y/alt-text */
@@ -124,6 +125,8 @@ import {
   ResendButton,
 } from "./OTPStyle/subcomponent";
 import { getCountryPin, getStates } from "../../redux/Register/api";
+import Register from "./RegisterStyle";
+import { getOTP } from "../../redux/streamMaster/api";
 
 const User = (): ReactElement => {
   const {
@@ -150,18 +153,20 @@ const User = (): ReactElement => {
 
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  const [showOtp, setShowOtp] = useState(false);
+  //\\const [showOtp, setShowOtp] = useState(false);
   const [values, setValues] = useState(registerDetails);
 
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const handleRegisterSubmit = (e: SyntheticEvent) => {
-    e.preventDefault();
-    dispatch(AddUserApi(values));
-    setShowOtp(true);
-    setShowRegister(false);
-  };
+  console.log(showRegister);
+  
+  // const handleRegisterSubmit = (e: SyntheticEvent) => {
+  //   e.preventDefault();
+  //   dispatch(AddUserApi(values));
+  //   setShowOtp(true);
+  //   setShowRegister(false);
+  // };
 
   useEffect(() => {
     dispatch(getCountries());
@@ -210,7 +215,9 @@ const User = (): ReactElement => {
             personality-skill-job-synchronization, embark on a redefined career
             test to negative in the direction of your dreams.
           </Footer>
-          <Start onClick={() => setShowLogin(true)}>Start Test</Start>
+          <Start onClick={() => {
+            setShowLogin(true)
+          }}>Start Test</Start>
         </Details>
         <ContainBImg src={Backimage12} />
         <ContainImg src={Backimage11} />
@@ -332,6 +339,23 @@ const User = (): ReactElement => {
 
       {showRegister && (
         <RegisterModalDialog
+          isLargeModal={true}
+          handleSubmit={() => {
+            setShowRegister(false)
+          }}
+          handleCancel={() => setShowRegister(false)}
+        >
+          <Register
+            values={values}
+            setValues={setValues}
+            setLogin={setShowLogin}
+            setRegister={setShowRegister}
+          />
+        </RegisterModalDialog>
+      )}
+
+      {/* {showRegister && (
+        <RegisterModalDialog
           show={true}
           onHide={() => setShowRegister(false)}
           centered={true}
@@ -448,11 +472,11 @@ const User = (): ReactElement => {
             </RegisterModalWrapper>
           </RegisterWrapper>
         </RegisterModalDialog>
-      )}
+      )} */}
 
       {/* --------------------------------------------otpModal-------------------------------------------------- */}
 
-      {showOtp && (
+      {/* {showOtp && (
         <OTPModalDialog
           show={true}
           onHide={() => setShowOtp(false)}
@@ -491,7 +515,7 @@ const User = (): ReactElement => {
             </OTPTitleWrapper>
           </OTPWrapper>
         </OTPModalDialog>
-      )}
+      )} */}
     </PageWrapper>
   );
 };

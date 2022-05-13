@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DropdownButton, Dropdown, FormControl } from 'react-bootstrap'
 import {
   ListInput,
@@ -18,14 +18,25 @@ const EditableDropdown = ({
   onBlur,
   error,
   isDisabled,
-  defaultValue
+  defaultValue,
+  reset
 }: EditableDropdownProps) => {
   const { name, id } = defaultValue || {}
   const [selectdItem, setSelectedItem] = useState({
     name: name || '',
     id: id || ''
   })
+  
+  useEffect(() => {
+    if (reset) {
+      setSelectedItem({
+        name: '',
+        id: ''
+      })
+    }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [reset])
   return (
     <EditDropdownWrapper
       width={width}
