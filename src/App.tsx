@@ -12,7 +12,7 @@ import BREAKPOINTS from "./const/breakpoint";
 import useBreakpoint from "use-breakpoint";
 import { updateIsMenuOpen } from "./redux/menu/actions";
 import FooterComponent from "./components/Footer";
-import './App.css'
+import "./App.css";
 
 interface BodyProps {
   isShowOverlay?: boolean;
@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle<GlobalStylesProps>`
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
     overflow: ${({ isMobileMenuOpen }) =>
-    isMobileMenuOpen ? "hidden" : "auto"}; 
+      isMobileMenuOpen ? "hidden" : "1px"}; 
   }
   #container {
     z-index: ${({ isMobileMenuOpen }) => (isMobileMenuOpen ? "-1" : "0")};
