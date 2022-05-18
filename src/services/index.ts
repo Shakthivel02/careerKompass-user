@@ -2,7 +2,7 @@ import axios from "axios";
 import ROUTES from "../const/routes";
 
 const axiosConfig = {
-  baseURL: "http://184.73.172.162:3000/api/",
+  baseURL: "http://localhost:4300/api/",
   timeout: 30000,
   headers: {
     "content-type": "application/json; charset=utf-8",

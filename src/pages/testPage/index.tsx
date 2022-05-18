@@ -3,8 +3,6 @@ import { shallowEqual, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { QuestionSection } from "./subcomponents";
 
-
-
 const TestPage = (): ReactElement => {
   const { questionList } = useSelector(
     (state: RootState) => ({
@@ -15,8 +13,8 @@ const TestPage = (): ReactElement => {
   const [activeQuestions, setActiveQuestion] = useState(0);
   const questionData = questionList.map((question) => question.question);
   const questionNo = questionList.map((question) => question.question_ID);
-  const catID = questionList.map((question) => question.cat_id);
-  const CrtAns = questionList.map((question) => question.answer);
+  const isMultiOption = questionList.map((question) => question.ismultioption);
+  const Options = questionList.map((question) => question.multioption);
 
   return (
     <QuestionSection
@@ -24,8 +22,8 @@ const TestPage = (): ReactElement => {
       quesId={questionNo}
       activeQuestions={activeQuestions}
       onSetActiveQuestion={setActiveQuestion}
-      catID={catID}
-      correctAns={CrtAns}
+      isMultiOption={isMultiOption}
+      options={Options[activeQuestions]}
     />
   );
 };

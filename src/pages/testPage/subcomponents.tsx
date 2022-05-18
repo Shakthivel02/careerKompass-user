@@ -54,8 +54,8 @@ const Bold = styled.p<bold>`
   }
 `;
 const QuestionContainer = styled.div`
-  width: 70%; 
-  background-color: #FCFCFF;
+  width: 70%;
+  background-color: #fcfcff;
   padding-left: 7%;
 `;
 const QuestionNo = styled.span`
@@ -154,9 +154,9 @@ export const OptionText = styled.span`
 
 export const Option = styled.span`
   float: left;
-  display: flex; 
+  display: flex;
   justify-content: center;
-  width: 10%; 
+  width: 10%;
   ${OptionButton}:hover & {
     color: white;
   }
@@ -182,7 +182,7 @@ export const PageDivideWrapper = styled.div`
 `;
 export const ProgressDivider = styled.div`
   width: 30%;
-  background-color: #F6F6FE;
+  background-color: #f6f6fe;
 `;
 
 export const ProgessWrapper = styled.div`
@@ -203,8 +203,8 @@ export const QuestionSection = ({
   data,
   activeQuestions,
   quesId,
-  catID,
-  correctAns,
+  isMultiOption,
+  options,
   onSetActiveQuestion,
 }: QuestionSectionProps): ReactElement => {
   const history = useHistory();
@@ -298,8 +298,6 @@ export const QuestionSection = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedAnswer]);
 
-
-
   return (
     <PageWrapper>
       <UserHeader />
@@ -327,36 +325,53 @@ export const QuestionSection = ({
               {activeQuestions + 1}.{data[activeQuestions]}
             </Bold>
           </FlexWrapper>
-          <TestWrapper>
-            <Optoins
-              onClick={(e) => {
-                changeHandler(e);
-              }}
-            >
-              <OptionButton value="True">
-                <Option>A</Option>
-                <OptionText>True</OptionText>
-              </OptionButton>
-            </Optoins>
-            <Optoins
-              onClick={(e) => {
-                changeHandler(e);
-              }}
-            >
-              <OptionButton value="False">
-                <Option>B</Option>
-                <OptionText>False</OptionText>
-              </OptionButton>
-            </Optoins>
-          </TestWrapper>
+          {(isMultiOption[activeQuestions] == false && (
+            <TestWrapper>
+              <Optoins
+                onClick={(e) => {
+                  changeHandler(e);
+                }}
+              >
+                <OptionButton value="True">
+                  <Option>A</Option>
+                  <OptionText>True</OptionText>
+                </OptionButton>
+              </Optoins>
+              <Optoins
+                onClick={(e) => {
+                  changeHandler(e);
+                }}
+              >
+                <OptionButton value="False">
+                  <Option>B</Option>
+                  <OptionText>False</OptionText>
+                </OptionButton>
+              </Optoins>
+            </TestWrapper>
+          )) || (
+            <TestWrapper>
+              {options?.map((opt) => (
+                <Optoins
+                  onClick={(e) => {
+                    changeHandler(e);
+                  }}
+                >
+                  <OptionButton value={opt.option}>
+                    <Option>A</Option>
+                    <OptionText>{opt.option}</OptionText>
+                  </OptionButton>
+                </Optoins>
+              ))}
+            </TestWrapper>
+          )}
 
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
         </QuestionContainer>
         <ProgressDivider>
           <ProgessWrapper>
             <Progess
-              value={data.length * activeQuestions+1 }
-              text={`${data.length * activeQuestions+1}% completed`}
+              value={data.length * activeQuestions + 1}
+              text={`${data.length * activeQuestions + 1}% completed`}
               strokeWidth={6}
               styles={buildStyles({
                 textColor: "#003B0A",
