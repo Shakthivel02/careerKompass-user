@@ -37,10 +37,16 @@ export interface SelectedLevel {
   test_level: string;
 }
 
+export interface OptionProps {
+  option: string;
+}
+
 export interface QuestionType {
   question_ID: string;
   question: string;
   question_no: string;
+  multioption: Array<OptionProps>;
+  ismultioption: boolean;
   answer: string;
   test_ID: string;
   test_name: string;
@@ -66,11 +72,11 @@ export interface InitialState {
 }
 
 export interface opt {
-  username: string
-  password: string
-  to: string
-  from: string
-  text: string
-  token: string
-  dlrmask: string
+  username: string;
+  password: string;
+  to: string;
+  from: string;
+  text: string;
+  token: string;
+  dlrmask: string;
 }
