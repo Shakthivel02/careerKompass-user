@@ -1,5 +1,4 @@
 import {
-    validateConfirmPassword,
     validateEmail,
     validatePassword,
     validatePhone,
@@ -14,7 +13,7 @@ const validateRegistration = ({
     fields
 }: RegisterValidation): Record<string, string> => {
     let formErrors: Record<string, string> = { ...errors }
-    const { name, lastName, password, confirmPassword, email,
+    const { name, lastName, password, email,
         mobile, state } = values
 
     switch (fields) {
@@ -26,9 +25,6 @@ const validateRegistration = ({
             break
         case 'password':
             formErrors['password'] = validatePassword(password)
-            break
-        case 'confirmPassword':
-            formErrors['confirmPassword'] = validateConfirmPassword(confirmPassword, password)
             break
         case 'email':
             formErrors['email'] = validateEmail(email)
@@ -43,7 +39,6 @@ const validateRegistration = ({
             formErrors['name'] = validateUsername(name)
             formErrors['lastName'] = validateUsername(lastName)
             formErrors['password'] = validatePassword(password)
-            formErrors['confirmPassword'] = validateConfirmPassword(confirmPassword, password)
             formErrors['email'] = validateEmail(email)
             formErrors['mobile'] = validatePhone(mobile)
             formErrors['state'] = validateRequired(state)

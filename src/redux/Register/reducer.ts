@@ -20,7 +20,6 @@ const initialState: InitialState = {
     name: "",
     lastName: "",
     password: "",
-    confirmPasword:'',
     email: "",
     mobile: "",
     country: "India",

@@ -48,7 +48,7 @@ import {
 } from '../OTPStyle/subcomponent'
 import { getOTP } from '../../../redux/streamMaster/api'
 import validateRegistration from './helper'
-import { hasFormError } from '../../../helpers/formValidation'
+import { hasFormError, validateConfirmPassword } from '../../../helpers/formValidation'
 import { RegisterField } from './typing'
 
 interface RegisterProps {
@@ -80,6 +80,8 @@ const Register = ({
     const CountyDropdown = countryList ? getCountryDropdown(countryList) : [];
     const StateDropDown = stateList ? getStateDropdown(stateList) : [];
 
+    const [cnpass, setCnpss] = useState('')
+    const [cnpassError, setCnpssError] = useState('')
     const [errors, setErrors] = useState({} as Record<string, string>)
     const [showOtp, setShowOtp] = useState(false);
     const [pin, setPin] = useState("+91");
@@ -184,7 +186,7 @@ const Register = ({
                                         setValues({ ...values, password: e.target.value })
                                     }
                                     value={values?.password}
-                                    type="text"
+                                    type="password"
                                     onBlur={() => validateBlur('password')}
                                     isValid={!errors.password}
                                     isInvalid={!!errors.password}
@@ -194,16 +196,19 @@ const Register = ({
                             <RegisterInput>
                                 <RegisterFormInput
                                     placeholder="Comfirm Password"
-                                    value={values?.confirmPassword}
+                                    value={cnpass}
                                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                                        setValues({ ...values, confirmPassword: e.target.value })
+                                        setCnpss(e.target.value)
                                     }
-                                    type="text"
-                                    onBlur={() => validateBlur('confirmPassword')}
-                                    isValid={!errors.confirmPassword}
-                                    isInvalid={!!errors.confirmPassword}
+                                    type="password"
+                                    onBlur={() => {
+                                        const cnerror = validateConfirmPassword(values?.password, cnpass)
+                                        setCnpssError(cnerror)
+                                    }}
+                                    isValid={!cnpassError}
+                                    isInvalid={!!cnpassError}
                                 />
-                                <FormFeedback type='invalid'>{errors.confirmPassword}</FormFeedback>
+                                <FormFeedback type='invalid'>{cnpassError}</FormFeedback>
                             </RegisterInput>
                             <RegisterInput>
                                 <RegisterFormInput

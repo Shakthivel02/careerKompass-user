@@ -2,7 +2,7 @@ export interface Register {
     name: string;
     lastName: string;
     password: string;
-    confirmPassword: string
+    confirmPassword?: string
     email: string;
     mobile: string;
     country?: string;
