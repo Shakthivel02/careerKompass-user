@@ -11,7 +11,7 @@ export const RegisterWrapper = styled.div`
   display: block;
   justify-content: center;
   align-items: center;
-  height: 520px;
+  height: auto;
   width: 700px;
   border-radius: 20px;
   border: none;
@@ -147,3 +147,9 @@ export const Span = styled.div`
   opacity: 0.8;
   font-size: 12px;
 `;
+
+export const FormFeedback = styled(FormControl.Feedback)` 
+font-size: 10px;
+font-family: 'Montserrat', sans-serif; 
+font-weight: 700;
+`
