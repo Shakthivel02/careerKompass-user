@@ -26,6 +26,7 @@ import {
     RegisterTitleWrapper,
     ModalRegisterButton,
     Span,
+    FormFeedback,
 } from './subcomponents'
 import logo from "../../../assests/logo.png";
 import lock from "../../../assests/login.png";
@@ -46,6 +47,9 @@ import {
     ResendButton
 } from '../OTPStyle/subcomponent'
 import { getOTP } from '../../../redux/streamMaster/api'
+import validateRegistration from './helper'
+import { hasFormError } from '../../../helpers/formValidation'
+import { RegisterField } from './typing'
 
 interface RegisterProps {
     values: any
@@ -76,6 +80,7 @@ const Register = ({
     const CountyDropdown = countryList ? getCountryDropdown(countryList) : [];
     const StateDropDown = stateList ? getStateDropdown(stateList) : [];
 
+    const [errors, setErrors] = useState({} as Record<string, string>)
     const [showOtp, setShowOtp] = useState(false);
     const [pin, setPin] = useState("+91");
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -83,20 +88,38 @@ const Register = ({
 
     const dispatch = useDispatch()
 
+    const validateBlur = (fields: RegisterField) => {
+        setErrors(
+            validateRegistration({
+                values,
+                errors,
+                fields
+            })
+        )
+    }
+
     const handleRegisterSubmit = (e: SyntheticEvent) => {
         e.preventDefault();
-        setRegister(true)
-        dispatch(AddUserApi(values));
-        dispatch(getOTP({
-            username: values?.name,
-            password: values?.password,
-            to: `91${values?.mobile}`,
-            from: 'CKCADD',
-            text: 'Message',
-            token: '23152918K7a944tgI8VicgTjjasVnWSYuXFkNP/6BlpKJBwIN+U=uZ$8A9dAN3pN$TYA8DP8',
-            dlrmask: '19'
-        }))
-        setShowOtp(true)
+        const validationError = validateRegistration({
+            values,
+            errors
+        })
+        if (hasFormError(validationError)) {
+            setErrors(validationError)
+        } else {
+            setRegister(true)
+            dispatch(AddUserApi(values));
+            dispatch(getOTP({
+                username: values?.name,
+                password: values?.password,
+                to: `91${values?.mobile}`,
+                from: 'CKCADD',
+                text: 'Message',
+                token: '23152918K7a944tgI8VicgTjjasVnWSYuXFkNP/6BlpKJBwIN+U=uZ$8A9dAN3pN$TYA8DP8',
+                dlrmask: '19'
+            }))
+            setShowOtp(true)
+        }
     };
 
     useEffect(() => {
@@ -132,7 +155,12 @@ const Register = ({
                                         setValues({ ...values, name: e.target.value })
                                     }
                                     type="text"
+                                    value={values?.name}
+                                    onBlur={() => validateBlur('name')}
+                                    isValid={!errors.name}
+                                    isInvalid={!!errors.name}
                                 />
+                                <FormFeedback type='invalid'>{errors.name}</FormFeedback>
                             </RegisterInput>
                             <RegisterInput>
                                 <RegisterFormInput
@@ -140,8 +168,13 @@ const Register = ({
                                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                         setValues({ ...values, lastName: e.target.value })
                                     }
+                                    value={values?.lastName}
                                     type="text"
+                                    onBlur={() => validateBlur('lastName')}
+                                    isValid={!errors.lastName}
+                                    isInvalid={!!errors.lastName}
                                 />
+                                <FormFeedback type='invalid'>{errors.name}</FormFeedback>
                             </RegisterInput>
 
                             <RegisterInput>
@@ -150,15 +183,27 @@ const Register = ({
                                     onChange={(e: ChangeEvent<HTMLInputElement>) =>
                                         setValues({ ...values, password: e.target.value })
                                     }
+                                    value={values?.password}
                                     type="text"
+                                    onBlur={() => validateBlur('password')}
+                                    isValid={!errors.password}
+                                    isInvalid={!!errors.password}
                                 />
+                                <FormFeedback type='invalid'>{errors.password}</FormFeedback>
                             </RegisterInput>
                             <RegisterInput>
                                 <RegisterFormInput
                                     placeholder="Comfirm Password"
-                                    onChange={() => { }}
+                                    value={values?.confirmPassword}
+                                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                                        setValues({ ...values, confirmPassword: e.target.value })
+                                    }
                                     type="text"
+                                    onBlur={() => validateBlur('confirmPassword')}
+                                    isValid={!errors.confirmPassword}
+                                    isInvalid={!!errors.confirmPassword}
                                 />
+                                <FormFeedback type='invalid'>{errors.confirmPassword}</FormFeedback>
                             </RegisterInput>
                             <RegisterInput>
                                 <RegisterFormInput
@@ -167,7 +212,12 @@ const Register = ({
                                         setValues({ ...values, email: e.target.value })
                                     }
                                     type="text"
+                                    value={values?.email}
+                                    onBlur={() => validateBlur('email')}
+                                    isValid={!errors.email}
+                                    isInvalid={!!errors.email}
                                 />
+                                <FormFeedback type='invalid'>{errors.email}</FormFeedback>
                             </RegisterInput>
                             <RegisterInput>
                                 <EditableDropdown
@@ -194,7 +244,8 @@ const Register = ({
                                         setValues({ ...values, state: value?.name });
                                         dispatch(getProfile());
                                     }}
-
+                                    onBlur={() => validateBlur('state')}
+                                    error={errors.state}
                                 />
                             </RegisterInput>
                             <RegisterInput>
@@ -205,7 +256,13 @@ const Register = ({
                                         setValues({ ...values, mobile: e.target.value })
                                     }
                                     type="text"
+                                    value={values?.mobile}
+
+                                    onBlur={() => validateBlur('mobile')}
+                                    isValid={!errors.mobile}
+                                    isInvalid={!!errors.mobile}
                                 />
+                                <FormFeedback type='invalid'>{errors.mobile}</FormFeedback>
                             </RegisterInput>
                         </FlexWrapper>
                         <FlexWrapper justifyContent="center" noPadding>
