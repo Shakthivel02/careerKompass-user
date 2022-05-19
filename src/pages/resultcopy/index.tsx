@@ -1,8 +1,4 @@
-import {
-  ActionButton,
-  UserHeader,
-  FlexWrapper,
-} from "../../components";
+import { ActionButton, UserHeader, FlexWrapper } from "../../components";
 import {
   Bold,
   FlexWrap,
@@ -32,7 +28,9 @@ import {
   Recommanded,
   Paras2,
   CongratLine,
-  CongratWrapper
+  CongratWrapper,
+  BadgeText,
+  StyledBadge,
 } from "./sucomponents";
 import badgeImg from "../../assests/badge.svg";
 import Gp from "../../assests/Gp1.png";
@@ -59,7 +57,7 @@ const Result = () => {
   const [FrstName] = userName.map((x) => x.user_name);
   const [LastName] = userName.map((x) => x.last_name);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [course] = cat.map((x) => x.course);
+  const [category] = cat.map((x) => x.name);
 
   return (
     <PageWrapper>
@@ -85,7 +83,7 @@ const Result = () => {
               Congratulation.. {FrstName} {LastName}
             </CongratLine>
           </CongratWrapper>
-          <Title>Your are a Analyst</Title>
+          <Title>Your are a {category}</Title>
           <FlexWrapper justifyContent="space-around">
             <Para>
               You love gaining knowledge in various science and engineering
@@ -94,24 +92,23 @@ const Result = () => {
               calculations that tell how durable and reliable different
               components are.You are also enthusiastic about documenting the
               difference in performances of things under different external
-              conditions.
-
-              As '{badge}' is your favourite stream.you could focus on making
-              yourself conversant with laws governing flying,quality and
-              performance of flying objects and the materials they are made
+              conditions. As '{badge}' is your favourite stream.you could focus
+              on making yourself conversant with laws governing flying,quality
+              and performance of flying objects and the materials they are made
               of,and so on.
-
             </Para>
             <div>
               <ContentPageLogo src={badgeImg} />
               <RelativeWrap>
                 <CareerKompass src={careerKompass} />
+                <BadgeText>YOU ARE A</BadgeText>
+                <StyledBadge>{category}</StyledBadge>
               </RelativeWrap>
             </div>
           </FlexWrapper>
 
           <FlexWrapper justifyContent="center">
-            <CardWrapper2 >
+            <CardWrapper2>
               <Paras>
                 You can have a great scope as a product analyst in Aeronautical
                 Engineering. To shine as an analyst, focus on mastering the
@@ -127,15 +124,18 @@ const Result = () => {
             </CardWrapper2>
           </FlexWrapper>
           <FlexWrapper>
-            <Recommanded>Following are the recommended CloudKampus Certified programs for you:</Recommanded>
+            <Recommanded>
+              Following are the recommended CloudKampus Certified programs for
+              you:
+            </Recommanded>
 
             <SideTitles>Subscription plan :</SideTitles>
             <Paras2>
-              You can choose a subscription plan suitable for you and enroll in a
-              number of individual courses and learn all the recommended software
-              / skills - without having to pay for each and every course
-              separately. Subscription plans are the best when you want to learn
-              more than one course.
+              You can choose a subscription plan suitable for you and enroll in
+              a number of individual courses and learn all the recommended
+              software / skills - without having to pay for each and every
+              course separately. Subscription plans are the best when you want
+              to learn more than one course.
             </Paras2>
             <SideTitles>Individual programs :</SideTitles>
             <Paras2>

@@ -14,7 +14,7 @@ export const PageWrapper = styled.div`
 `;
 export const Text = styled.div`
   margin-top: 2;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: white;
   font-size: 22px;
   font-weight: 600;
@@ -26,7 +26,7 @@ export const Text = styled.div`
   @media (max-width: 1200px) {
     font-size: 15px;
     width: 100%;
-    margin:auto 0  ;
+    margin: auto 0;
   }
 `;
 
@@ -52,7 +52,7 @@ interface ParaProps {
 }
 
 export const Para = styled.p<ParaProps>`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   line-height: 1.6;
   width: 50%;
@@ -72,7 +72,7 @@ export const Para = styled.p<ParaProps>`
   }
 `;
 export const Paras = styled.p<ParaProps>`
-font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
   margin: auto 0;
@@ -111,11 +111,8 @@ export const ListText = styled.li`
 
 export const ContentPageLogo = styled(Figure.Image)`
   width: 70%;
-  display: flex;
-  justify-content: center;
 
   @media (max-width: 500px) {
-    
   }
   @media (max-width: 900px) {
   }
@@ -140,11 +137,11 @@ export const LastLogo = styled(Figure.Image)`
 
 export const SideTitles = styled.p`
   font-weight: 650;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   margin-top: 5px;
   float: right;
-  color: #3335CF;
+  color: #3335cf;
   width: 100%;
   color: ${({ color }) => (color ? color : null)};
   @media (max-width: 600px) {
@@ -170,7 +167,7 @@ export const Titles = styled.p`
 `;
 
 export const Heading = styled.p`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 600;
   color: #43566d;
   align-items: center;
@@ -185,7 +182,7 @@ export const Heading = styled.p`
 
 export const SubmitButton = styled(Button)`
   height: 35px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 100px;
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
@@ -248,8 +245,8 @@ export const DownloadButton = styled(Button)`
     font-size: 68%;
     width: 75%;
   }
-  span{
-    font-family: 'Montserrat', sans-serif;
+  span {
+    font-family: "Montserrat", sans-serif;
   }
 `;
 
@@ -259,7 +256,7 @@ export const Buttons = styled(Button)`
   background: #ff7b00 0% 0% no-repeat padding-box;
   border: none;
   font-size: 13px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #ffffff;
   border-radius: 17px;
   opacity: 1;
@@ -306,7 +303,7 @@ export const Label = styled.div`
 
 export const Title = styled.div`
   color: #3335cf;
-  font-family: 'Montserrat', sans-serif; 
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   font-weight: 1000;
   margin-left: 5%;
@@ -319,7 +316,7 @@ export const Title = styled.div`
     font-size: 18px;
     margin: 0 auto;
 
-   margin-top: 10px;
+    margin-top: 10px;
   }
 `;
 
@@ -340,7 +337,7 @@ export const Bold = styled.p<bold>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : "700")};
   color: #3335cf;
   font-size: ${({ fontSize }) => (fontSize ? `${fontSize}px` : "25px")};
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   z-index: 100;
   color: #3335cf;
   margin: auto 0;
@@ -375,15 +372,16 @@ export const Sticky = styled.div`
 export const RelativeWrap = styled.div`
   position: relative;
   z-index: 1000;
-  margin-left: 23%;
+  text-align: center;
   margin-top: -50%;
+  margin-left: -30%;
   @media (max-width: 650px) {
     width: 100%;
   }
 `;
 
 export const CareerKompass = styled(Figure.Image)`
-  width: 40%;
+  width: 28%;
   @media (max-width: 650px) {
     margin-bottom: 30%;
   }
@@ -393,12 +391,12 @@ export const CardWrapper2 = styled(Card)`
   width: 75%;
   padding: 12px 32px 16px;
   border-radius: 8px;
-  @media (max-width: 500px) { 
-     margin: 0 auto; 
-     padding: 5px 5px 5px 5px;
+  @media (max-width: 500px) {
+    margin: 0 auto;
+    padding: 5px 5px 5px 5px;
   }
   @media (max-width: 1200px) {
-   margin-top: 150px;
+    margin-top: 150px;
     width: 100%;
   }
 `;
@@ -408,7 +406,7 @@ export const Recommanded = styled.div`
   color: black;
   font-size: 15px;
   font-weight: 700;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   padding: 10px 0px 10px 0px;
   @media (max-width: 500px) {
     width: 100%;
@@ -421,11 +419,11 @@ export const Recommanded = styled.div`
 `;
 
 export const Paras2 = styled.p<ParaProps>`
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 500;
   padding: 1px 0px 10px 0px;
-  margin: auto 0;  
+  margin: auto 0;
   color: ${({ color }) => (color ? color : "black")};
   @media (max-width: 600px) {
     margin: 0 auto;
@@ -450,14 +448,26 @@ export const CongratWrapper = styled.div`
 export const CongratLine = styled.div`
   margin: auto 0;
   font-size: 35px;
-  color: #FF7B00;
+  color: #ff7b00;
   font-weight: 1000;
   @font-face {
     font-family: "TexturaModern";
-    src:  url("../../fonts/textura/TexturaModern.ttf");
+    src: url("../../fonts/textura/TexturaModern.ttf");
     font-weight: bold;
   }
- font-family: "TexturaModern";
-
+  font-family: "TexturaModern";
 `;
- 
+
+export const BadgeText = styled.p`
+  font-size: 15px;
+  font-family: "Montserrat";
+  font-weight: 500;
+`;
+
+export const StyledBadge = styled.p`
+  font-size: 22px;
+  font-family: "Montserrat";
+  font-weight: 800;
+  color: #3335cf;
+  margin-top: -12px;
+`;

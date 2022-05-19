@@ -5,7 +5,7 @@ import { shallowEqual, useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
 import { useHistory } from "react-router-dom";
 import { ActionButton, FlexWrapper, UserHeader } from "../../components";
-import { Button } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import ROUTES from "../../const/routes";
 import { postAnswer } from "../../redux/TestApi/api";
 import { getTestId } from "../../helpers/dropdown";
@@ -13,6 +13,7 @@ import { SelectedAnswers } from "../../redux/TestApi/types";
 import { buildStyles, CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import Background from "../../assests/testHeader.svg";
+import { alphabet } from "./const";
 
 export const FlexWrap = styled.div`
   display: flex;
@@ -48,9 +49,10 @@ const Bold = styled.p<bold>`
   margin: auto 0;
   padding: ${({ padding }) => (padding ? "14px" : "0")};
   padding-right: ${({ paddingRight }) => (paddingRight ? "190px" : "0")};
-  @media (max-width: 600px) {
+  @media (max-width: 900px) {
     font-size: 14px;
     width: 100%;
+    padding-left: 4%;
   }
 `;
 const QuestionContainer = styled.div`
@@ -71,24 +73,20 @@ const TestWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   width: 80%;
-  padding-left: 60px;
+  padding-left: 8%;
   font-family: "Montserrat", sans-serif;
-  @media (max-width: 1000px) {
-    padding: 0px;
-  }
 `;
 
 const Optoins = styled.div`
   display: flex;
-  width: 80%;
+  width: 70%;
   align-items: center;
-  @media (max-width: 1000px) {
-    width: 42%;
+  @media (max-width: 900px) {
+    width: 80%;
   }
   @media (max-width: 500px) {
     width: 100%;
     height: 30px;
-    margin: auto 0;
   }
 `;
 
@@ -120,7 +118,7 @@ const OptionButton = styled(Button)`
 
 const SubmitButton = styled(Button)`
   height: 35px;
-  width: 100px;
+  width: 18%;
   background: #ff7b00;
   border: none;
   float: right;
@@ -129,11 +127,15 @@ const SubmitButton = styled(Button)`
   opacity: 1;
   font-family: "Montserrat", sans-serif;
   margin-top: 7%;
-  margin-right: 100px;
+  margin-right: 20%;
   &:hover,
   &:active,
   &:focus {
     background: #ff7b00 0% 0% no-repeat padding-box;
+  }
+  @media (max-width: 900px) {
+    font-size: 12px;
+    margin-right: 16%;
   }
 `;
 
@@ -311,7 +313,7 @@ export const QuestionSection = ({
             marginTop="32"
             backgroundColor="#3335CF"
           >
-            {TestName}-{level}
+            {TestName} - {level}
           </ActionButton>
         </div>
       </FlexWrap>
@@ -322,7 +324,7 @@ export const QuestionSection = ({
           </Bold>
           <FlexWrapper>
             <Bold fontWeight="500" fontSize="15" padding>
-              {activeQuestions + 1}.{data[activeQuestions]}
+              {activeQuestions + 1}. {data[activeQuestions]}
             </Bold>
           </FlexWrapper>
           {(isMultiOption[activeQuestions] == false && (
@@ -349,20 +351,22 @@ export const QuestionSection = ({
               </Optoins>
             </TestWrapper>
           )) || (
-            <TestWrapper>
-              {options?.map((opt) => (
-                <Optoins
-                  onClick={(e) => {
-                    changeHandler(e);
-                  }}
-                >
-                  <OptionButton value={opt.option}>
-                    <Option>A</Option>
-                    <OptionText>{opt.option}</OptionText>
-                  </OptionButton>
-                </Optoins>
+            <Row xs={2} md={2}>
+              {options?.map((opt, i) => (
+                <Col style={{ padding: "2%" }}>
+                  <Optoins
+                    onClick={(e) => {
+                      changeHandler(e);
+                    }}
+                  >
+                    <OptionButton value={opt.option}>
+                      <Option>{alphabet[i]}</Option>
+                      <OptionText>{opt.option}</OptionText>
+                    </OptionButton>
+                  </Optoins>
+                </Col>
               ))}
-            </TestWrapper>
+            </Row>
           )}
 
           <SubmitButton onClick={nextClickHandle}>{buttonValue}</SubmitButton>
