@@ -98,10 +98,7 @@ import {
   RegisterHelperText,
 } from "./RegisterStyle/subcomponents";
 import { EditableDropdown, FlexWrapper, Loader } from "../../components";
-import {
-  getCountryDropdown,
-  getStateDropdown,
-} from "../../helpers/dropdown";
+import { getCountryDropdown, getStateDropdown } from "../../helpers/dropdown";
 import {
   getProfile,
   AddUserApi,
@@ -153,14 +150,14 @@ const User = (): ReactElement => {
 
   const [showLogin, setShowLogin] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  //\\const [showOtp, setShowOtp] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
   const [values, setValues] = useState(registerDetails);
 
   const dispatch = useDispatch();
   const history = useHistory();
 
   console.log(showRegister);
-  
+
   // const handleRegisterSubmit = (e: SyntheticEvent) => {
   //   e.preventDefault();
   //   dispatch(AddUserApi(values));
@@ -194,10 +191,7 @@ const User = (): ReactElement => {
           <Logo src={logo} alt="logo" />
         </LogoWrapper>
         <Wrapper>
-          <LoginButton
-            classNameName="login"
-            onClick={() => setShowLogin(true)}
-          >
+          <LoginButton classNameName="login" onClick={() => setShowLogin(true)}>
             Login
           </LoginButton>
           <MenuContainer>Menu</MenuContainer>
@@ -215,9 +209,13 @@ const User = (): ReactElement => {
             personality-skill-job-synchronization, embark on a redefined career
             test to negative in the direction of your dreams.
           </Footer>
-          <Start onClick={() => {
-            setShowLogin(true)
-          }}>Start Test</Start>
+          <Start
+            onClick={() => {
+              setShowLogin(true);
+            }}
+          >
+            Start Test
+          </Start>
         </Details>
         <ContainBImg src={Backimage12} />
         <ContainImg src={Backimage11} />
@@ -228,14 +226,16 @@ const User = (): ReactElement => {
           <Header2>Discover your best Career path</Header2>
           <Body2>with Careerkompass’s top-notch professional guidance</Body2>
         </Details2>
-        <CardWrapper  >
+        <CardWrapper>
           <Cards>
             <CardHeader>Explore</CardHeader>
             <CardBody>
               <CareerKompas src={Group} />
             </CardBody>
             <CardFooter>
-              Careerkompass computes your personality traits, strong interests and aligns them with work skills to determine the best career options in varied work environments
+              Careerkompass computes your personality traits, strong interests
+              and aligns them with work skills to determine the best career
+              options in varied work environments
             </CardFooter>
           </Cards>
           <Cards>
@@ -244,7 +244,10 @@ const User = (): ReactElement => {
               <SecondImage src={identify} />
             </CardBody>
             <CardFooter>
-              The testing elements capture your approach to various scenarios, identifying your strengths, attitude, aptitude, and more. Also, established on the lines of real jobs and industries for career satisfaction
+              The testing elements capture your approach to various scenarios,
+              identifying your strengths, attitude, aptitude, and more. Also,
+              established on the lines of real jobs and industries for career
+              satisfaction
             </CardFooter>
           </Cards>
           <Cards>
@@ -253,7 +256,8 @@ const User = (): ReactElement => {
               <ThirdImage src={advance} />
             </CardBody>
             <CardFooter>
-              Receive an inventory of career interests and a personalized guide to steer your career forward on a new journey!
+              Receive an inventory of career interests and a personalized guide
+              to steer your career forward on a new journey!
             </CardFooter>
           </Cards>
         </CardWrapper>
@@ -316,7 +320,7 @@ const User = (): ReactElement => {
                     onChange={(event: ChangeEvent<HTMLInputElement>) =>
                       dispatch(updatePassword(event?.target?.value))
                     }
-                  // type="password"
+                    type="password"
                   />
                 </Input>
                 <CheckboxWrapper>
@@ -341,7 +345,7 @@ const User = (): ReactElement => {
         <RegisterModalDialog
           isLargeModal={true}
           handleSubmit={() => {
-            setShowRegister(false)
+            setShowRegister(false);
           }}
           handleCancel={() => setShowRegister(false)}
         >
@@ -350,6 +354,7 @@ const User = (): ReactElement => {
             setValues={setValues}
             setLogin={setShowLogin}
             setRegister={setShowRegister}
+            setOtp={setShowOtp}
           />
         </RegisterModalDialog>
       )}
@@ -476,7 +481,7 @@ const User = (): ReactElement => {
 
       {/* --------------------------------------------otpModal-------------------------------------------------- */}
 
-      {/* {showOtp && (
+      {showOtp && (
         <OTPModalDialog
           show={true}
           onHide={() => setShowOtp(false)}
@@ -515,7 +520,7 @@ const User = (): ReactElement => {
             </OTPTitleWrapper>
           </OTPWrapper>
         </OTPModalDialog>
-      )} */}
+      )}
     </PageWrapper>
   );
 };
