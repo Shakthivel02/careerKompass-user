@@ -19,10 +19,9 @@ export const ContainerWrapper = styled.div`
   background: url(${Back});
   background-position: center;
   background-size: cover;
-  width: 100%; 
+  width: 100%;
   @media (max-width: 700px) {
     width: 100%;
-  overflow: auto;
     height: auto;
   }
 `;
@@ -43,7 +42,7 @@ export const Header1 = styled.div`
   letter-spacing: 0px;
   color: #0f1043;
   opacity: 1;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: 38px;
   font-weight: 900;
@@ -51,7 +50,7 @@ export const Header1 = styled.div`
   z-index: 100;
   @media (max-width: 650px) {
     width: 100%;
-    font-size:160%;
+    font-size: 160%;
   }
 `;
 
@@ -62,15 +61,15 @@ export const Header2 = styled.div<Header2props>`
   letter-spacing: 0px;
   color: #6d6d95;
   opacity: 1;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   text-align: center;
   font-size: ${({ fontSize }) => (fontSize ? fontSize : "28px")};
   font-weight: 600;
   position: relative;
   z-index: 100;
-  @media (max-width: 650px) {
+  @media (max-width: 800px) {
     width: 100%;
-    font-size:70%;
+    font-size: 14px;
   }
 `;
 
@@ -81,20 +80,18 @@ export const Para = styled.p`
   text-align: center;
   font-size: 14px;
   font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 60%;
   @media (max-width: 650px) {
     width: 100%;
-    font-size:70%;
+    font-size: 70%;
   }
 `;
 export const StreamWrapper = styled.div`
-  margin: 3rem 5rem;
   display: flex;
   justify-content: center;
   @media (max-width: 600px) {
-    margin: 6rem 10rem;
-    display: block;
+    display: flex;
     justify-content: center;
     width: 100%;
   }
@@ -106,21 +103,14 @@ export const StreamWrapper = styled.div`
 `;
 
 export const DropdownWrapper = styled.div`
-  margin: auto 12px;
   width: 35%;
   box-shadow: 0 1px 10px 0 lightgray;
   #editable-dropdown {
     height: 100%;
   }
-  @media (max-width: 600px) {
-    display: inline;
-    justify-content: center;
-  }
   @media (max-width: 900px) {
-    margin: auto 12px;
-    width: 80%;
+    width: 60%;
     margin-bottom: 3rem;
-   
   }
 `;
 
@@ -141,11 +131,13 @@ export const LevelCard = styled(Button)`
     background-color: #ff7b00;
     color: white;
   }
-  @media (max-width: 600px) {
-    width: 50%;
+  @media (max-width: 1100px) {
+    width: 150px;
+    font-size: 12px;
   }
-  span{
-    font-family: 'Montserrat', sans-serif;
+  span {
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
   }
 `;
 
@@ -153,10 +145,9 @@ export const TestButton = styled(Button)`
   position: absolute;
   height: 35px;
   font-weight: 600;
-  font-family: "Montserrat", sans-serif; 
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   color: #ffffff;
   opacity: 1;
   border: none;
 `;
-
