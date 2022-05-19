@@ -375,8 +375,9 @@ export const RelativeWrap = styled.div`
   text-align: center;
   margin-top: -50%;
   margin-left: -30%;
-  @media (max-width: 650px) {
-    width: 100%;
+  @media (max-width: 900px) {
+    margin-top: -50%;
+    margin-left: -30%;
   }
 `;
 
@@ -462,6 +463,10 @@ export const BadgeText = styled.p`
   font-size: 15px;
   font-family: "Montserrat";
   font-weight: 500;
+  @media (max-width: 600px) {
+    font-size: 12px;
+    margin-top: -26%;
+  }
 `;
 
 export const StyledBadge = styled.p`
@@ -470,4 +475,7 @@ export const StyledBadge = styled.p`
   font-weight: 800;
   color: #3335cf;
   margin-top: -12px;
+  @media (max-width: 1100px) {
+    font-size: 12px;
+  }
 `;
