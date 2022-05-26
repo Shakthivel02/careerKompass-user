@@ -26,8 +26,7 @@ import {
 import Ab from "../../assests/Group.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png";
-import logo from "../../assests/about.png";
-import { Header } from "../../components";
+import logo from "../../assests/about.png"; 
 import { ReactElement } from "react";
 import MainHeader from "../../components/Header";
 
