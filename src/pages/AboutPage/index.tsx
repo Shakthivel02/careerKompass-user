@@ -31,6 +31,7 @@ import { Header } from "../../components";
 import { ReactElement } from "react";
 import MainHeader from "../../components/Header";
 
+
 const AboutPage = (): ReactElement => {
   return (
     <PageWrapper>
