@@ -44,7 +44,6 @@ import {
 } from "./subcomponents";
 import logo from "../../assests/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import co3 from "../../assests/co3.png";
 import Footers from "../LandingPage/footer/index";
 import Backimage11 from "../../assests/contain1.png";

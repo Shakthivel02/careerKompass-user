@@ -2,8 +2,7 @@ import Login from "../container/Login";
 import TestPage from "./testPage";
 import User from "./LandingPage";
 import StreamSelection from "./StreamSelection";
-import Result from "./resultcopy";
-import AboutPage from "./AboutPage";
+import Result from "./resultcopy"; 
 
 export {
     TestPage,
