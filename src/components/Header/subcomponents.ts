@@ -102,4 +102,5 @@ export const MenuListWrapper = styled.ul`
   margin-top: 4%;
   margin-right: 4px;
   list-style: none;
+  transition:  0.2s ease-in-out;
 `;

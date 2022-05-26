@@ -76,10 +76,10 @@ const MainHeader = ({ showLogin }: ManiHeaderProps): ReactElement => {
             <span className="line" />
           </Hamburger>
         )) || (
-          <HamburgerMenu onClick={Toggle}>
-            <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
-          </HamburgerMenu>
-        )}
+            <HamburgerMenu onClick={Toggle}>
+              <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
+            </HamburgerMenu>
+          )}
       </Wrapper>
     </HeaderWrapper>
   );

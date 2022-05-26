@@ -5,6 +5,7 @@ export const Hamburger = styled.div`
   flex-direction: column;
   cursor: pointer;
   margin-top: 8%;
+  transition: 5s;
   span {
     height: 2px;
     width: 25px;
