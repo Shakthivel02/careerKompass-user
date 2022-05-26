@@ -16,7 +16,7 @@ const Routes = (): ReactElement => {
       />
       <ProtectedRoute path={ROUTES.TEST} component={TestPage} />
       <ProtectedRoute path={ROUTES.RESULTCOPY} component={Result} />
-      <ProtectedRoute path={ROUTES.ABOUT} component={AboutPage} />
+      <Route path={ROUTES.ABOUT} component={AboutPage} />
     </Switch>
   );
 };
