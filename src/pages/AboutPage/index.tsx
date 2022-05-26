@@ -1,4 +1,3 @@
-
 import { FlexWrapper } from "../../components";
 import {
   Para,
@@ -22,21 +21,21 @@ import {
   FormCardContent,
   FormCardText,
   FormCardInput,
-  FormCardButton
+  FormCardButton,
 } from "../AboutPage/subcomponents";
-import Ab from "../../assests/Group.png"
+import Ab from "../../assests/Group.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import logo2 from "../../assests/logo.png";
-import logo from "../../assests/about.png"
+import logo from "../../assests/about.png";
 import { Header } from "../../components";
 import { ReactElement } from "react";
+import MainHeader from "../../components/Header";
 
-const AboutPage = ():ReactElement => {
+const AboutPage = (): ReactElement => {
   return (
     <PageWrapper>
-      <Header />
-      <FlexWrap>
-      </FlexWrap>
+      <MainHeader />
+      <FlexWrap></FlexWrap>
       <Title>About</Title>
       <FlexWrapper>
         <AboutImage src={Ab} />
@@ -48,24 +47,23 @@ const AboutPage = ():ReactElement => {
           <br />
           With well-designed study materials, specially curated courses, and
           certifications to develop in-demand technology, design, and management
-          skills, Cloudkampus aims to goastep beyond and revolutionize the practice
-          of career decision-making with Careerkompass's App.
+          skills, Cloudkampus aims to goastep beyond and revolutionize the
+          practice of career decision-making with Careerkompass's App.
           <br />
-          Careerkompass helps students and professionals steer their course towards
-          findingascientific approach to making crucial work decisions. Building on
-          self-exploration, strength identification, and maximizing inputs for a
-          successful future, Careerkompass empowers students to establish possible
-          success and fulfilment with different career options based on their
-          personality and skills. Along with assessment and matching preferences,
-          Careerkampus also plotsacourse for the future with two different levels,
-          one for beginners and another for experienced individuals.
-          
+          Careerkompass helps students and professionals steer their course
+          towards findingascientific approach to making crucial work decisions.
+          Building on self-exploration, strength identification, and maximizing
+          inputs for a successful future, Careerkompass empowers students to
+          establish possible success and fulfilment with different career
+          options based on their personality and skills. Along with assessment
+          and matching preferences, Careerkampus also plotsacourse for the
+          future with two different levels, one for beginners and another for
+          experienced individuals.
         </Para>
-
       </FlexWrapper>
 
-      <LogoWrapper >
-      <Logo src={logo} />
+      <LogoWrapper>
+        <Logo src={logo} />
       </LogoWrapper>
       <FinalWrapper>
         <Container4>
@@ -112,7 +110,7 @@ const AboutPage = ():ReactElement => {
               <Links>Chennai 600-004</Links>
             </div>
           </FooterWrapper>
-          <FinalFooter >
+          <FinalFooter>
             <div>Copyright & Designed By CareerKompass</div>
             <div>Terms | Privacy Policy</div>
           </FinalFooter>

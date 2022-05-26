@@ -21,15 +21,6 @@ interface BodyProps {
 const Body = styled.div<BodyProps>`
   display: flex;
   min-height: calc(100vh - 40px);
-  background: ${({ isShowOverlay }) =>
-    isShowOverlay
-      ? `
-  linear-gradient(
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.5)
-  )
-  `
-      : "none"};
 `;
 
 interface GlobalStylesProps {

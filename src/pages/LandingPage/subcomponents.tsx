@@ -111,6 +111,7 @@ export const HamburgerMenu = styled(Button)`
   color: #3335cf;
 `;
 
+
 export const Details = styled.div`
   margin: 23vh 12vh;
   @media (max-width: 900px) {

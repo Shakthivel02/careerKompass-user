@@ -1,8 +1,10 @@
 import axios from "axios";
 import ROUTES from "../const/routes";
 
+export const BASEURL = "http://localhost:4300/api/";
+
 const axiosConfig = {
-  baseURL: "http://184.73.172.162:3000/api/",
+  baseURL: BASEURL,
   timeout: 30000,
   headers: {
     "content-type": "application/json; charset=utf-8",

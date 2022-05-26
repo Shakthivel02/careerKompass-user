@@ -1,8 +1,9 @@
 import axios from "axios";
 import fileDownload from "js-file-download";
+import { BASEURL } from "../../services";
 
 const Download = (id?: string) => {
-  const url = `http://localhost:4300/api/Download?id=${id}`;
+  const url = `${BASEURL}Download?id=${id}`;
 
   axios
     .get(url, {

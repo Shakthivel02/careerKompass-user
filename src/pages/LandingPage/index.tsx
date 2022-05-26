@@ -124,6 +124,7 @@ import {
 import { getCountryPin, getStates } from "../../redux/Register/api";
 import Register from "./RegisterStyle";
 import { getOTP } from "../../redux/streamMaster/api";
+import MainHeader from "../../components/Header";
 
 const User = (): ReactElement => {
   const {
@@ -186,20 +187,7 @@ const User = (): ReactElement => {
 
   return (
     <PageWrapper>
-      <HeaderWrapper>
-        <LogoWrapper>
-          <Logo src={logo} alt="logo" />
-        </LogoWrapper>
-        <Wrapper>
-          <LoginButton classNameName="login" onClick={() => setShowLogin(true)}>
-            Login
-          </LoginButton>
-          <MenuContainer>Menu</MenuContainer>
-          <HamburgerMenu>
-            <FontAwesomeIcon icon={["fas", "bars"]} size="lg" />
-          </HamburgerMenu>
-        </Wrapper>
-      </HeaderWrapper>
+      <MainHeader showLogin={setShowLogin} />
       <Container1>
         <Details>
           <Header> Welcome to Careerkompass</Header>
