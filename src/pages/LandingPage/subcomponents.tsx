@@ -297,12 +297,12 @@ export const CardWrapper = styled.div`
 
 export const Cards = styled(Card)`
   background-color: #ffffff;
-  margin: 20px;
+  margin: 19px;
   box-shadow: 0 1px 10px 0 lightgray;
   border-radius: 10px;
   border: none;
-  width: 21%;
-  height: 330px;
+  width: 19%;
+  height: 370px;
   &:hover,
   &:active,
   &:focus {
@@ -354,7 +354,8 @@ export const CardFooter = styled(Card.Footer)`
   display: flex;
   background: none;
   text-align: center;
-  padding: 4%;
+  padding: 10%;
+  margin-bottom:13%;
   text-align-last: center;
   font-size: 13px;
   font-weight: 550;
