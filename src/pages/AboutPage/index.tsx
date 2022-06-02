@@ -12,6 +12,7 @@ import {
   FinalFooter,
   BrandIcon,
   PageWrapper,
+  TextWrapper,
   FHeader,
   Links,
   FinalWrapper,
@@ -39,17 +40,20 @@ const AboutPage = (): ReactElement => {
       <Title>About</Title>
       <FlexWrapper>
         <AboutImage src={Ab} />
+         <TextWrapper>
         <Para>
           Transforming education for millions of aspirants with various learning
           modes and innovative teaching techniques, Cloudkampus has arrived as a
           reputed global online institution, settingaworld-class learning
           environment.
-          <br />
+          </Para> 
+          <Para>
           With well-designed study materials, specially curated courses, and
           certifications to develop in-demand technology, design, and management
           skills, Cloudkampus aims to goastep beyond and revolutionize the
           practice of career decision-making with Careerkompass's App.
-          <br />
+          </Para> 
+          <Para>
           Careerkompass helps students and professionals steer their course
           towards findingascientific approach to making crucial work decisions.
           Building on self-exploration, strength identification, and maximizing
@@ -60,6 +64,7 @@ const AboutPage = (): ReactElement => {
           future with two different levels, one for beginners and another for
           experienced individuals.
         </Para>
+        </TextWrapper>
       </FlexWrapper>
 
       <LogoWrapper>

@@ -20,7 +20,7 @@ export const FlexWrap = styled.div`
 `;
 
 export const Title = styled.p`
-  margin-left: 45%;
+  margin-left: 42%;
   color: #0f1043;
   font-size: 40px;
   font-weight: 1000;
@@ -35,7 +35,7 @@ export const Title = styled.p`
 
 export const AboutImage = styled(Figure.Image)`
   width: 40%;
-  height: 97%;
+  height: 520px;
   margin: 0 -2%;
   @media (max-width: 600px) {
     width: 50%;
@@ -44,14 +44,19 @@ export const AboutImage = styled(Figure.Image)`
   }
   
 `;
+export const TextWrapper = styled.div`
+width: 60%;
+margin-top:5%;
+`;
 
 export const Para = styled.p`
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  width: 47%;
+  font-weight: 530;
+  font-size: 18px;
+  width: 83%;
+  opacity: 1;
   color: ${({ color }) => (color ? color : "#000000")};
-  margin: 3% auto;
+  margin-left:8%;
   @media (max-width: 600px) {
     margin: 0 auto;
     font-size: 9px;
@@ -112,7 +117,8 @@ export const FormCardContent = styled.div`
 `;
 
 export const FormCardText = styled(Card.Body)`
-  font-weight: 700;
+  font-weight: 500;
+  font-size:140%;
    font-family: 'Montserrat', sans-serif; 
   color: white;
   margin: auto 0;
@@ -125,8 +131,8 @@ export const FormCardText = styled(Card.Body)`
 
 export const FormCardInput = styled.input`
   margin-right: 4%;
-  margin-top: 3%;
-  height: 55%;
+  margin-top: 2.5%;
+  height: 65%;
   width: 40%;
   border-radius: 20px;
   border: none;
@@ -135,6 +141,7 @@ export const FormCardInput = styled.input`
     font-size: 12px;
     font-weight: 550;
   }
+  
   @media (max-width: 650px) {
     width: 60%;
     height: 50%;
